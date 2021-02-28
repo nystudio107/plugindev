@@ -1,7 +1,38 @@
+fieldLayouts:
+  fff7ed87-136b-4fc9-b978-481e41e39e26:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: homepage
 hasTitleField: false
 name: Homepage
 section: 54e60257-f31a-44aa-960e-bbd364197e28
 sortOrder: 1
 titleFormat: '{section.name|raw}'
-titleLabel: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

@@ -82,8 +82,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - db-data:/var/lib/mysql
-      - ./db-seed/:/docker-entrypoint-initdb.d
+      - mariadb-db-data:/var/lib/mysql
+      - ./mariadb-db-seed/:/docker-entrypoint-initdb.d
   # redis - key/value database for caching & php sessions
   redis:
     build:
@@ -94,6 +94,6 @@ services:
     init: true
 
 volumes:
-  db-data:
+  mariadb-db-data:
   cpresources:
   storage:
