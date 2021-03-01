@@ -40,6 +40,39 @@ rm cms/composer.lock
 docker-compose up
 ```
 
+### Switching between MySQL & Postgres
+
+The plugindev project supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
+
+The `cms/config/db.php` looks like this:
+
+```php
+$mysqlConfig = [
+    'driver' => 'mysql',
+    'server' => 'mysql',
+    'port' => 3306,
+];
+
+$postgresConfig = [
+    'driver' => 'pgsql',
+    'server' => 'postgres',
+    'port' => 5432,
+];
+
+// Choose whether to override with either $mysqlConfig or $postgresConfig
+return array_merge($baseConfig, $mysqlConfig);
+```
+
+So by default it's using MySQL, but you can dynamically change it to use Postgres by just chaining the last line in the file to be:
+
+```php
+return array_merge($baseConfig, $postgresConfig);
+```
+
+...and then just reload the page.
+
+This is great for ensuring your db queries work properly on both MySQL and Postgres, without having to set up two separate environments.
+
 ### XDebug with VScode
 
 To use Xdebug with VSCode install the [PHP Debug extension](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug ) and use the following configuration in your `.vscode/launch.json`:
