@@ -21,6 +21,7 @@ services:
       dockerfile: ./Dockerfile
     depends_on:
       - "mysql"
+      - "postgres"
       - "redis"
     env_file:
       *env
@@ -51,6 +52,23 @@ services:
     user: www-data
     volumes:
       *php-volumes
+  # postgres - database
+  postgres:
+    build:
+      context: ./docker-config/postgres
+      dockerfile: ./Dockerfile
+    env_file:
+      *env
+    environment:
+      POSTGRES_DB: project
+      POSTGRES_USER: project
+      POSTGRES_PASSWORD: project
+    init: true
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db-data:/usr/local/pgsql/data
+      - ./postgres-db-seed/:/docker-entrypoint-initdb.d
   # queue - runs queue jobs via php craft queue/listen
   queue:
     build:
@@ -97,5 +115,6 @@ services:
 
 volumes:
   mysql-db-data:
+  postgres-db-data:
   cpresources:
   storage:
