@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.2 - 2021.02.28
+### Changed
+* Removed `sitemodule` from `composer.json`
+* Put Craft dependencies back into the project
+
 ## 1.0.1 - 2021.02.28
 ### Added
 * Added postgres container
