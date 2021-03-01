@@ -25,11 +25,22 @@ You'll need Docker desktop for your platform installed to run the project in loc
 * Start up the site with `docker-compose up` (the first build will be somewhat lengthy)
 * Navigate to `http://localhost:8000` to use the site
 
+### Login
+
+The default login is:
+
+**User:** `andrew@nystudio107.com` \
+**Password:** `letmein`
+
+### Updating
+
 To update to the latest Composer packages (as constrained by the `cms/composer.json` semvers), do:
 ```
 rm cms/composer.lock
 docker-compose up
 ```
+
+### XDebug with VScode
 
 To use Xdebug with VSCode install the [PHP Debug extension](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug ) and use the following configuration in your `.vscode/launch.json`:
 ```json
