@@ -10,7 +10,7 @@
 
 use craft\helpers\App;
 
-return [
+$baseConfig = [
     'dsn' => App::env('DB_DSN') ?: null,
     'driver' => App::env('DB_DRIVER'),
     'server' => App::env('DB_SERVER'),
@@ -21,3 +21,19 @@ return [
     'schema' => App::env('DB_SCHEMA'),
     'tablePrefix' => App::env('DB_TABLE_PREFIX'),
 ];
+
+$mysqlConfig = [
+    'driver' => 'mysql',
+    'server' => 'mysql',
+    'port' => 3306,
+];
+
+$postgresConfig = [
+    'driver' => 'pgsql',
+    'server' => 'postgres',
+    'port' => 5432,
+];
+
+// Choose whether to override with either $mysqlConfig or $postgresConfig
+// no restarting anything, just reload the page
+return array_merge($baseConfig, $postgresConfig);

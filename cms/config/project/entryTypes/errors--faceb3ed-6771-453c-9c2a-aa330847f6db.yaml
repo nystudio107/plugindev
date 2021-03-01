@@ -1,7 +1,38 @@
+fieldLayouts:
+  31e67dee-1002-4a93-9546-8b234b3b368b:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\EntryTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
 handle: errors
 hasTitleField: true
 name: Errors
 section: a72bfe0c-3389-4f9f-8ec1-ab318ec10b29
 sortOrder: 1
 titleFormat: null
-titleLabel: Title
+titleTranslationKeyFormat: null
+titleTranslationMethod: ''

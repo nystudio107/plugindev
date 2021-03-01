@@ -5,22 +5,28 @@ instructions: ''
 name: 'Error Image'
 searchable: true
 settings:
+  allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:5c642d7e-b16b-4836-9575-668d75d242e5'
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
+  previewMode: full
   restrictFiles: '1'
   selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
   singleUploadLocationSource: 'volume:5c642d7e-b16b-4836-9575-668d75d242e5'
   singleUploadLocationSubpath: ''
   source: null
   sources:
     - 'volume:5c642d7e-b16b-4836-9575-668d75d242e5'
   targetSiteId: null
-  useSingleFolder: ''
-  validateRelatedElements: ''
+  useSingleFolder: false
+  validateRelatedElements: false
   viewMode: large
 translationKeyFormat: null
 translationMethod: site

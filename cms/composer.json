@@ -1,11 +1,10 @@
 {
   "require": {
-    "craftcms/cms": "^3.5.15.1",
+    "craftcms/cms": "^3.6.7",
     "vlucas/phpdotenv": "^3.4.0",
     "yiisoft/yii2-redis": "^2.0.6",
     "nystudio107/craft-connect": "^1.0.0",
     "nystudio107/craft-cookies": "^1.0.0",
-    "nystudio107/craft-crafty": "^1.0.0",
     "nystudio107/craft-disqus": "^1.0.0",
     "nystudio107/craft-eagerbeaver": "^1.0.0",
     "nystudio107/craft-emptycoalesce": "^1.0.0",

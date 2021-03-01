@@ -20,7 +20,8 @@ services:
       context: ./docker-config/php-prod-craft
       dockerfile: ./Dockerfile
     depends_on:
-      - "mariadb"
+      - "mysql"
+      - "postgres"
       - "redis"
     env_file:
       *env
@@ -51,6 +52,23 @@ services:
     user: www-data
     volumes:
       *php-volumes
+  # postgres - database
+  postgres:
+    build:
+      context: ./docker-config/postgres
+      dockerfile: ./Dockerfile
+    env_file:
+      *env
+    environment:
+      POSTGRES_DB: project
+      POSTGRES_USER: project
+      POSTGRES_PASSWORD: project
+    init: true
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db-data:/usr/local/pgsql/data
+      - ./postgres-db-seed/:/docker-entrypoint-initdb.d
   # queue - runs queue jobs via php craft queue/listen
   queue:
     build:
@@ -66,11 +84,13 @@ services:
     user: www-data
     volumes:
       *php-volumes
-  # mariadb - database
-  mariadb:
+  # mysql - database
+  mysql:
     build:
-      context: ./docker-config/mariadb
+      context: ./docker-config/mysql
       dockerfile: ./Dockerfile
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
     env_file:
       *env
     environment:
@@ -82,8 +102,8 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - db-data:/var/lib/mysql
-      - ./db-seed/:/docker-entrypoint-initdb.d
+      - mysql-db-data:/var/lib/mysql
+      - ./mysql-db-seed:/docker-entrypoint-initdb.d
   # redis - key/value database for caching & php sessions
   redis:
     build:
@@ -94,6 +114,7 @@ services:
     init: true
 
 volumes:
-  db-data:
+  mysql-db-data:
+  postgres-db-data:
   cpresources:
   storage:
