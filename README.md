@@ -1,10 +1,10 @@
 <p align="center"><a href="https://craftcms.com/" target="_blank"><img width="300" height="300" src="https://nystudio107.com/img/site/nystudio107_submark.svg" alt="nystudio107"></a></p>
 
-## About nystudio107/craft
+## About nystudio107/plugindev
 
 This is a project scaffolding package for Craft 3 CMS plugin development.
 
-## Using nystudio107/craft
+## Using nystudio107/plugindev
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
 
