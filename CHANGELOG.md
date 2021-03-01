@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.3 - 2021.02.28
+### Changed
+* Remove `require` dependencies
+* Cleaned up `README.md`
+
 ## 1.0.2 - 2021.02.28
 ### Changed
 * Removed `sitemodule` from `composer.json`

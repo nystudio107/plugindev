@@ -1,12 +1,13 @@
 {
   "name": "nystudio107/plugindev",
   "description": "nystudio107 Craft CMS plugin development environment scaffolding",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "craft",
     "cms",
     "craftcms",
-    "plugins"
+    "plugin",
+    "development"
   ],
   "license": "0BSD",
   "homepage": "https://craftcms.com/",
@@ -18,17 +19,6 @@
     "source": "https://github.com/craftcms/cms",
     "docs": "https://craftcms.com/docs",
     "rss": "https://craftcms.com/changelog.rss"
-  },
-  "require": {
-    "craftcms/cms": "^3.6.7",
-    "vlucas/phpdotenv": "^3.4.0"
-  },
-  "config": {
-    "optimize-autoloader": true,
-    "sort-packages": true,
-    "platform": {
-      "php":  "7.2.5"
-    }
   },
   "scripts": {
     "post-create-project-cmd": [
