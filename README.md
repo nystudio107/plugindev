@@ -8,19 +8,20 @@ This is a project scaffolding package for Craft 3 CMS plugin development.
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
 
-    composer create-project nystudio107/plugindev PATH --no-install
+    composer create-project nystudio107/plugindev PATH
 
 Make sure that `PATH` is the path to your project, including the name you want for the project, e.g.:
 
-    composer create-project nystudio107/plugindev craft3 --no-install
-
-We use `--no-install` so that the composer packages for the root project are not installed.
+    composer create-project nystudio107/plugindev craft3
 
 ## Setting Up Local Dev
 
 You'll need Docker desktop for your platform installed to run the project in local development
 
-* Set up a `.env` file in the `cms/` directory, based off of the provided `example.env`
+* Composer will have already created a `.env` file in the `cms/` directory, based off of the provided `example.env`
+  
+* Edit the `cms/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft/*",` in `repostories` to point to your local plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft:/Users/andrew/webdev/craft` to point to your local plugin Git repositories
 * Start up the site with `docker-compose up` (the first build will be somewhat lengthy)
 * Navigate to `http://localhost:8000` to use the site
 
