@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.4 - 2021.03.01
+### Changed
+* Default to using MySQL
+* Updated `README.md` to be more useful
+
 ## 1.0.3 - 2021.02.28
 ### Changed
 * Remove `require` dependencies

@@ -35,5 +35,4 @@ $postgresConfig = [
 ];
 
 // Choose whether to override with either $mysqlConfig or $postgresConfig
-// no restarting anything, just reload the page
-return array_merge($baseConfig, $postgresConfig);
+return array_merge($baseConfig, $mysqlConfig);
