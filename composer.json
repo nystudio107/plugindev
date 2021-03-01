@@ -1,7 +1,6 @@
 {
   "name": "nystudio107/plugindev",
   "description": "nystudio107 Craft CMS plugin development environment scaffolding",
-  "version": "1.0.3",
   "keywords": [
     "craft",
     "cms",
