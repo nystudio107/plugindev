@@ -1,5 +1,13 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.5 - 2021.03.02
+### Added
+* Added a default `SITE_NAME` in `example.env`
+
+### Changed
+* Updated the seed dbs and Project Config files to no longer include licenses
+* Updated `README.md` project creation instructions
+
 ## 1.0.4 - 2021.03.01
 ### Changed
 * Default to using MySQL

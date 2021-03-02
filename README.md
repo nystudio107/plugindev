@@ -8,11 +8,17 @@ This is a project scaffolding package for Craft 3 CMS plugin development.
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
 
-    composer create-project nystudio107/plugindev PATH
+    composer create-project nystudio107/plugindev --no-install
+
+This will create a project named `plugindev` which is probably what you want, but if you want to manually pick a name, you can:
+
+    composer create-project nystudio107/plugindev PATH --no-install
 
 Make sure that `PATH` is the path to your project, including the name you want for the project, e.g.:
 
-    composer create-project nystudio107/plugindev craft3
+    composer create-project nystudio107/plugindev craft3 --no-install
+
+We use `--no-install` so that the composer packages for the root project are not installed.
 
 ## Setting Up Local Dev
 
