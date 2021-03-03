@@ -1,4 +1,5 @@
 {
   "buttons": ["bold", "italic"],
-  "toolbarFixed": true
+  "toolbarFixed": true,
+  "plugins": ["richvariables"]
 }

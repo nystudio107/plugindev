@@ -1,0 +1,110 @@
+contentColumnType: text
+fieldGroup: 94b4d5ac-d7ea-4241-a6cb-92b39f482f99
+handle: optimizedImages
+instructions: ''
+name: 'Optimized Images'
+searchable: false
+settings:
+  displayDominantColorPalette: '1'
+  displayLazyLoadPlaceholderImages: '1'
+  displayOptimizedImageVariants: '1'
+  variants:
+    -
+      __assoc__:
+        -
+          - width
+          - '1200'
+        -
+          - useAspectRatio
+          - '1'
+        -
+          - aspectRatioX
+          - '16'
+        -
+          - aspectRatioY
+          - '9'
+        -
+          - retinaSizes
+          -
+            - '1'
+        -
+          - quality
+          - '82'
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - '992'
+        -
+          - useAspectRatio
+          - '1'
+        -
+          - aspectRatioX
+          - '16'
+        -
+          - aspectRatioY
+          - '9'
+        -
+          - retinaSizes
+          -
+            - '1'
+        -
+          - quality
+          - '82'
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - '768'
+        -
+          - useAspectRatio
+          - '1'
+        -
+          - aspectRatioX
+          - '4'
+        -
+          - aspectRatioY
+          - '3'
+        -
+          - retinaSizes
+          -
+            - '1'
+        -
+          - quality
+          - '60'
+        -
+          - format
+          - jpg
+    -
+      __assoc__:
+        -
+          - width
+          - '576'
+        -
+          - useAspectRatio
+          - '1'
+        -
+          - aspectRatioX
+          - '4'
+        -
+          - aspectRatioY
+          - '3'
+        -
+          - retinaSizes
+          -
+            - '1'
+        -
+          - quality
+          - '60'
+        -
+          - format
+          - jpg
+translationKeyFormat: null
+translationMethod: none
+type: nystudio107\imageoptimize\fields\OptimizedImages
