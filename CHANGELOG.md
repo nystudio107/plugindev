@@ -1,5 +1,11 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.6 - 2021.03.02
+### Added
+* Added Redactor installed by default
+* Installed more NYS plugins by default
+* Updated seed dbs & Project Config
+
 ## 1.0.5 - 2021.03.02
 ### Added
 * Added a default `SITE_NAME` in `example.env`
