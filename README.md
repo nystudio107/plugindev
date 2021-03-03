@@ -10,15 +10,11 @@ This project package works exactly the way Pixel & Tonic's [craftcms/craft](http
 
     composer create-project nystudio107/plugindev --no-install
 
-This will create a project named `plugindev` which is probably what you want, but if you want to manually pick a name, you can:
-
-    composer create-project nystudio107/plugindev PATH --no-install
-
-Make sure that `PATH` is the path to your project, including the name you want for the project, e.g.:
-
-    composer create-project nystudio107/plugindev craft3 --no-install
+This will create a project named `plugindev` which is a turnkey Craft CMS install for developing plugins.
 
 We use `--no-install` so that the composer packages for the root project are not installed.
+
+**N.B.** If you change the directory name to some
 
 ## Setting Up Local Dev
 
