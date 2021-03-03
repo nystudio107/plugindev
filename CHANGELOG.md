@@ -2,8 +2,10 @@
 
 ## 1.0.6 - 2021.03.02
 ### Added
-* Added Redactor installed by default
+* Added Redactor plugin installed by default
 * Installed more NYS plugins by default
+  
+### Changed
 * Updated seed dbs & Project Config
 
 ## 1.0.5 - 2021.03.02
