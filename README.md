@@ -14,8 +14,6 @@ This will create a project named `plugindev` which is a turnkey Craft CMS instal
 
 We use `--no-install` so that the composer packages for the root project are not installed.
 
-**N.B.** If you change the directory name to some
-
 ## Setting Up Local Dev
 
 You'll need Docker desktop for your platform installed to run the project in local development
