@@ -4,6 +4,18 @@
 
 This is a project scaffolding package for Craft 3 CMS plugin development.
 
+It gives you the following out of the box:
+
+* Craft CMS `^3.6.7` is installed
+* `craftcms/redactor` plugin is installed
+* `craftcms/commerce` plugin is installed
+* A PHP 8.x environment with Imagick and other needed extensions pre-installed
+* A prefab database seed for both MySQL and Postgres databases
+* The ability to switch between MySQL and Postgres easily
+* Dual [production/debug Docker](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) containers for PHP, for improved performance while also supporting XDebug
+* Multiple sites for testing
+* Prefab content with a "blog" channel for testing
+
 ## Using nystudio107/plugindev
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
@@ -29,8 +41,8 @@ You'll need Docker desktop for your platform installed to run the project in loc
 
 The default login is:
 
-**User:** `andrew@nystudio107.com` \
-**Password:** `letmein`
+**User:** `admin` \
+**Password:** `password`
 
 ### Updating
 

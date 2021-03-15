@@ -1,5 +1,17 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.7 - 2021.03.15
+### Added
+* Add `craftcms/redactor` to the base config
+* Add `craftcms/commerce` to the base config
+* Added `soap` PHP extension for Commerce
+* Multiple sites for testing
+* Prefab content with a "blog" channel for testing
+
+### Changed
+* Set `useEmailAsUsername` to `false` in `config/general.php` so we can use the generic login `admin`
+* Remove `errorTemplatePrefix` and remove the `errors/` templates completely, because, who cares?
+
 ## 1.0.6 - 2021.03.02
 ### Added
 * Added Redactor plugin installed by default
