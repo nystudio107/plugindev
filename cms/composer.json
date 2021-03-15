@@ -1,6 +1,8 @@
 {
   "require": {
     "craftcms/cms": "^3.6.7",
+    "craftcms/redactor": "^2.0.0",
+    "craftcms/commerce": "^3.0.0",
     "vlucas/phpdotenv": "^3.4.0",
     "yiisoft/yii2-redis": "^2.0.6",
     "nystudio107/craft-connect": "^1.0.0",
