@@ -4,12 +4,14 @@
     <section>
         <h1>{{ entry.title }}</h1>
         <h3>content</h3>
+        <p>{{ entry.richText }}</p>
     </section>
 {% endblock %}
 
 {% block subcontent %}
     <section>
         <h3>subcontent</h3>
+        <p>{{ entry.plainText }}</p>
     </section>
 {% endblock %}
 
