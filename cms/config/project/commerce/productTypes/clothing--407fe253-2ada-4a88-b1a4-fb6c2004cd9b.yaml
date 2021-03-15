@@ -1,5 +1,12 @@
-fieldLayouts:
-  31e67dee-1002-4a93-9546-8b234b3b368b:
+descriptionFormat: ''
+handle: clothing
+hasDimensions: true
+hasProductTitleField: true
+hasVariantTitleField: true
+hasVariants: false
+name: Clothing
+productFieldLayouts:
+  08766548-0b7c-493b-bdce-20f096719426:
     tabs:
       -
         elements:
@@ -23,16 +30,20 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\commerce\fieldlayoutelements\ProductTitleField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: errors
-hasTitleField: true
-name: Errors
-section: a72bfe0c-3389-4f9f-8ec1-ab318ec10b29
-sortOrder: 1
-titleFormat: null
-titleTranslationKeyFormat: null
-titleTranslationMethod: ''
+productTitleFormat: ''
+siteSettings:
+  5da841b1-ca0d-46ff-8bb1-04d6c889ac54:
+    hasUrls: true
+    template: shop/products/_product
+    uriFormat: 'shop/products/{slug}'
+  ec473f07-152f-423b-90df-ac425e6068a1:
+    hasUrls: true
+    template: shop/products/_product
+    uriFormat: 'shop/products/{slug}'
+skuFormat: ''
+titleFormat: '{product.title}'

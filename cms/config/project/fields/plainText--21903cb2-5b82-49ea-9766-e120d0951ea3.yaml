@@ -1,17 +1,17 @@
 contentColumnType: text
-fieldGroup: d08a0d16-0e00-49e6-9cd4-465fa2d65d7d
-handle: errorHeadline
+fieldGroup: 94b4d5ac-d7ea-4241-a6cb-92b39f482f99
+handle: plainText
 instructions: ''
-name: 'Error Headline'
-searchable: true
+name: 'Plain Text'
+searchable: false
 settings:
   byteLimit: null
   charLimit: null
   code: ''
-  columnType: text
+  columnType: null
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

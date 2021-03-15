@@ -1,9 +1,14 @@
-dateModified: 1614742665
+dateModified: 1615824820
 email:
   fromEmail: andrew@nystudio107.com
   fromName: Craft
   transportType: craft\mail\transportadapters\Sendmail
 plugins:
+  commerce:
+    edition: lite
+    enabled: true
+    licenseKey: J2NBXBI5X4R7LD6QH69N51OY
+    schemaVersion: 3.2.13
   fastcgi-cache-bust:
     edition: standard
     enabled: true
@@ -111,7 +116,7 @@ system:
   live: true
   name: Project
   retryDuration: 60
-  schemaVersion: 3.6.4
+  schemaVersion: 3.6.6
   timeZone: America/New_York
 users:
   allowPublicRegistration: false
