@@ -1,5 +1,5 @@
 fieldLayouts:
-  8e570088-70dd-482b-9657-5b8511032da4:
+  e73b4186-2fad-4c0f-8eae-bbb884932c58:
     tabs:
       -
         elements:
@@ -26,6 +26,15 @@ fieldLayouts:
             type: craft\fieldlayoutelements\AssetTitleField
             warning: null
             width: 100
+          -
+            fieldUid: 3fccd13a-e7e7-4d00-8505-0ba4cf0b9be5
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
         name: Content
         sortOrder: 1
 handle: site
@@ -33,7 +42,7 @@ hasUrls: true
 name: Site
 settings:
   path: '@webroot/assets/site'
-sortOrder: 1
+sortOrder: 0
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 type: craft\volumes\Local

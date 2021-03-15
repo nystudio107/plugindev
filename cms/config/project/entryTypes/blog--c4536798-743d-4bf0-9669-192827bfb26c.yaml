@@ -1,5 +1,5 @@
 fieldLayouts:
-  3079b909-ff31-4f40-98a0-10c57767ab1f:
+  44918e94-126a-4108-98da-1f66e19d2b2d:
     tabs:
       -
         elements:
@@ -55,11 +55,11 @@ fieldLayouts:
             width: 100
         name: Content
         sortOrder: 1
-handle: homepage
-hasTitleField: false
-name: Homepage
-section: 54e60257-f31a-44aa-960e-bbd364197e28
+handle: blog
+hasTitleField: true
+name: Blog
+section: de308a7d-1794-448f-9176-29e2eace7ecf # Blog
 sortOrder: 1
-titleFormat: '{section.name|raw}'
+titleFormat: null
 titleTranslationKeyFormat: null
-titleTranslationMethod: none
+titleTranslationMethod: site

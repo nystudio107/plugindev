@@ -34,12 +34,11 @@ return [
     ],
     'defaultTokenDuration' => 'P2W',
     'enableCsrfProtection' => true,
-    'errorTemplatePrefix' => 'errors/',
     'generateTransformsBeforePageLoad' => true,
     'maxCachedCloudImageSize' => 3000,
     'maxUploadFileSize' => '100M',
     'omitScriptNameInUrls' => true,
-    'useEmailAsUsername' => true,
+    'useEmailAsUsername' => false,
     'usePathInfo' => true,
     'useProjectConfigFile' => true,
 ];

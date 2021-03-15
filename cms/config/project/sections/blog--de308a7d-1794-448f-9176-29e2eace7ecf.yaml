@@ -1,15 +1,15 @@
-enableVersioning: false
-handle: homepage
-name: Homepage
+enableVersioning: true
+handle: blog
+name: Blog
 previewTargets:
   -
     __assoc__:
       -
         - label
-        - Entry
+        - 'Primary entry page'
       -
         - urlFormat
-        - /
+        - '{url}'
       -
         - refresh
         - '1'
@@ -18,11 +18,11 @@ siteSettings:
   5da841b1-ca0d-46ff-8bb1-04d6c889ac54:
     enabledByDefault: true
     hasUrls: true
-    template: index
-    uriFormat: __home__
+    template: blog/_entry
+    uriFormat: 'blog/{slug}'
   ec473f07-152f-423b-90df-ac425e6068a1:
     enabledByDefault: true
     hasUrls: true
-    template: index
-    uriFormat: __home__
-type: single
+    template: blog/_entry
+    uriFormat: 'blog/{slug}'
+type: channel
