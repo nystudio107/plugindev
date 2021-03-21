@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.8 - UNRELEASED
+### Added
+* Added `name` & `description` to root `composer.json`
+* Added a `Makefile` for command aliases
+
 ## 1.0.7 - 2021.03.15
 ### Added
 * Add `craftcms/redactor` to the base config
