@@ -1,4 +1,4 @@
-CONTAINER?=plugindev_php_1
+CONTAINER?=$(shell basename $(CURDIR))_php_1
 
 .PHONY: dev up
 
