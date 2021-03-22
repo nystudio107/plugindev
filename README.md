@@ -34,7 +34,7 @@ You'll need Docker desktop for your platform installed to run the project in loc
   
 * Edit the `cms/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft/*",` in `repostories` to point to your local plugin Git repositories
 * Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft:/Users/andrew/webdev/craft` to point to your local plugin Git repositories
-* Start up the site with `docker-compose up` (the first build will be somewhat lengthy)
+* Start up the site with `make dev` (the first build will be somewhat lengthy)
 * Navigate to `http://localhost:8000` to use the site
 
 ### Login
@@ -49,7 +49,7 @@ The default login is:
 To update to the latest Composer packages (as constrained by the `cms/composer.json` semvers), do:
 ```
 rm cms/composer.lock
-docker-compose up
+make dev
 ```
 
 ### Switching between MySQL & Postgres

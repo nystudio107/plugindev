@@ -12,9 +12,9 @@ use craft\helpers\App;
 
 return [
     'dsn' => App::env('DB_DSN') ?: null,
-    'driver' => 'mysql',
-    'server' => 'mysql',
-    'port' => 3306,
+    'driver' => 'pgsql',
+    'server' => 'postgres',
+    'port' => 5432,
     'database' => App::env('DB_DATABASE'),
     'user' => App::env('DB_USER'),
     'password' => App::env('DB_PASSWORD'),

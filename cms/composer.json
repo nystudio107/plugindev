@@ -1,4 +1,6 @@
 {
+  "name": "nystudio107/plugindev",
+  "description": "This is a project scaffolding package for Craft 3 CMS plugin development.",
   "require": {
     "craftcms/cms": "^3.6.7",
     "craftcms/redactor": "^2.0.0",
