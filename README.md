@@ -56,34 +56,33 @@ make dev
 
 The plugindev project supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
 
-The `cms/config/db.php` looks like this:
-
-```php
-$mysqlConfig = [
-    'driver' => 'mysql',
-    'server' => 'mysql',
-    'port' => 3306,
-];
-
-$postgresConfig = [
-    'driver' => 'pgsql',
-    'server' => 'postgres',
-    'port' => 5432,
-];
-
-// Choose whether to override with either $mysqlConfig or $postgresConfig
-return array_merge($baseConfig, $mysqlConfig);
+To use MySQL (the default) just type:
+```bash
+make mysql
 ```
 
-So by default it's using MySQL, but you can dynamically change it to use Postgres by just chaining the last line in the file to be:
-
-```php
-return array_merge($baseConfig, $postgresConfig);
+To use Postgres just type:
+```bash
+make postgres
 ```
 
 ...and then just reload the page.
 
 This is great for ensuring your db queries work properly on both MySQL and Postgres, without having to set up two separate environments.
+
+### Dual PHP Containers for Xdebug
+
+By default, all of your requests will be routed through the production PHP container, for speedy local development and testing.
+
+However, there is a second Xdebug PHP container that's always running too, for the time that you need to use Xdebug on the really tough problems.
+
+What happens is a request comes in, Nginx looks to see if there's an `XDEBUG_SESSION` cookie set. If there's no cookie, it routes the request to the regular php container.
+
+If however the `XDEBUG_SESSION` cookie is set (with any value), it routes the request to the php_xdebug container.
+
+You can set this cookie with a [browser extension, your IDE](https://xdebug.org/docs/step_debug), or via a number of other methods. Here is the Xdebug Helper browser extension for your favorite browsers: [Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) - [Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12)
+
+You can read more about it in the Dual [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
 
 ### XDebug with VScode
 
