@@ -1,9 +1,10 @@
 # nystudio107/plugindev Change Log
 
-## 1.0.8 - UNRELEASED
+## 1.0.8 - 2021.03.22
 ### Added
 * Added `name` & `description` to root `composer.json`
 * Added a `Makefile` for command aliases
+* Added `make mysql` and `make postgres` for switching between databases
 
 ## 1.0.7 - 2021.03.15
 ### Added
