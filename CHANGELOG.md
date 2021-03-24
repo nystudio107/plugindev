@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.9 - UNRELEASED
+### Added
+* Added `make clean` to the Makefile
+
 ## 1.0.8 - 2021.03.22
 ### Added
 * Added `name` & `description` to root `composer.json`
