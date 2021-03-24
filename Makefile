@@ -1,8 +1,11 @@
 CONTAINER?=$(shell basename $(CURDIR))_php_1
 
-.PHONY: dev up
+.PHONY: dev mysql postgres up
 
 dev: up
+clean:
+	docker-compose down -v
+	docker-compose up --build
 mysql: up
 	cp cms/config/_dbconfigs/mysql.php cms/config/db.php
 postgres: up
