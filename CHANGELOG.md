@@ -3,6 +3,7 @@
 ## 1.0.9 - UNRELEASED
 ### Added
 * Added `make clean` to the Makefile
+* Added **Makefile Project Commands** to `README.md`
 
 ## 1.0.8 - 2021.03.22
 ### Added
