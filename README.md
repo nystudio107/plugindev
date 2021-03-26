@@ -84,6 +84,18 @@ You can set this cookie with a [browser extension, your IDE](https://xdebug.org/
 
 You can read more about it in the Dual [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
 
+### Makefile Project Commands
+
+This project uses Docker to shrink-wrap the devops it needs to run around the project.
+
+To make using it easier, we're using a Makefile and the built-in `make` utility to create local aliases. You can run the following from terminal in the project directory:
+
+- `make dev` - starts up the local dev server listening on `http://localhost:8000/`
+- `make clean` - shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
+- `make mysql` - switches the project to use the MySQL database container; just reload the browser
+- `make postgres` - switches the project to use the Postgres database container; just reload the browser
+- `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install`
+
 ### XDebug with VScode
 
 To use Xdebug with VSCode install the [PHP Debug extension](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug ) and use the following configuration in your `.vscode/launch.json`:

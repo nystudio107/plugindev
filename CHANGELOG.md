@@ -1,5 +1,11 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.9 - 2021.03.25
+### Added
+* Added `make clean` to the Makefile
+* Added **Makefile Project Commands** to `README.md`
+* Added `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install`
+
 ## 1.0.8 - 2021.03.22
 ### Added
 * Added `name` & `description` to root `composer.json`
