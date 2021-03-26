@@ -94,6 +94,7 @@ To make using it easier, we're using a Makefile and the built-in `make` utility 
 - `make clean` - shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
 - `make mysql` - switches the project to use the MySQL database container; just reload the browser
 - `make postgres` - switches the project to use the Postgres database container; just reload the browser
+- `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install`
 
 ### XDebug with VScode
 
