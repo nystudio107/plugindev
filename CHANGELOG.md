@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.10 - UNRELEASED
+### Fixed
+* Fixed `make up` command by removing an errant `$`
+
 ## 1.0.9 - 2021.03.25
 ### Added
 * Added `make clean` to the Makefile
