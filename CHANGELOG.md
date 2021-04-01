@@ -3,6 +3,7 @@
 ## 1.0.10 - UNRELEASED
 ### Changed
 * Add rebrand logo & icon, updated login background
+* Updated database seed with entry types & category group
 
 ### Fixed
 * Fixed `make up` command by removing an errant `$`
