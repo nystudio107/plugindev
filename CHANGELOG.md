@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.0.10 - UNRELEASED
+## 1.0.10 - 2021.03.31
 ### Changed
 * Add rebrand logo & icon, updated login background
 * Updated database seed with entry types & category group
