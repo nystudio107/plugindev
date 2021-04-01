@@ -1,4 +1,4 @@
-dateModified: 1615824820
+dateModified: 1617245912
 email:
   fromEmail: andrew@nystudio107.com
   fromName: Craft
@@ -8,7 +8,7 @@ plugins:
     edition: lite
     enabled: true
     licenseKey: J2NBXBI5X4R7LD6QH69N51OY
-    schemaVersion: 3.2.13
+    schemaVersion: 3.2.18
   fastcgi-cache-bust:
     edition: standard
     enabled: true
@@ -114,9 +114,9 @@ plugins:
 system:
   edition: pro
   live: true
-  name: Project
+  name: plugindev
   retryDuration: 60
-  schemaVersion: 3.6.6
+  schemaVersion: 3.6.7
   timeZone: America/New_York
 users:
   allowPublicRegistration: false

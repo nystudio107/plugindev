@@ -14,7 +14,7 @@ mysql: up
 postgres: up
 	cp cms/config/_dbconfigs/postgres.php cms/config/db.php
 up:
-	if [ ! "$$(docker ps -q -f name=$${CONTAINER})" ]; then \
+	if [ ! "$$(docker ps -q -f name=${CONTAINER})" ]; then \
         docker-compose up; \
     fi
 %:

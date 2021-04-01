@@ -11,9 +11,7 @@
  */
 
 body.login {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url('/img/site/login-background-image.svg');
+    background-image: url('/img/site/login-background-image.png');
 }
 
 body.login label, body.login #forgot-password {
