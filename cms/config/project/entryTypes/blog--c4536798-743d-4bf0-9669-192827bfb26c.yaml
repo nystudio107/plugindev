@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 4a0cb371-14a6-415d-84db-fc0512410ec8
+            fieldUid: 4a0cb371-14a6-415d-84db-fc0512410ec8 # SEO
             instructions: null
             label: null
             required: false

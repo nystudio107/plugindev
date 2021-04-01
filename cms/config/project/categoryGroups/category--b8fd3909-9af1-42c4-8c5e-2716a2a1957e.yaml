@@ -1,5 +1,5 @@
 fieldLayouts:
-  e73b4186-2fad-4c0f-8eae-bbb884932c58:
+  4e420bac-c389-4bea-9708-e3e7c19f3cc1:
     tabs:
       -
         elements:
@@ -23,27 +23,22 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\AssetTitleField
-            warning: null
-            width: 100
-          -
-            fieldUid: 3fccd13a-e7e7-4d00-8505-0ba4cf0b9be5 # Optimized Images
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
+            type: craft\fieldlayoutelements\TitleField
             warning: null
             width: 100
         name: Content
         sortOrder: 1
-handle: site
-hasUrls: true
-name: Site
-settings:
-  path: '@webroot/assets/site'
-sortOrder: 0
-titleTranslationKeyFormat: null
-titleTranslationMethod: site
-type: craft\volumes\Local
-url: '@assetsUrl/assets/site'
+handle: category
+name: Category
+siteSettings:
+  5da841b1-ca0d-46ff-8bb1-04d6c889ac54: # English
+    hasUrls: true
+    template: null
+    uriFormat: 'category/{slug}'
+  ec473f07-152f-423b-90df-ac425e6068a1: # Spanish
+    hasUrls: true
+    template: null
+    uriFormat: 'category/{slug}'
+structure:
+  maxLevels: null
+  uid: 7955d443-a120-44f2-bdbe-c741d59fadf4
