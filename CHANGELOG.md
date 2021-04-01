@@ -1,6 +1,9 @@
 # nystudio107/plugindev Change Log
 
 ## 1.0.10 - UNRELEASED
+### Changed
+* Add rebrand logo & icon, updated login background
+
 ### Fixed
 * Fixed `make up` command by removing an errant `$`
 
