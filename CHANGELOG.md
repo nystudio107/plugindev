@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.12 - 2021.04.01
+### Changed
+* Better login background pattern
+
 ## 1.0.11 - 2021.04.01
 ### Fixed
 * Fixed the rebrand by adding a bind mount for `storage/rebrand/` in the `docker-compose.yaml`
