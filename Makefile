@@ -13,6 +13,15 @@ mysql: up
 	cp cms/config/_dbconfigs/mysql.php cms/config/db.php
 postgres: up
 	cp cms/config/_dbconfigs/postgres.php cms/config/db.php
+update:
+	docker-compose down
+	rm cms/composer.lock
+	docker-compose up
+update-clean:
+	docker-compose down
+	rm cms/composer.lock
+	rm -rf cms/vendor/
+	docker-compose up
 up:
 	if [ ! "$$(docker ps -q -f name=${CONTAINER})" ]; then \
         docker-compose up; \
