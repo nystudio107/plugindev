@@ -48,8 +48,12 @@ The default login is:
 
 To update to the latest Composer packages (as constrained by the `cms/composer.json` semvers), do:
 ```
-rm cms/composer.lock
-make dev
+make update
+```
+
+To start from scratch by removing `cms/vendor/`, then update to the latest Composer packages (as constrained by the `cms/composer.json` semvers), do:
+```
+make update-clean
 ```
 
 ### Switching between MySQL & Postgres
@@ -94,6 +98,8 @@ To make using it easier, we're using a Makefile and the built-in `make` utility 
 - `make clean` - shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
 - `make mysql` - switches the project to use the MySQL database container; just reload the browser
 - `make postgres` - switches the project to use the Postgres database container; just reload the browser
+- `make update` - causes the project to update to the latest Composer and NPM dependencies
+- `make update-clean` - completely removes `node_modules/` & `vendor/`, then causes the project to update to the latest Composer and NPM dependencies
 - `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install`
 
 ### XDebug with VScode
