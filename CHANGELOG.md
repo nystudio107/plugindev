@@ -2,8 +2,8 @@
 
 ## 1.0.13 - 2021.04.05
 ### Added
-* Added `make update` to update Composer & NPM packages
-* Added `make update-clean` to completely remove `vendor/` and `node_modules/`, then update Composer & NPM packages
+* Added `make update` to update Composer packages
+* Added `make update-clean` to completely remove `vendor/`, then update Composer packages
 
 ## 1.0.12 - 2021.04.01
 ### Changed
