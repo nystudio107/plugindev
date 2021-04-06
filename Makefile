@@ -15,11 +15,11 @@ postgres: up
 	cp cms/config/_dbconfigs/postgres.php cms/config/db.php
 update:
 	docker-compose down
-	rm cms/composer.lock
+	rm -f cms/composer.lock
 	docker-compose up
 update-clean:
 	docker-compose down
-	rm cms/composer.lock
+	rm -f cms/composer.lock
 	rm -rf cms/vendor/
 	docker-compose up
 up:
