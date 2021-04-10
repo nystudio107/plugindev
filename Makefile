@@ -9,6 +9,9 @@ clean:
 composer: up
 	docker exec -it ${CONTAINER} composer \
 		$(filter-out $@,$(MAKECMDGOALS))
+craft: up
+	docker exec -it ${CONTAINER} php craft \
+		$(filter-out $@,$(MAKECMDGOALS))
 mysql: up
 	cp cms/config/_dbconfigs/mysql.php cms/config/db.php
 postgres: up

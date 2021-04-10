@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.15 - 2021.04.10
+### Added
+* Added `make craft` to the Makefile commands
+
 ## 1.0.14 - 2021.04.06
 ### Changed
 * Use `rm -f` to ensure no errors if the file doesn’t exist
