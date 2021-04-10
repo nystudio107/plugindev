@@ -101,7 +101,7 @@ To make using it easier, we're using a Makefile and the built-in `make` utility 
 - `make update` - causes the project to update to the latest Composer and NPM dependencies
 - `make update-clean` - completely removes `node_modules/` & `vendor/`, then causes the project to update to the latest Composer and NPM dependencies
 - `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install` in the php container
-- `make craft xxx` - runs the `craft` command passed in, e.g. `make craft project-config/apply` in the php container
+- `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g. `make craft project-config/apply` in the php container
 
 ### XDebug with VScode
 
