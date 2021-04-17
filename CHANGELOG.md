@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.17 - 2021.04.17
+### Changed
+* Bring the debug container in line with the production container, allowing it to work with either Postgres or MySQL
+
 ## 1.0.16 - 2021.04.17
 ### Changed
 * Use separate `phpSessionName`s for MySQL and Postgres, to keep us logged in when switching between them
