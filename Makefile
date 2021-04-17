@@ -13,9 +13,11 @@ craft: up
 	docker exec -it ${CONTAINER} php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql: up
-	cp cms/config/_dbconfigs/mysql.php cms/config/db.php
+	cp cms/config/_configs/mysql/db.php cms/config/db.php
+	cp cms/config/_configs/mysql/general.php cms/config/general.php
 postgres: up
-	cp cms/config/_dbconfigs/postgres.php cms/config/db.php
+	cp cms/config/_configs/postgres/db.php cms/config/db.php
+	cp cms/config/_configs/postgres/general.php cms/config/general.php
 update:
 	docker-compose down
 	rm -f cms/composer.lock
