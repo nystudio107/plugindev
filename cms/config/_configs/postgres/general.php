@@ -11,7 +11,7 @@
 use craft\helpers\App;
 
 return [
-    'phpSessionName' => 'CraftSessionIdMySQL',
+    'phpSessionName' => 'CraftSessionIdPostgres',
     // Craft config settings from .env variables
     'aliases' => [
         '@assetsUrl' => App::env('ASSETS_URL'),

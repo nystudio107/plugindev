@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.16 - 2021.04.17
+### Changed
+* Use separate `phpSessionName`s for MySQL and Postgres, to keep us logged in when switching between them
+
 ## 1.0.15 - 2021.04.10
 ### Added
 * Added `make craft` to the Makefile commands
