@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.18 - UNRELEASED
+### Changed
+* Silence errors from the root `post-create-project-cmd` script
+* Don't remove the `README.md` file
+
 ## 1.0.17 - 2021.04.17
 ### Changed
 * Bring the debug container in line with the production container, allowing it to work with either Postgres or MySQL
