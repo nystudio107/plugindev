@@ -4,6 +4,8 @@
 
 This is a project scaffolding package for Craft 3 CMS plugin development.
 
+Read the [A Craft CMS Plugin Local Development Environment article](https://nystudio107.com/blog/a-craft-cms-plugin-local-development-environment) for full details on this project.
+
 It gives you the following out of the box:
 
 * Craft CMS `^3.6.7` is installed
