@@ -1,5 +1,14 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.18 - 2021.04.22
+### Added
+* Use the `mysql/mysql-server:8.0` Docker image because the "official" image doesn't support M1 Apple Silicon
+
+### Changed
+* Don't `.gz` compress the `mysql-db-seed` database seed, because the entrypoint.sh script doesn't support it [ref](https://github.com/mysql/mysql-docker/blob/mysql-server/8.0/docker-entrypoint.sh#L149)
+* Silence errors from the root `post-create-project-cmd` script
+* Don't remove the `README.md` file
+
 ## 1.0.17 - 2021.04.17
 ### Changed
 * Bring the debug container in line with the production container, allowing it to work with either Postgres or MySQL
