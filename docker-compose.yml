@@ -12,7 +12,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - cpresources:/var/www/project/cms/web/cpresources
+      - cpresources:/var/www/project/cms/web/cpresources:delegated
       - ./cms/web:/var/www/project/cms/web:cached
   # php - run php-fpm
   php:
@@ -31,13 +31,10 @@ services:
     volumes: &php-volumes
     # Change the path below to map to your local plugin repositories
       - /Users/andrew/webdev/craft:/Users/andrew/webdev/craft
-      - cpresources:/var/www/project/cms/web/cpresources
-      - storage:/var/www/project/cms/storage
+      - cpresources:/var/www/project/cms/web/cpresources:delegated
+      - storage:/var/www/project/cms/storage:delegated
       - ./cms:/var/www/project/cms:cached
       - ./cms/vendor:/var/www/project/cms/vendor:delegated
-      - ./cms/storage/logs:/var/www/project/cms/storage/logs:delegated
-      - ./cms/storage/rebrand:/var/www/project/cms/storage/rebrand:delegated
-      - ./cms/storage/runtime/compiled_templates:/var/www/project/cms/storage/runtime/compiled_templates:delegated
   # php - run php-fpm with xdebug
   php_xdebug:
     build:

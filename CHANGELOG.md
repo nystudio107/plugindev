@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.19 - 2021.04.27
+### Changed
+* Delegate all of `storage` & `cpresources` volumes, let the container own it
+
 ## 1.0.18 - 2021.04.22
 ### Added
 * Use the `mysql/mysql-server:8.0` Docker image because the "official" image doesn't support M1 Apple Silicon
