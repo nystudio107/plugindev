@@ -35,6 +35,7 @@ services:
       - storage:/var/www/project/cms/storage:delegated
       - ./cms:/var/www/project/cms:cached
       - ./cms/vendor:/var/www/project/cms/vendor:delegated
+      - ./cms/storage/rebrand:/var/www/project/cms/storage/rebrand:delegated
   # php - run php-fpm with xdebug
   php_xdebug:
     build:
