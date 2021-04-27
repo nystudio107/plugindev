@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.20 - 2021.04.27
+### Changed
+* Explicitly designate the `rebrand` mount
+
 ## 1.0.19 - 2021.04.27
 ### Changed
 * Delegate all of `storage` & `cpresources` volumes, let the container own it
