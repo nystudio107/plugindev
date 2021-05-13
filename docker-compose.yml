@@ -33,6 +33,8 @@ services:
       - /Users/andrew/webdev/craft:/Users/andrew/webdev/craft
       - cpresources:/var/www/project/cms/web/cpresources:delegated
       - storage:/var/www/project/cms/storage:delegated
+      - ./cms/storage/logs:/var/www/project/cms/storage/logs:delegated
+      - ./cms/storage/runtime/compiled_templates:/var/www/project/cms/storage/runtime/compiled_templates:delegated
       - ./cms:/var/www/project/cms:cached
       - ./cms/vendor:/var/www/project/cms/vendor:delegated
       - ./cms/storage/rebrand:/var/www/project/cms/storage/rebrand:delegated
