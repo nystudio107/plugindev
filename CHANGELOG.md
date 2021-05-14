@@ -1,6 +1,9 @@
 # nystudio107/plugindev Change Log
 
-## 1.0.21 - UNRELEASED
+## 1.0.21 - 2021.05.14
+### Added
+* Added `VITE_PLUGIN_DEVSERVER` environment variable
+
 ### Changed
 * Added `logs` and `compiled_templates` directories back in so that they will appear on the client side
 
