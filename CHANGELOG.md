@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.21 - UNRELEASED
+### Changed
+* Added `logs` and `compiled_templates` directories back in so that they will appear on the client side
+
 ## 1.0.20 - 2021.04.27
 ### Changed
 * Explicitly designate the `rebrand` mount
@@ -7,10 +11,6 @@
 ## 1.0.19 - 2021.04.27
 ### Changed
 * Delegate all of `storage` & `cpresources` volumes, let the container own it
-
-## 1.0.19 - UNRELEASED
-### Changed
-* Added `logs` and `compiled_templates` directories back in so that they will appear on the client side
 
 ## 1.0.18 - 2021.04.22
 ### Added
