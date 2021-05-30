@@ -51,7 +51,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "/Users/andrew/webdev/craft/*",
+      "url": "/plugins/*",
       "options": {
         "symlink": true
       }
