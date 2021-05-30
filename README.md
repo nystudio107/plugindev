@@ -34,8 +34,7 @@ You'll need Docker desktop for your platform installed to run the project in loc
 
 * Composer will have already created a `.env` file in the `cms/` directory, based off of the provided `example.env`
   
-* Edit the `cms/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft/*",` in `repostories` to point to your local plugin Git repositories
-* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft:/Users/andrew/webdev/craft` to point to your local plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft:/plugins` to point to your local plugin Git repositories
 * Start up the site with `make dev` (the first build will be somewhat lengthy)
 * Navigate to `http://localhost:8000` to use the site
 
