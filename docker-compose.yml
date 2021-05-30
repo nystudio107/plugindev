@@ -30,7 +30,7 @@ services:
     init: true
     volumes: &php-volumes
     # Change the path below to map to your local plugin repositories
-      - /Users/andrew/webdev/craft:/Users/andrew/webdev/craft
+      - /Users/andrew/webdev/craft:/plugins
       - cpresources:/var/www/project/cms/web/cpresources:delegated
       - storage:/var/www/project/cms/storage:delegated
       - ./cms/storage/logs:/var/www/project/cms/storage/logs:delegated
