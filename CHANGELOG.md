@@ -2,7 +2,7 @@
 
 ## 1.0.23 - UNRELEASED
 ### Changed
-* Cleaned up the `php-dev-craft` & `php-prod-craft` Dockerfiles
+* Cleaned up the `php-dev-craft` & `php-prod-craft` Dockerfile file permissions
 
 ## 1.0.22 - 2021.05.23
 ### Changed
