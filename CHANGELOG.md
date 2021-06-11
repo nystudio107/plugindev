@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.0.23 - UNRELEASED
+## 1.0.23 - 2021.06.11
 ### Changed
 * Cleaned up the `php-dev-craft` & `php-prod-craft` Dockerfile file permissions
 
