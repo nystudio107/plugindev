@@ -22,7 +22,7 @@ It gives you the following out of the box:
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
 
-    composer create-project nystudio107/plugindev --no-install
+    composer create-project nystudio107/plugindev --no-install --remove-vcs
 
 This will create a project named `plugindev` which is a turnkey Craft CMS install for developing plugins.
 
