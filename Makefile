@@ -15,6 +15,10 @@ craft: up
 mysql: up
 	cp cms/config/_configs/mysql/db.php cms/config/db.php
 	cp cms/config/_configs/mysql/general.php cms/config/general.php
+nuke: up
+	docker-compose down -v
+	rm -f cms/composer.lock
+	docker-compose up
 postgres: up
 	cp cms/config/_configs/postgres/db.php cms/config/db.php
 	cp cms/config/_configs/postgres/general.php cms/config/general.php
