@@ -18,7 +18,7 @@ mysql: up
 nuke: up
 	docker-compose down -v
 	rm -f cms/composer.lock
-	docker-compose up --build
+	docker-compose up --build --force-recreate
 postgres: up
 	cp cms/config/_configs/postgres/db.php cms/config/db.php
 	cp cms/config/_configs/postgres/general.php cms/config/general.php
