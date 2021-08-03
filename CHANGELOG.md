@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.28 - UNRELEASED
+### Added
+* Handle both `XDEBUG_SESSION` and `XDEBUG_PROFILE` cookies
+
 ## 1.0.27 - 2021.07.29
 ### Added
 * Added `putyourlightson/craft-autocomplete` for the Twig + Symfony plugin auto-complete, removed FauxTwigExtension.php
