@@ -3,6 +3,7 @@
 ## 1.0.28 - UNRELEASED
 ### Added
 * Handle both `XDEBUG_SESSION` and `XDEBUG_PROFILE` cookies
+* Added `make nuke` to the Makefile commands to restart from scratch
 
 ## 1.0.27 - 2021.07.29
 ### Added
