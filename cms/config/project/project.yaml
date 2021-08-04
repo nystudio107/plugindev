@@ -1,18 +1,66 @@
-dateModified: 1617245912
+dateModified: 1628107078
 email:
   fromEmail: andrew@nystudio107.com
   fromName: Craft
   transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    3ac44e69-f6b1-48f7-a9a6-f4cf14261b16: 'Some Images' # Some Images
+    3fccd13a-e7e7-4d00-8505-0ba4cf0b9be5: 'Optimized Images' # Optimized Images
+    4a0cb371-14a6-415d-84db-fc0512410ec8: SEO # SEO
+    5c642d7e-b16b-4836-9575-668d75d242e5: Site # Site
+    5da841b1-ca0d-46ff-8bb1-04d6c889ac54: English # English
+    6a117ef0-054c-4147-acb6-6fe57d48c4ae: Dummy # Dummy
+    54e60257-f31a-44aa-960e-bbd364197e28: Homepage # Homepage
+    94b4d5ac-d7ea-4241-a6cb-92b39f482f99: Common # Common
+    0242b54b-89fc-4bc4-b2ba-308cca715ba7: Longform # Longform
+    407fe253-2ada-4a88-b1a4-fb6c2004cd9b: Clothing # Clothing
+    626b0987-e067-4dd2-9918-1d209373265a: Review # Review
+    6005c2f9-5d85-4442-b712-22e070096ac8: 'Public Schema' # Public Schema
+    21903cb2-5b82-49ea-9766-e120d0951ea3: 'Plain Text' # Plain Text
+    110568c4-6978-4a9d-ae96-44c45c0739c1: New # New
+    a0587a0b-d71c-4085-9c28-f0165af2b925: 'Contact Form' # Contact Form
+    aa7c6968-88ec-4d2a-af47-d3c40b582a68: Globals # Globals
+    abcda4a4-b1db-4677-b5d6-69588443704f: 'Rich Text' # Rich Text
+    b8fd3909-9af1-42c4-8c5e-2716a2a1957e: Category # Category
+    c4536798-743d-4bf0-9669-192827bfb26c: Blog # Blog
+    de308a7d-1794-448f-9176-29e2eace7ecf: Blog # Blog
+    ec473f07-152f-423b-90df-ac425e6068a1: Spanish # Spanish
+    f89601e9-4ba9-4a48-9e99-350aa9914912: plugindev # plugindev
+    f923795f-139e-4b59-b27c-eaa0be4f847c: New # New
+    fb3a8f31-d1cc-4c13-903b-a501f7e51f54: Homepage # Homepage
 plugins:
+  autocomplete:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  campaign:
+    edition: lite
+    enabled: true
+    licenseKey: F3MN89XHBHVI5DAPSIVIYT8V
+    schemaVersion: 1.18.0
   commerce:
     edition: lite
     enabled: true
     licenseKey: J2NBXBI5X4R7LD6QH69N51OY
-    schemaVersion: 3.2.18
+    schemaVersion: 3.4.11
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  disqus:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   fastcgi-cache-bust:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  formie:
+    edition: standard
+    enabled: true
+    licenseKey: P7DFF2O1GLQSRR9AH5IS9Q4R
+    schemaVersion: 1.1.11
   image-optimize:
     edition: standard
     enabled: true
@@ -23,7 +71,7 @@ plugins:
       assetVolumeSubFolders: true
       autoSharpenScaledImages: true
       createColorPalette: true
-      createPlaceholderSilhouettes: false
+      createPlaceholderSilhouettes: true
       imageTransformTypeSettings:
         __assoc__:
           -
@@ -39,13 +87,16 @@ plugins:
                 -
                   - securityToken
                   - ''
+                -
+                  - unsharpMask
+                  - '20'
           -
             - nystudio107\imageoptimizesharp\imagetransforms\SharpImageTransform
             -
               __assoc__:
                 -
                   - baseUrl
-                  - $SERVERLESS_SHARP_CLOUDFRONT_URL
+                  - ''
           -
             - nystudio107\imageoptimizethumbor\imagetransforms\ThumborImageTransform
             -
@@ -56,10 +107,8 @@ plugins:
                 -
                   - securityKey
                   - ''
-                -
-                  - includeBucketPrefix
-                  - ''
-      lowerQualityRetinaImageVariants: false
+      lowerQualityRetinaImageVariants: true
+      sharpenScaledImagePercentage: 50
       transformClass: nystudio107\imageoptimize\imagetransforms\CraftImageTransform
   instant-analytics:
     edition: standard
@@ -78,7 +127,25 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 4LL2ODYFR0QG87WCCW3XYYFQ
-    schemaVersion: 3.0.9
+    schemaVersion: 3.0.10
+    settings:
+      additionalHeaders: ''
+      alwaysStripQueryString: false
+      automaticallyTrimStatistics: '1'
+      createUriChangeRedirects: true
+      dynamicRedirectDisplayLimit: 100
+      enableApiEndpoint: ''
+      excludePatterns: ''
+      pluginName: Retour
+      preserveQueryString: false
+      recordRemoteIp: true
+      refreshIntervalSecs: 5
+      staticRedirectDisplayLimit: 100
+      statisticsRateLimitMs: '3600000'
+      statsDisplayLimit: 1000
+      statsStoredLimit: 1000
+      stripQueryStringFromStats: false
+      uriChangeRedirectSrcMatch: pathonly
   rich-variables:
     edition: standard
     enabled: true
@@ -88,10 +155,10 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: ZTMAKHNCRNLVSBCTDHIJUPQW
-    schemaVersion: 3.0.9
+    schemaVersion: 3.0.10
   templatecomments:
     edition: standard
-    enabled: true
+    enabled: false
     schemaVersion: 1.0.0
   transcoder:
     edition: standard
@@ -106,9 +173,18 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  webperf:
+  vite:
     edition: standard
     enabled: true
+    schemaVersion: 1.0.0
+  vizy:
+    edition: standard
+    enabled: true
+    licenseKey: 0NNHVEL0DM3VA58KBCKVWRSJ
+    schemaVersion: 0.9.0
+  webperf:
+    edition: standard
+    enabled: false
     licenseKey: SP5V7EIW3GYBJR4R20D30Q0I
     schemaVersion: 1.0.1
 system:
@@ -116,7 +192,7 @@ system:
   live: true
   name: plugindev
   retryDuration: 60
-  schemaVersion: 3.6.7
+  schemaVersion: 3.7.7
   timeZone: America/New_York
 users:
   allowPublicRegistration: false
