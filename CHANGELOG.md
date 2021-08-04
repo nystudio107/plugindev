@@ -1,5 +1,17 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.28 - 2021.08.04
+### Added
+* Handle both `XDEBUG_SESSION` and `XDEBUG_PROFILE` cookies
+* Added `make nuke` to the Makefile commands to restart from scratch
+
+### Changed
+* Updated the baseline Craft vMS version to `craftcms/cms` `^3.7.0`
+
+## 1.0.27 - 2021.07.29
+### Added
+* Added `putyourlightson/craft-autocomplete` for the Twig + Symfony plugin auto-complete, removed FauxTwigExtension.php
+
 ## 1.0.26 - 2021.06.22
 ### Changed
 * Continue running the `php-fpm` containers as root (since `php-fpm` uses worker pools with the proper user/group), but switch to `su-exec` to ensure any craft CLI commands are run as `www-data`
