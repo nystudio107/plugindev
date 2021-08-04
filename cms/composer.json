@@ -2,7 +2,7 @@
   "name": "nystudio107/plugindev",
   "description": "This is a project scaffolding package for Craft 3 CMS plugin development.",
   "require": {
-    "craftcms/cms": "^3.6.7",
+    "craftcms/cms": "^3.7.0",
     "craftcms/redactor": "^2.0.0",
     "craftcms/commerce": "^3.0.0",
     "vlucas/phpdotenv": "^3.4.0",
