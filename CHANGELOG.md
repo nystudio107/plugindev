@@ -1,9 +1,12 @@
 # nystudio107/plugindev Change Log
 
-## 1.0.28 - UNRELEASED
+## 1.0.28 - 2021.08.04
 ### Added
 * Handle both `XDEBUG_SESSION` and `XDEBUG_PROFILE` cookies
 * Added `make nuke` to the Makefile commands to restart from scratch
+
+### Changed
+* Updated the baseline Craft vMS version to `craftcms/cms` `^3.7.0`
 
 ## 1.0.27 - 2021.07.29
 ### Added
