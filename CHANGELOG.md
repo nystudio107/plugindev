@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.29 - UNRELEASED
+### Added
+* Added `compiled_templates` as a bind mount in `docker-compose.yaml` for IDE autocompletion
+
 ## 1.0.28 - 2021.08.04
 ### Added
 * Handle both `XDEBUG_SESSION` and `XDEBUG_PROFILE` cookies
