@@ -3,6 +3,7 @@
 ## 1.0.29 - UNRELEASED
 ### Added
 * Added `compiled_templates` as a bind mount in `docker-compose.yaml` for IDE autocompletion
+* Added `nystudio107/craft-autocomplete` for autocomplete of variables in Twig templates
 
 ## 1.0.28 - 2021.08.04
 ### Added
