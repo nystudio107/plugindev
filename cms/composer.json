@@ -7,6 +7,7 @@
     "craftcms/commerce": "^3.0.0",
     "vlucas/phpdotenv": "^3.4.0",
     "yiisoft/yii2-redis": "^2.0.6",
+    "nystudio107/craft-autocomplete": "^1.0.0",
     "nystudio107/craft-connect": "^1.0.0",
     "nystudio107/craft-cookies": "^1.0.0",
     "nystudio107/craft-disqus": "^1.0.0",
