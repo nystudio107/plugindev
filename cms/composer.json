@@ -32,7 +32,8 @@
     "nystudio107/craft-units": "^1.0.0",
     "nystudio107/craft-vanillaforums": "^1.0.0",
     "nystudio107/craft-webperf": "^1.0.0",
-    "nystudio107/craft-youtubeliveembed": "^1.0.0"
+    "nystudio107/craft-youtubeliveembed": "^1.0.0",
+    "nystudio107/craft-vite": "^1.0.0"
   },
   "require-dev": {
     "yiisoft/yii2-shell": "^2.0.3"
