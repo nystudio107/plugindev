@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.30 - 2021.08.16
+### Added
+* Added `enableGraphqlCaching` setting, defaulting to `0` (false)
+* Added iCalender and Vite plugins to the `composer.json`
+
 ## 1.0.29 - 2021.08.07
 ### Added
 * Added `compiled_templates` as a bind mount in `docker-compose.yaml` for IDE autocompletion
