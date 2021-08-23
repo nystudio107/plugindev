@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.31 - 2021.08.23
+### Added
+* Add `CRAFT_ALLOW_SUPERUSER` & `COMPOSER_ALLOW_SUPERUSER` `.env` variables ([#2](https://github.com/nystudio107/plugindev/issues/2))
+
 ## 1.0.30 - 2021.08.16
 ### Added
 * Added `enableGraphqlCaching` setting, defaulting to `0` (false)
