@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.32 - 2021.10.20
+### Changed
+* Updated the `Makefile` to accommodate the change in Docker to using `-` instead of `_` in container names
+
 ## 1.0.31 - 2021.08.23
 ### Added
 * Add `CRAFT_ALLOW_SUPERUSER` & `COMPOSER_ALLOW_SUPERUSER` `.env` variables ([#2](https://github.com/nystudio107/plugindev/issues/2))
