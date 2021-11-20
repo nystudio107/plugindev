@@ -1,5 +1,12 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.33 - UNRELEASED
+### Added
+* Use `tty: true` for nicer output in terminal from the PHP Docker containers
+
+### Changed
+* Move Craft Autocomplete to `require-dev`
+
 ## 1.0.32 - 2021.10.20
 ### Changed
 * Updated the `Makefile` to accommodate the change in Docker to using `-` instead of `_` in container names
