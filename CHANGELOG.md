@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.0.33 - UNRELEASED
+## 1.0.33 - 2021.11.20
 ### Added
 * Use `tty: true` for nicer output in terminal from the PHP Docker containers
 
