@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.34 - 2021.12.07
+### Changed
+* Updated the `Makefile` to accommodate _another_ change in Docker that switches back to using `_` instead of `-` in container names
+
 ## 1.0.33 - 2021.11.20
 ### Added
 * Use `tty: true` for nicer output in terminal from the PHP Docker containers
