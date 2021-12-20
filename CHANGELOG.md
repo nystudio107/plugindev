@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.35 - 2021.12.20
+### Fixed
+* Fixed a regression where the Postgres db seed was in `.zip` format, when it should have been in `.gz` format to work with the container `entrypoint.sh` ([#3](https://github.com/nystudio107/plugindev/issues/3))
+
 ## 1.0.34 - 2021.12.07
 ### Changed
 * Updated the `Makefile` to accommodate _another_ change in Docker that switches back to using `_` instead of `-` in container names
