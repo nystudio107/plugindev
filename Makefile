@@ -7,10 +7,10 @@ clean:
 	docker-compose down -v
 	docker-compose up --build
 composer: up
-	docker exec -it ${CONTAINER} composer \
+	docker exec -it ${CONTAINER} su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
 craft: up
-	docker exec -it ${CONTAINER} php craft \
+	docker exec -it ${CONTAINER} su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql: up
 	cp cms/config/_configs/mysql/db.php cms/config/db.php

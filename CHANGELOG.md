@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.38 - 2022.01.07
+### Fixed
+* Use `su-exec www-data` in the Makefile so `craft` and `composer` commands are not run as root
+
 ## 1.0.37 - 2021.12.25
 ### Fixed
 * Fix Composer [2.2.0 error](https://getcomposer.org/doc/06-config.md#allow-plugins) by adding `allow-plugins`
