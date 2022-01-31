@@ -1,0 +1,28 @@
+enableVersioning: false
+handle: homepage
+name: Homepage
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - Entry
+      -
+        - urlFormat
+        - /
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  5da841b1-ca0d-46ff-8bb1-04d6c889ac54: # English
+    enabledByDefault: true
+    hasUrls: true
+    template: index
+    uriFormat: __home__
+  ec473f07-152f-423b-90df-ac425e6068a1: # Spanish
+    enabledByDefault: true
+    hasUrls: true
+    template: index
+    uriFormat: __home__
+type: single

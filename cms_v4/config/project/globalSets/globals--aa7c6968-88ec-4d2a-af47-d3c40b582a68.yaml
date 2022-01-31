@@ -1,0 +1,27 @@
+fieldLayouts:
+  e1ad1c2a-97c8-4b64-9d59-41e897a98298:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: abcda4a4-b1db-4677-b5d6-69588443704f
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Default
+        sortOrder: 1
+handle: globals
+name: Globals

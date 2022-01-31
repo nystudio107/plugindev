@@ -13,6 +13,7 @@
 
 # CRAFT ENVIRONMENT
 .env*
+license.key*
 
 # COMPOSER
 */vendor/*
@@ -22,19 +23,17 @@
 !*/storage/.gitkeep
 
 # ASSETS
-/cms/web/assets/*
-/cms/web/cpresources/*
-/cms/web/dist/*
-/cms/web/favicon.*
-/cms/web/sw.*
+/cms_v3/web/assets/*
+/cms_v3/web/cpresources/*
+/cms_v3/web/dist/*
+/cms_v4/web/assets/*
+/cms_v4/web/cpresources/*
+/cms_v4/web/dist/*
 
 # BUILD FILES
 node_modules
 yarn-error.log
 npm-debug.log
-
-# TRANSCODER
-/cms/web/transcoder/*
 
 # MISC FILES
 .cache

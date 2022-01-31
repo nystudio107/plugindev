@@ -53,15 +53,7 @@ RUN set -eux; \
 WORKDIR /var/www/project
 
 COPY ./run_queue.sh .
-RUN chmod a+x run_queue.sh \
-    && \
-    mkdir -p /var/www/project/cms/storage \
-    && \
-    mkdir -p /var/www/project/cms/web/cpresources \
-    && \
-    chown -R www-data:www-data /var/www/project
-
-WORKDIR /var/www/project/cms
+RUN chmod a+x run_queue.sh
 
 # Force permissions, update Craft, and start php-fpm
 
@@ -73,6 +65,8 @@ WORKDIR /var/www/project/cms
 # but saves far more time in not having to deal with out of sync versions
 # when working with teams or multiple environments
 CMD chown -R www-data:www-data /var/www/project \
+    && \
+    cd $CMS_ROOT_PATH \
     && \
     su-exec www-data composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction \
     && \
