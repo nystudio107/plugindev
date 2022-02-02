@@ -11,17 +11,17 @@ clean:
 	docker-compose up --build
 composer-$(CMS_VERSIONS):V=$(subst composer-,,$@)
 composer-$(CMS_VERSIONS):CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(V)_1
-composer-$(CMS_VERSIONS): up
+composer-$(CMS_VERSIONS):up
 	docker exec -it $(CONTAINER) su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
 craft-$(CMS_VERSIONS):V=$(subst craft-,,$@)
 craft-$(CMS_VERSIONS):CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(V)_1
-craft-$(CMS_VERSIONS): up
+craft-$(CMS_VERSIONS):up
 	docker exec -it $(CONTAINER) su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql-$(CMS_VERSIONS):V=$(subst mysql-,,$@)
 mysql-$(CMS_VERSIONS):CMS_DIR=$(CMS_ROOT_NAME)_$(V)
-mysql-$(CMS_VERSIONS): up
+mysql-$(CMS_VERSIONS):up
 	cp $(CMS_DIR)/config/_configs/mysql/db.php $(CMS_DIR)/config/db.php
 	cp $(CMS_DIR)/config/_configs/mysql/general.php $(CMS_DIR)/config/general.php
 nuke:
@@ -49,11 +49,12 @@ update-clean:
 		rm -rf $(CMS_ROOT_NAME)$$v/vendor/
 	done
 	docker-compose up
+up:CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_v3_1
 up:
-	if [ ! "$$(docker ps -q -f name=${CONTAINER})" ]; then \
-		for v in $(cms_versions); do \
-			cp -n cms_$$v/example.env cms_$$v/.env; \
-		done
+	if [ ! "$$(docker ps -q -f name=$(CONTAINER))" ]; then \
+		for v in $(CMS_VERSIONS); do \
+			cp -n $(CMS_ROOT_NAME)$$v/example.env $(CMS_ROOT_NAME)$$v/.env; \
+		done; \
 		docker-compose up; \
     fi
 %:
