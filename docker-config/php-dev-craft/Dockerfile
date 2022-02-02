@@ -50,16 +50,6 @@ RUN set -eux; \
     # Clean out directories that don't need to be part of the image
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /var/www/project
-
-RUN mkdir -p /var/www/project/cms/storage \
-    && \
-    mkdir -p /var/www/project/cms/web/cpresources \
-    && \
-    chown -R www-data:www-data /var/www/project
-
-WORKDIR /var/www/project/cms
-
 # Force permissions, update Craft, and start php-fpm
 CMD chown -R www-data:www-data /var/www/project \
     && \
