@@ -1,4 +1,7 @@
-CONTAINER?=$(shell basename $(CURDIR))_php_1
+PROJECT_NAME?=$(shell basename $(CURDIR))
+SERVICE_NAME?=php
+CMS_ROOT_NAME?=cms_
+CMS_VERSIONS:=v3 v4
 
 .PHONY: dev clean composer craft mysql nuke postgres update update-clean up
 
@@ -6,35 +9,51 @@ dev: up
 clean:
 	docker-compose down -v
 	docker-compose up --build
-composer: up
-	docker exec -it ${CONTAINER} su-exec www-data composer \
+composer-$(CMS_VERSIONS):V=$(subst test-,,$@)
+composer-$(CMS_VERSIONS):CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(V)_1
+composer-$(CMS_VERSIONS): up
+	docker exec -it $(CONTAINER) su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
-craft: up
-	docker exec -it ${CONTAINER} su-exec www-data php craft \
+craft-$(CMS_VERSIONS):V=$(subst test-,,$@)
+craft-$(CMS_VERSIONS):CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(V)_1
+craft-$(CMS_VERSIONS): up
+	docker exec -it $(CONTAINER) su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
-mysql: up
-	cp cms/config/_configs/mysql/db.php cms/config/db.php
-	cp cms/config/_configs/mysql/general.php cms/config/general.php
+mysql-$(CMS_VERSIONS):V=$(subst test-,,$@)
+mysql-$(CMS_VERSIONS):CMS_DIR=$(CMS_ROOT_NAME)_$(V)
+mysql-$(CMS_VERSIONS): up
+	cp $(CMS_DIR)/config/_configs/mysql/db.php $(CMS_DIR)/config/db.php
+	cp $(CMS_DIR)/config/_configs/mysql/general.php $(CMS_DIR)/config/general.php
 nuke:
 	docker-compose down -v
-	rm -f cms/composer.lock
+	for v in $(cms_versions); do \
+		rm -f $(CMS_ROOT_NAME)$$v/composer.lock
+		rm -rf $(CMS_ROOT_NAME)$$v/vendor/
+	done
 	docker-compose up --build --force-recreate
-postgres: up
-	cp cms/config/_configs/postgres/db.php cms/config/db.php
-	cp cms/config/_configs/postgres/general.php cms/config/general.php
+postgres-$(CMS_VERSIONS):V=$(subst test-,,$@)
+postgres-$(CMS_VERSIONS):CMS_DIR=$(CMS_ROOT_NAME)_$(V)
+postgres-$(CMS_VERSIONS): up
+	cp $(CMS_DIR)/config/_configs/postgres/db.php $(CMS_DIR)/config/db.php
+	cp $(CMS_DIR)/config/_configs/postgres/general.php $(CMS_DIR)/config/general.php
 update:
 	docker-compose down
-	rm -f cms/composer.lock
+	for v in $(cms_versions); do \
+		rm -f $(CMS_ROOT_NAME)$$v/composer.lock ; \
+	done
 	docker-compose up
 update-clean:
 	docker-compose down
-	rm -f cms_v3/composer.lock
-	rm -rf cms_v3/vendor/
+	for v in $(cms_versions); do \
+		rm -f $(CMS_ROOT_NAME)$$v/composer.lock
+		rm -rf $(CMS_ROOT_NAME)$$v/vendor/
+	done
 	docker-compose up
 up:
 	if [ ! "$$(docker ps -q -f name=${CONTAINER})" ]; then \
-		cp -n cms_v3/example.env cms_v3/.env; \
-		cp -n cms_v4/example.env cms_v4/.env; \
+		for v in $(cms_versions); do \
+			cp -n cms_$$v/example.env cms_$$v/.env; \
+		done
 		docker-compose up; \
     fi
 %:
