@@ -49,7 +49,7 @@ update-clean:
 		rm -rf $(CMS_ROOT_NAME)$$v/vendor/ ; \
 	done
 	docker-compose up
-up: CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_v3_1
+up: CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(word 1,$(CMS_VERSIONS))_1
 up:
 	if [ ! "$$(docker ps -q -f name=$(CONTAINER))" ]; then \
 		for v in $(CMS_VERSIONS) ; do \
