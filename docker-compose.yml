@@ -8,8 +8,8 @@ services:
       dockerfile: ./Dockerfile
     init: true
     ports:
-      - "8000:8000"
-      - "8001:8001"
+      - "8003:8003"
+      - "8004:8004"
     volumes:
       - cpresources_v3:/var/www/project/cms_v3/web/cpresources:delegated
       - cpresources_v4:/var/www/project/cms_v4/web/cpresources:delegated
