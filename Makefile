@@ -45,8 +45,8 @@ update:
 update-clean:
 	docker-compose down
 	for v in $(CMS_VERSIONS) ; do \
-		rm -f $(CMS_ROOT_NAME)$$v/composer.lock
-		rm -rf $(CMS_ROOT_NAME)$$v/vendor/
+		rm -f $(CMS_ROOT_NAME)$$v/composer.lock ; \
+		rm -rf $(CMS_ROOT_NAME)$$v/vendor/ ; \
 	done
 	docker-compose up
 up: CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_v3_1
