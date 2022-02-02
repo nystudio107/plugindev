@@ -28,8 +28,8 @@ services:
       MYSQL_USER: project
       MYSQL_PASSWORD: project
     init: true
-    ports:
-      - "3306:3306"
+    expose:
+      - "3306"
     volumes:
       - mysql-db-data:/var/lib/mysql
       - ./mysql-db-seed:/docker-entrypoint-initdb.d
@@ -119,8 +119,8 @@ services:
       POSTGRES_USER: project
       POSTGRES_PASSWORD: project
     init: true
-    ports:
-      - "5432:5432"
+    expose:
+      - "5432"
     volumes:
       - postgres-db-data:/usr/local/pgsql/data
       - ./postgres-db-seed/:/docker-entrypoint-initdb.d
