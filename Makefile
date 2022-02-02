@@ -9,17 +9,17 @@ dev: up
 clean:
 	docker-compose down -v
 	docker-compose up --build
-composer-$(CMS_VERSIONS):V=$(subst test-,,$@)
+composer-$(CMS_VERSIONS):V=$(subst composer-,,$@)
 composer-$(CMS_VERSIONS):CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(V)_1
 composer-$(CMS_VERSIONS): up
 	docker exec -it $(CONTAINER) su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
-craft-$(CMS_VERSIONS):V=$(subst test-,,$@)
+craft-$(CMS_VERSIONS):V=$(subst craft-,,$@)
 craft-$(CMS_VERSIONS):CONTAINER=$(PROJECT_NAME)_$(SERVICE_NAME)_$(V)_1
 craft-$(CMS_VERSIONS): up
 	docker exec -it $(CONTAINER) su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
-mysql-$(CMS_VERSIONS):V=$(subst test-,,$@)
+mysql-$(CMS_VERSIONS):V=$(subst mysql-,,$@)
 mysql-$(CMS_VERSIONS):CMS_DIR=$(CMS_ROOT_NAME)_$(V)
 mysql-$(CMS_VERSIONS): up
 	cp $(CMS_DIR)/config/_configs/mysql/db.php $(CMS_DIR)/config/db.php
@@ -31,7 +31,7 @@ nuke:
 		rm -rf $(CMS_ROOT_NAME)$$v/vendor/
 	done
 	docker-compose up --build --force-recreate
-postgres-$(CMS_VERSIONS):V=$(subst test-,,$@)
+postgres-$(CMS_VERSIONS):V=$(subst postgres-,,$@)
 postgres-$(CMS_VERSIONS):CMS_DIR=$(CMS_ROOT_NAME)_$(V)
 postgres-$(CMS_VERSIONS): up
 	cp $(CMS_DIR)/config/_configs/postgres/db.php $(CMS_DIR)/config/db.php
