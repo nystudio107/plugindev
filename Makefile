@@ -28,12 +28,13 @@ update:
 	docker-compose up
 update-clean:
 	docker-compose down
-	rm -f cms/composer.lock
-	rm -rf cms/vendor/
+	rm -f cms_v3/composer.lock
+	rm -rf cms_v3/vendor/
 	docker-compose up
 up:
 	if [ ! "$$(docker ps -q -f name=${CONTAINER})" ]; then \
-		cp -n cms/example.env cms/.env; \
+		cp -n cms_v3/example.env cms_v3/.env; \
+		cp -n cms_v4/example.env cms_v4/.env; \
 		docker-compose up; \
     fi
 %:
