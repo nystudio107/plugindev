@@ -28,7 +28,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "/Users/andrew/webdev/craft/*",
+      "url": "/Users/andrew/webdev/craft_v4/*",
       "options": {
         "symlink": true
       }
