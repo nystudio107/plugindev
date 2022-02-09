@@ -1,5 +1,9 @@
 version: '3.7'
 
+networks:
+  default:
+    name: plugindev_default
+
 services:
   # nginx - web server
   nginx:
