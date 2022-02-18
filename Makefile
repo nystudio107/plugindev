@@ -40,7 +40,7 @@ postgres-$(CMS_VERSIONS): up
 ssh-$(CMS_VERSIONS): V=$(subst ssh-,,$@)
 ssh-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
 ssh-$(CMS_VERSIONS): up
-	docker exec -it $(CONTAINER) /bin/sh
+	docker exec -it $(CONTAINER) su-exec www-data /bin/sh
 update:
 	docker-compose down
 	for v in $(CMS_VERSIONS) ; do \
