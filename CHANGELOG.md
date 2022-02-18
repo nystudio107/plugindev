@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.0.39 - 2022.02.18
+### Fixed
+* fix: Go back to using dashes & the Docker Composer v2 API [ref](https://stackoverflow.com/questions/69464001/docker-compose-container-name-use-dash-instead-of-underscore/70295720)
+
 ## 1.0.38 - 2022.01.07
 ### Fixed
 * Use `su-exec www-data` in the Makefile so `craft` and `composer` commands are not run as root
