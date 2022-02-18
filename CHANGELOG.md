@@ -1,6 +1,9 @@
 # nystudio107/plugindev Change Log
 
 ## 1.0.39 - 2022.02.18
+### Added
+* Add new `make ssh` command to open up a shell inside the PHP container ([#4](https://github.com/nystudio107/plugindev/pull/4))
+
 ### Fixed
 * fix: Go back to using dashes & the Docker Composer v2 API [ref](https://stackoverflow.com/questions/69464001/docker-compose-container-name-use-dash-instead-of-underscore/70295720)
 
