@@ -1,4 +1,4 @@
-CONTAINER?=$(shell basename $(CURDIR))_php_1
+CONTAINER?=$(shell basename $(CURDIR))-php-1
 
 .PHONY: dev clean composer craft mysql nuke postgres update update-clean up
 
