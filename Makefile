@@ -1,6 +1,6 @@
-CONTAINER?=$(shell basename $(CURDIR))_php_1
+CONTAINER?=$(shell basename $(CURDIR))-php-1
 
-.PHONY: dev clean composer craft mysql nuke postgres update update-clean up
+.PHONY: dev clean composer craft mysql nuke postgres ssh update update-clean up
 
 dev: up
 clean:
@@ -22,6 +22,8 @@ nuke:
 postgres: up
 	cp cms/config/_configs/postgres/db.php cms/config/db.php
 	cp cms/config/_configs/postgres/general.php cms/config/general.php
+ssh: up
+	docker exec -it ${CONTAINER} su-exec www-data /bin/sh
 update:
 	docker-compose down
 	rm -f cms/composer.lock
