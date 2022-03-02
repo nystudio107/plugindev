@@ -37,6 +37,11 @@ postgres-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(SEPARATOR)$(V)
 postgres-$(CMS_VERSIONS): up
 	cp $(CMS_DIR)/config/_configs/postgres/db.php $(CMS_DIR)/config/db.php
 	cp $(CMS_DIR)/config/_configs/postgres/general.php $(CMS_DIR)/config/general.php
+rector-$(CMS_VERSIONS): V=$(subst craft-,,$@)
+rector-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
+rector-$(CMS_VERSIONS): up
+	docker exec -it $(CONTAINER) su-exec www-data vendor/bin/rector process \
+		$(filter-out $@,$(MAKECMDGOALS))
 ssh-$(CMS_VERSIONS): V=$(subst ssh-,,$@)
 ssh-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
 ssh-$(CMS_VERSIONS): up

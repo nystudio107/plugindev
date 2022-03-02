@@ -52,7 +52,7 @@ services:
     tty: true
     volumes: &php-volumes_v3
       # Change the path below to map to your local plugin repositories
-      - /Users/andrew/webdev/craft:/Users/andrew/webdev/craft
+      - /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3
       - cpresources_v3:/var/www/project/cms_v3/web/cpresources:delegated
       - storage_v3:/var/www/project/cms_v3/storage:delegated
       - ./cms_v3:/var/www/project/cms_v3:cached

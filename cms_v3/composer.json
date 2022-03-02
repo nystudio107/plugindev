@@ -1,10 +1,13 @@
 {
   "name": "nystudio107/plugindev",
   "description": "This is a project scaffolding package for Craft 3 CMS plugin development.",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "require": {
     "craftcms/cms": "^3.7.26",
     "craftcms/redactor": "^2.0.0",
     "craftcms/commerce": "^3.0.0",
+    "craftcms/digital-products": "^2.0.0",
     "vlucas/phpdotenv": "^5.4.0",
     "yiisoft/yii2-redis": "^2.0.6",
     "nystudio107/craft-connect": "^1.0.0",
@@ -33,11 +36,13 @@
     "nystudio107/craft-vanillaforums": "^3.0.0",
     "nystudio107/craft-webperf": "^1.0.0",
     "nystudio107/craft-youtubeliveembed": "^1.0.0",
-    "nystudio107/craft-vite": "^1.0.0"
+    "nystudio107/craft-vite": "^1.0.0",
+    "solspace/craft3-calendar": "^3.0.0"
   },
   "require-dev": {
     "nystudio107/craft-autocomplete": "^1.0.0",
-    "yiisoft/yii2-shell": "^2.0.3"
+    "yiisoft/yii2-shell": "^2.0.3",
+    "craftcms/rector": "dev-main"
   },
   "autoload": {
     "psr-4": {
@@ -58,7 +63,7 @@
   "repositories": [
     {
       "type": "path",
-      "url": "/Users/andrew/webdev/craft/*",
+      "url": "/Users/andrew/webdev/craft_v3/*",
       "options": {
         "symlink": true
       }
