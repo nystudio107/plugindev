@@ -37,7 +37,7 @@ postgres-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(SEPARATOR)$(V)
 postgres-$(CMS_VERSIONS): up
 	cp $(CMS_DIR)/config/_configs/postgres/db.php $(CMS_DIR)/config/db.php
 	cp $(CMS_DIR)/config/_configs/postgres/general.php $(CMS_DIR)/config/general.php
-rector-$(CMS_VERSIONS): V=$(subst craft-,,$@)
+rector-$(CMS_VERSIONS): V=$(subst rector-,,$@)
 rector-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
 rector-$(CMS_VERSIONS): up
 	docker exec -it $(CONTAINER) su-exec www-data vendor/bin/rector process \
@@ -63,7 +63,7 @@ up: CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(word 1,$(CMS_VERSIONS
 up:
 	if [ ! "$$(docker ps -q -f name=$(CONTAINER))" ]; then \
 		for v in $(CMS_VERSIONS) ; do \
-			cp -n $(CMS_ROOT_NAME)$$v/example.env $(CMS_ROOT_NAME)$$v/.env ; \
+			cp -fn $(CMS_ROOT_NAME)$$v/example.env $(CMS_ROOT_NAME)$$v/.env ; \
 		done ; \
 		docker-compose up ; \
     fi
