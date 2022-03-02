@@ -1,10 +1,11 @@
 PROJECT_NAME?=$(shell basename $(CURDIR))
+PROJECT_DIR?=/var/www/project/
 SERVICE_NAME?=php
 CMS_ROOT_NAME?=cms_
 CMS_VERSIONS:=v3 v4
 SEPARATOR:=-
 
-.PHONY: dev clean composer craft mysql nuke postgres rector ssh update up
+.PHONY: dev clean composer craft mysql nuke postgres rector ssh up
 
 dev: up
 clean:
@@ -14,16 +15,18 @@ clean:
 	done
 composer-$(CMS_VERSIONS): V=$(subst composer-,,$@)
 composer-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
+composer-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(V)
 composer-$(CMS_VERSIONS): up
-	docker exec -it $(CONTAINER) su-exec www-data composer \
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
 craft-$(CMS_VERSIONS): V=$(subst craft-,,$@)
 craft-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
+craft-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(V)
 craft-$(CMS_VERSIONS): up
-	docker exec -it $(CONTAINER) su-exec www-data php craft \
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql-$(CMS_VERSIONS): V=$(subst mysql-,,$@)
-mysql-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(SEPARATOR)$(V)
+mysql-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(V)
 mysql-$(CMS_VERSIONS): up
 	cp $(CMS_DIR)/config/_configs/mysql/db.php $(CMS_DIR)/config/db.php
 	cp $(CMS_DIR)/config/_configs/mysql/general.php $(CMS_DIR)/config/general.php
@@ -31,22 +34,21 @@ nuke: clean
 	docker-compose down -v
 	docker-compose up --build --force-recreate
 postgres-$(CMS_VERSIONS): V=$(subst postgres-,,$@)
-postgres-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(SEPARATOR)$(V)
+postgres-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(V)
 postgres-$(CMS_VERSIONS): up
 	cp $(CMS_DIR)/config/_configs/postgres/db.php $(CMS_DIR)/config/db.php
 	cp $(CMS_DIR)/config/_configs/postgres/general.php $(CMS_DIR)/config/general.php
 rector-$(CMS_VERSIONS): V=$(subst rector-,,$@)
 rector-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
+rector-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(V)
 rector-$(CMS_VERSIONS): up
-	docker exec -it $(CONTAINER) su-exec www-data vendor/bin/rector process \
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/rector process \
 		$(filter-out $@,$(MAKECMDGOALS))
 ssh-$(CMS_VERSIONS): V=$(subst ssh-,,$@)
 ssh-$(CMS_VERSIONS): CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(V)$(SEPARATOR)1
+ssh-$(CMS_VERSIONS): CMS_DIR=$(CMS_ROOT_NAME)$(V)
 ssh-$(CMS_VERSIONS): up
-	docker exec -it $(CONTAINER) su-exec www-data /bin/sh
-update: clean
-	docker-compose down
-	docker-compose up
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data /bin/sh
 up: CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(word 1,$(CMS_VERSIONS))$(SEPARATOR)1
 up:
 	if [ ! "$$(docker ps -q -f name=$(CONTAINER))" ]; then \
