@@ -10,6 +10,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator): void {
     // Optional directories to skip
     $parameters = $containerConfigurator->parameters();
+    /** @noinspection PhpParamsInspection */
     $parameters->set(Option::SKIP, [
         __DIR__ . '/vendor/nystudio107/craft-seomatic/src/integrations',
     ]);
