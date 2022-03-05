@@ -50,7 +50,49 @@ RUN set -eux; \
     # Clean out directories that don't need to be part of the image
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# Force permissions, update Craft, and start php-fpm
+# Needed to allow for headless chrome in the same container as PHP
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+ENV CHROME_BIN /usr/bin/chromium-browser
+ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
+# Install packages for headless chrome
+RUN set -eux; \
+    apk update \
+    && \
+    apk add --no-cache \
+        nmap \
+        nodejs \
+        npm \
+    && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+    && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
+    && \
+    apk update \
+    && \
+    apk add --no-cache \
+        autoconf \
+        automake \
+        build-base \
+        g++ \
+        gcc \
+        glu \
+        libc6-compat \
+        libtool \
+        libpng-dev \
+        libxxf86vm \
+        make \
+        nasm \
+        # Headless Chrome packages
+        chromium \
+        harfbuzz \
+        "freetype>2.8" \
+        ttf-freefont \
+        nss \
+        && \
+        npm install -g puppeteer
+
+    # Force permissions, update Craft, and start php-fpm
 CMD chown -R www-data:www-data /var/www/project \
     && \
     php-fpm
