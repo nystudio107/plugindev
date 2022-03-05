@@ -16,11 +16,11 @@ craft:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql:
-	cp $(CMS_DIR)/config/_configs/mysql/db.php $(CMS_DIR)/config/db.php
-	cp $(CMS_DIR)/config/_configs/mysql/general.php $(CMS_DIR)/config/general.php
+	cp config/_configs/mysql/db.php config/db.php
+	cp config/_configs/mysql/general.php config/general.php
 postgres:
-	cp $(CMS_DIR)/config/_configs/postgres/db.php $(CMS_DIR)/config/db.php
-	cp $(CMS_DIR)/config/_configs/postgres/general.php $(CMS_DIR)/config/general.php
+	cp config/_configs/postgres/db.php config/db.php
+	cp config/_configs/postgres/general.php config/general.php
 rector:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/rector process \
 		$(filter-out $@,$(MAKECMDGOALS))
