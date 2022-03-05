@@ -1,5 +1,5 @@
 #!/bin/bash
-MYSQL_DB_SEED_DIR="db_seeds"
+MYSQL_DB_SEED_DIR="dbs"
 MYSQL_DATABASES_ARRAY=( $MYSQL_DATABASES )
 
 # from: https://github.com/mysql/mysql-docker/blob/main/mysql-server/8.0/docker-entrypoint.sh

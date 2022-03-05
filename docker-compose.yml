@@ -36,7 +36,7 @@ services:
       - "3306:3306"
     volumes:
       - mysql-db-data:/var/lib/mysql
-      - ./mysql-db-seed:/docker-entrypoint-initdb.d
+      - ./db-seed/mysql:/docker-entrypoint-initdb.d
   # php_v3 - run php-fpm
   php_v3:
     build: &php-build_v3
@@ -119,7 +119,7 @@ services:
       context: ./docker-config/postgres
       dockerfile: ./Dockerfile
     environment:
-      POSTGRES_DB: project
+      POSTGRES_DATABASES: "project_v3 project_v4"
       POSTGRES_USER: project
       POSTGRES_PASSWORD: project
     init: true
@@ -127,7 +127,7 @@ services:
       - "5432:5432"
     volumes:
       - postgres-db-data:/usr/local/pgsql/data
-      - ./postgres-db-seed/:/docker-entrypoint-initdb.d
+      - ./db-seed/postgres:/docker-entrypoint-initdb.d
   # queue_v3 - runs queue jobs via php craft queue/listen
   queue_v3:
     build:
