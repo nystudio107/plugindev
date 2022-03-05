@@ -37,11 +37,11 @@ productFieldLayouts:
         sortOrder: 1
 productTitleFormat: ''
 siteSettings:
-  5da841b1-ca0d-46ff-8bb1-04d6c889ac54: # English
+  5da841b1-ca0d-46ff-8bb1-04d6c889ac54:
     hasUrls: true
     template: shop/products/_product
     uriFormat: 'shop/products/{slug}'
-  ec473f07-152f-423b-90df-ac425e6068a1: # Spanish
+  ec473f07-152f-423b-90df-ac425e6068a1:
     hasUrls: true
     template: shop/products/_product
     uriFormat: 'shop/products/{slug}'

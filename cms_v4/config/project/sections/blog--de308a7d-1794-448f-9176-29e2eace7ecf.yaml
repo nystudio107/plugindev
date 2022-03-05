@@ -1,3 +1,4 @@
+defaultPlacement: end
 enableVersioning: true
 handle: blog
 name: Blog
@@ -15,12 +16,12 @@ previewTargets:
         - '1'
 propagationMethod: all
 siteSettings:
-  5da841b1-ca0d-46ff-8bb1-04d6c889ac54: # English
+  5da841b1-ca0d-46ff-8bb1-04d6c889ac54:
     enabledByDefault: true
     hasUrls: true
     template: blog/_entry
     uriFormat: 'blog/{slug}'
-  ec473f07-152f-423b-90df-ac425e6068a1: # Spanish
+  ec473f07-152f-423b-90df-ac425e6068a1:
     enabledByDefault: true
     hasUrls: true
     template: blog/_entry

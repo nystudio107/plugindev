@@ -23,7 +23,8 @@ fieldLayouts:
             step: null
             tip: null
             title: null
-            type: craft\fieldlayoutelements\EntryTitleField
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f4127044-7714-4595-b4ca-a5e2be18c107
             warning: null
             width: 100
           -
@@ -33,6 +34,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 5dbc5ee4-9043-4628-a3ca-8a92bb2fee0b
             warning: null
             width: 100
           -
@@ -42,6 +44,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: cbe51c1b-db13-411b-a379-653f4119e98c
             warning: null
             width: 100
           -
@@ -51,10 +54,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 1dc6fdaa-dd80-4b28-bdec-cb4553af911d
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 345ff311-ebc0-4929-9d25-eaa8babbb4d7
 handle: blog
 hasTitleField: true
 name: Blog

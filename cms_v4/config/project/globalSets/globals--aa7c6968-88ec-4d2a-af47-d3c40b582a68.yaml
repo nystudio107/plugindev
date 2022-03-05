@@ -10,6 +10,7 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: f088d1ae-0e27-4b44-8409-9b280767bc95
             warning: null
             width: 100
           -
@@ -19,9 +20,11 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: aa115fb5-c963-4b33-ae24-6142e5fbea98
             warning: null
             width: 100
         name: Default
-        sortOrder: 1
+        uid: 3a845609-01dd-4d7f-bafd-8c001c4be32d
 handle: globals
 name: Globals
+sortOrder: 0
