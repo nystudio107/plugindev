@@ -2,13 +2,13 @@
 
 ## About nystudio107/plugindev
 
-This is a project scaffolding package for Craft 3 CMS plugin development.
+This is a project scaffolding package for Craft CMS & Craft CMS 4 plugin development.
 
 Read the [A Craft CMS Plugin Local Development Environment article](https://nystudio107.com/blog/a-craft-cms-plugin-local-development-environment) for full details on this project.
 
 It gives you the following out of the box:
 
-* Craft CMS `^3.6.7` is installed
+* Dual installs of both Craft CMS `^3.7.26` and Craft CMS `^4.0.0-alpha.1` running simultaneously
 * `craftcms/redactor` plugin is installed
 * `craftcms/commerce` plugin is installed
 * A PHP 8.x environment with Imagick and other needed extensions pre-installed
@@ -30,18 +30,28 @@ We use `--no-install` so that the composer packages for the root project are not
 
 ## Setting Up Local Dev
 
-You'll need Docker desktop for your platform installed to run the project in local development
+You'll need [Docker desktop](https://www.docker.com/products/docker-desktop) for your platform installed to run the project in local development
 
-* Composer will have already created a `.env` file in the `cms/` directory, based off of the provided `example.env`
-  
-* Edit the `cms/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft/*",` in `repostories` to point to your local plugin Git repositories
-* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft:/Users/andrew/webdev/craft` to point to your local plugin Git repositories
+Craft CMS 3 runs out of the `cms_v3/` directory available at `http://localhost:8003`, and Craft CMS 4 runs out of the `cms_v4` directory available at `http://localhost:8004`.
+
+Each version of Craft CMS runs in separate Docker containers, and uses a separate database running out of the database containers (MySQL and Postgres). 
+
+Composer will have already created a `.env` file in the `cms_v3/` & `cms_v4` directories, based off of the respective `example.env` files.
+
+To set up your local dev environment:
+
+* Edit the `cms_v3/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v3/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
+* Edit the `cms_v4/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v4/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3` to point to your local plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4` to point to your local plugin Git repositories
 * Start up the site with `make dev` (the first build will be somewhat lengthy)
-* Navigate to `http://localhost:8000` to use the site
 
 ### Login
 
-The default login is:
+* Navigate to `http://localhost:8003` to use the Craft CMS 3 site
+* Navigate to `http://localhost:8004` to use the Craft CMS 3 site
+
+The default login for both sites is:
 
 **User:** `admin` \
 **Password:** `password`
