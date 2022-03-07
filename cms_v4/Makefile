@@ -22,7 +22,7 @@ postgres:
 	cp config/_configs/postgres/db.php config/db.php
 	cp config/_configs/postgres/general.php config/general.php
 rector:
-	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/rector process \
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/rector \
 		$(filter-out $@,$(MAKECMDGOALS))
 ssh:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data /bin/sh
