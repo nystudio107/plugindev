@@ -18,7 +18,7 @@ It gives you the following out of the box:
 * Multiple sites for testing
 * Prefab content with a "blog" channel for testing
 
-## Using nystudio107/plugindev
+## Creating nystudio107/plugindev
 
 This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
 
@@ -44,17 +44,33 @@ To set up your local dev environment:
 * Edit the `cms_v4/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v4/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
 * Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3` to point to your local plugin Git repositories
 * Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4` to point to your local plugin Git repositories
-* Start up the site with `make dev` (the first build will be somewhat lengthy)
+
+## Using nystudio107/plugindev
+
+Start up the `plugindev` environment by typing `make dev` in a terminal window (the first build will be somewhat lengthy).
+
+To stop the `plugindev` environment, type `Control-C` in the terminal window you used to start it, which terminates the Docker containers.
 
 ### Login
 
 * Navigate to `http://localhost:8003` to use the Craft CMS 3 site
-* Navigate to `http://localhost:8004` to use the Craft CMS 3 site
+* Navigate to `http://localhost:8004` to use the Craft CMS 4 site
 
 The default login for both sites is:
 
 **User:** `admin` \
 **Password:** `password`
+
+### Exposed ports & services
+
+The following ports are exposed on `localhost` while `plugindev` is running (these need to not be in use prior to starting up `plugindev`):
+
+* `8003` - The Craft CMS 3 website
+* `8004` - The Craft CMS 4 website
+* `5432` - The Postgres database server
+* `3306` - The MySQL database server
+
+Both the 
 
 ### Updating
 
