@@ -7,7 +7,6 @@
     "php": "^8.0.2",
     "craftcms/cms": "^4.0.0-alpha.1",
     "vlucas/phpdotenv": "^5.4.0",
-    "nystudio107/craft-autocomplete": "^1.0.0",
     "nystudio107/craft-instantanalytics": "^4.0.0-beta.1",
     "nystudio107/craft-minify": "^4.0.0-beta.1",
     "nystudio107/craft-richvariables": "^4.0.0-beta.1",
@@ -21,9 +20,11 @@
     "yiisoft/yii2-redis": "^2.0.6"
   },
   "require-dev": {
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main",
+    "craftcms/rector": "dev-main",
     "nystudio107/craft-autocomplete": "^1.10.0",
-    "yiisoft/yii2-shell": "^2.0.3",
-    "craftcms/rector": "dev-main"
+    "yiisoft/yii2-shell": "^2.0.3"
   },
   "autoload": {
     "psr-4": {

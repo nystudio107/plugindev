@@ -10,7 +10,6 @@
     "craftcms/digital-products": "^2.0.0",
     "vlucas/phpdotenv": "^5.4.0",
     "yiisoft/yii2-redis": "^2.0.6",
-    "nystudio107/craft-autocomplete": "^1.0.0",
     "nystudio107/craft-connect": "^1.0.0",
     "nystudio107/craft-cookies": "^1.0.0",
     "nystudio107/craft-disqus": "^1.0.0",
@@ -41,9 +40,11 @@
     "solspace/craft3-calendar": "^3.0.0"
   },
   "require-dev": {
-    "nystudio107/craft-autocomplete": "^1.0.0",
-    "yiisoft/yii2-shell": "^2.0.3",
-    "craftcms/rector": "dev-main"
+    "craftcms/ecs": "dev-main",
+    "craftcms/phpstan": "dev-main",
+    "craftcms/rector": "dev-main",
+    "nystudio107/craft-autocomplete": "^1.10.0",
+    "yiisoft/yii2-shell": "^2.0.3"
   },
   "autoload": {
     "psr-4": {
