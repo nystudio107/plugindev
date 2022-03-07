@@ -7,13 +7,16 @@ SEPARATOR:=-
 CONTAINER:=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(CMS_VERSION)$(SEPARATOR)1
 CMS_DIR:=$(CMS_ROOT_NAME)$(CMS_VERSION)
 
-.PHONY: composer craft mysql postgres rector ssh
+.PHONY: composer craft ecs mysql postgres rector ssh
 
 composer:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
 craft:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php craft \
+		$(filter-out $@,$(MAKECMDGOALS))
+ecs:
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php vendor/bin/ecs \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql:
 	cp config/_configs/mysql/db.php config/db.php
