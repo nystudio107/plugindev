@@ -7,7 +7,7 @@ SEPARATOR:=-
 CONTAINER:=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(CMS_VERSION)$(SEPARATOR)1
 CMS_DIR:=$(CMS_ROOT_NAME)$(CMS_VERSION)
 
-.PHONY: composer craft ecs mysql postgres rector ssh
+.PHONY: composer craft ecs mysql phpstan postgres rector ssh
 
 composer:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data composer \
@@ -16,11 +16,14 @@ craft:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php craft \
 		$(filter-out $@,$(MAKECMDGOALS))
 ecs:
-	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php vendor/bin/ecs \
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/ecs \
 		$(filter-out $@,$(MAKECMDGOALS))
 mysql:
 	cp config/_configs/mysql/db.php config/db.php
 	cp config/_configs/mysql/general.php config/general.php
+phpstan:
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/phpstan --memory-limit=1G \
+		$(filter-out $@,$(MAKECMDGOALS))
 postgres:
 	cp config/_configs/postgres/db.php config/db.php
 	cp config/_configs/postgres/general.php config/general.php
