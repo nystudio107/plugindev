@@ -30,7 +30,7 @@ We use `--no-install` so that the composer packages for the root project are not
 
 It works this way so that you can take the basic scaffolding, and then modify it as you see fit.
 
-## Setting Up Local Dev
+## Getting Started with nystudio107/plugindev
 
 You'll need [Docker desktop](https://www.docker.com/products/docker-desktop) for your platform installed to run the project in local development
 
@@ -40,12 +40,24 @@ Each version of Craft CMS runs in separate Docker containers, and uses a separat
 
 Composer will have already created a `.env` file in the `cms_v3/` & `cms_v4` directories, based off of the respective `example.env` files.
 
-To set up your local dev environment:
+### Setting up Local Dev
+
+To set up your local dev environment, follow these steps:
 
 * Edit the `cms_v3/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v3/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
 * Edit the `cms_v4/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v4/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
-* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3` to point to your local plugin Git repositories
-* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4` to point to your local plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3` to point to your local Craft CMS 3 plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4` to point to your local Craft CMS 4 plugin Git repositories
+
+### Setting up Plugin Git Repos
+
+To make working on plugins from multiple versions of Craft CMS easier, clone each of your plugin repositories down to two separate directories: `craft_v3` and `craft_4`.
+
+These are two separate local repositories from the same remote git origin repository.
+
+This allows you to have all the repositories in the `craft_v3` directory set to your Craft CMS 3 compatible branch, and all the repositories in the `craft_v4` directory set to your Craft CMS 4 compatible branch.
+
+This makes working with multiple versions of your plugins for multiple versions of Craft CMS much easier.
 
 ## Using nystudio107/plugindev
 
