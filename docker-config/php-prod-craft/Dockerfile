@@ -50,18 +50,52 @@ RUN set -eux; \
     # Clean out directories that don't need to be part of the image
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Needed to allow for headless chrome in the same container as PHP
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser
+ENV CHROME_BIN /usr/bin/chromium-browser
+ENV LIGHTHOUSE_CHROMIUM_PATH /usr/bin/chromium-browser
+# Install packages for headless chrome
+RUN set -eux; \
+    apk update \
+    && \
+    apk add --no-cache \
+        nmap \
+        nodejs \
+        npm \
+    && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+    && \
+    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
+    && \
+    apk update \
+    && \
+    apk add --no-cache \
+        autoconf \
+        automake \
+        build-base \
+        g++ \
+        gcc \
+        glu \
+        libc6-compat \
+        libtool \
+        libpng-dev \
+        libxxf86vm \
+        make \
+        nasm \
+        # Headless Chrome packages
+        chromium \
+        harfbuzz \
+        "freetype>2.8" \
+        ttf-freefont \
+        nss \
+        && \
+        npm install -g puppeteer
+
 WORKDIR /var/www/project
 
 COPY ./run_queue.sh .
-RUN chmod a+x run_queue.sh \
-    && \
-    mkdir -p /var/www/project/cms/storage \
-    && \
-    mkdir -p /var/www/project/cms/web/cpresources \
-    && \
-    chown -R www-data:www-data /var/www/project
-
-WORKDIR /var/www/project/cms
+RUN chmod a+x run_queue.sh
 
 # Force permissions, update Craft, and start php-fpm
 
@@ -73,6 +107,8 @@ WORKDIR /var/www/project/cms
 # but saves far more time in not having to deal with out of sync versions
 # when working with teams or multiple environments
 CMD chown -R www-data:www-data /var/www/project \
+    && \
+    cd $CMS_ROOT_PATH \
     && \
     su-exec www-data composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction \
     && \

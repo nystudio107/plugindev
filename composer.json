@@ -21,7 +21,8 @@
   },
   "scripts": {
     "post-create-project-cmd": [
-      "@php -r \"copy('./cms/example.env', './cms/.env');\"",
+      "@php -r \"copy('./cms_v3/example.env', './cms_v3/.env');\"",
+      "@php -r \"copy('./cms_v4/example.env', './cms_v4/.env');\"",
       "@php -r \"@unlink('composer.json');\"",
       "@php -r \"@unlink('composer.lock');\"",
       "@php -r \"@unlink('LICENSE.md');\""

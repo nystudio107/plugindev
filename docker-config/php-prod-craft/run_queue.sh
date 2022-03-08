@@ -13,7 +13,7 @@
 
 while true
 do
-  cd /var/www/project/cms
+  cd $CMS_ROOT_PATH
   su-exec www-data php craft queue/listen 10
   echo "-> craft queue/listen will retry in 60 seconds"
   sleep 60

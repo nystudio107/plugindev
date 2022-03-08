@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.0 - 2022.03.07
+### Added
+* Added a dual Craft CMS 3 & Craft CMS 4 setup
+
 ## 1.0.39 - 2022.02.18
 ### Added
 * Add new `make ssh` command to open up a shell inside the PHP container ([#4](https://github.com/nystudio107/plugindev/pull/4))
