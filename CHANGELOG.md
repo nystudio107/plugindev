@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.1 - 2022.03.08
+### Added
+* Add updated Project Config files for `craft_v3`
+
 ## 1.1.0 - 2022.03.07
 ### Added
 * Added a dual Craft CMS 3 & Craft CMS 4 setup
