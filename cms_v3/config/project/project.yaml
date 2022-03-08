@@ -1,4 +1,4 @@
-dateModified: 1643632413
+dateModified: 1646773455
 email:
   fromEmail: andrew@nystudio107.com
   fromName: Craft
@@ -172,7 +172,7 @@ system:
   live: true
   name: plugindev
   retryDuration: 60
-  schemaVersion: 3.7.8
+  schemaVersion: 3.7.33
   timeZone: America/New_York
 users:
   allowPublicRegistration: false

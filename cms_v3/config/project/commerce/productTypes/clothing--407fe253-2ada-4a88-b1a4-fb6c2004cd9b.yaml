@@ -11,6 +11,13 @@ productFieldLayouts:
       -
         elements:
           -
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\commerce\fieldlayoutelements\VariantsField
+            warning: null
+          -
             autocapitalize: true
             autocomplete: false
             autocorrect: true
