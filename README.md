@@ -55,6 +55,8 @@ To make working on plugins from multiple versions of Craft CMS easier, clone eac
 
 These are two separate local repositories from the same remote git origin repository.
 
+The path `repositories` in your respective `composer.json` files will cause Composer to install your plugins locally, rather than via Packagist, creating a symlink to the directories mentioned above.
+
 This allows you to have all the repositories in the `craft_v3` directory set to your Craft CMS 3 compatible branch, and all the repositories in the `craft_v4` directory set to your Craft CMS 4 compatible branch.
 
 This makes working with multiple versions of your plugins for multiple versions of Craft CMS much easier.
