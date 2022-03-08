@@ -20,13 +20,15 @@ It gives you the following out of the box:
 
 ## Creating nystudio107/plugindev
 
-This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
+This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project via Composer:
 
-    composer create-project nystudio107/plugindev --no-install --remove-vcs
+    composer create-project nystudio107/plugindev --no-install
 
 This will create a project named `plugindev` which is a turnkey Craft CMS install for developing plugins.
 
 We use `--no-install` so that the composer packages for the root project are not installed.
+
+It works this way so that you can take the basic scaffolding, and then modify it as you see fit.
 
 ## Setting Up Local Dev
 
@@ -79,7 +81,7 @@ Internally, there are also containers that run the Craft CMS queue automatically
 
 ### Switching between MySQL & Postgres
 
-The plugindev project supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
+The `plugindev` environment supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
 
 To use MySQL (the default) just type:
 ```bash
@@ -107,13 +109,15 @@ If however the `XDEBUG_SESSION` cookie is set (with any value), it routes the re
 
 You can set this cookie with a [browser extension, your IDE](https://xdebug.org/docs/step_debug), or via a number of other methods. Here is the Xdebug Helper browser extension for your favorite browsers: [Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) - [Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12)
 
-You can read more about it in the Dual [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
+You can read more about it in the [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
 
 ## `make` Commands
 
 This project uses Docker to shrink-wrap the devops it needs to run around the project.
 
 To make using it easier, we're using a Makefile and the built-in `make` utility to create a CLI API both for the project as a whole, and for the individual Craft CMS 3 & Craft CMS 4 site.
+
+You can read more about it in the [Using Make & Makefiles to Automate your Frontend Workflow](https://nystudio107.com/blog/using-make-makefiles-to-automate-your-frontend-workflow) article.
 
 ### `make` Project Commands
 
@@ -136,6 +140,7 @@ You can run the following from terminal in the `cms_v3` or `cms_v4` CMS director
 - `make phpstan xxx` - runs [PHPStan](https://github.com/phpstan/phpstan) using the [Craft CMS PHPStan config](https://github.com/craftcms/phpstan), with the passed in path, e.g.: `make phpstan vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `phpstan.neon` file
 - `make postgres` - switches the project to use the Postgres database container; just reload the browser
 - `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
+- `make ssh` - opens up a Unix shell inside the PHP container for the project
 
 ## XDebug with VScode
 
