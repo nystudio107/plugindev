@@ -59,6 +59,8 @@ This allows you to have all the repositories in the `craft_v3` directory set to 
 
 This makes working with multiple versions of your plugins for multiple versions of Craft CMS much easier.
 
+Each directory will always have their branches set appropriately, and you can have separate Git Flow settings via Git Tower or other clients for each.
+
 ## Using nystudio107/plugindev
 
 Start up the `plugindev` environment by typing `make dev` in a terminal window (the first build will be somewhat lengthy).
@@ -87,7 +89,7 @@ The following ports are exposed on `localhost` while `plugindev` is running (the
 The following databases are available in both the MySQL and Postgres database containers:
 
 * `project_v3` - the database for Craft CMS 3. User: `project` Password: `project`
-* `project_43` - the database for Craft CMS 4. User: `project` Password: `project`
+* `project_v4` - the database for Craft CMS 4. User: `project` Password: `project`
 
 Internally, there are also containers that run the Craft CMS queue automatically, a Redis container for caching.
 
