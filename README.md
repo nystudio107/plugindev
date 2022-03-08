@@ -12,6 +12,7 @@ It gives you the following out of the box:
 * `craftcms/redactor` plugin is installed
 * `craftcms/commerce` plugin is installed
 * A PHP 8.x environment with Imagick and other needed extensions pre-installed
+* Code quality tools like `rector`, `phpstan`, and `ecs` are all baked in
 * A prefab database seed for both MySQL and Postgres databases
 * The ability to switch between MySQL and Postgres easily
 * Dual [production/debug Docker](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) containers for PHP, for improved performance while also supporting XDebug
