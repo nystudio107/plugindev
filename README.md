@@ -79,6 +79,37 @@ The following databases are available in both the MySQL and Postgres database co
 
 Internally, there are also containers that run the Craft CMS queue automatically, a Redis container for caching.
 
+## `make` Commands
+
+This project uses Docker to shrink-wrap the devops it needs to run around the project.
+
+To make using it easier, we're using a Makefile and the built-in `make` utility to create a CLI API both for the project as a whole, and for the individual Craft CMS 3 & Craft CMS 4 site.
+
+You can read more about it in the [Using Make & Makefiles to Automate your Frontend Workflow](https://nystudio107.com/blog/using-make-makefiles-to-automate-your-frontend-workflow) article.
+
+### `make` Project Commands
+
+You can run the following from terminal in the root project directory:
+
+- `make dev` - starts up the local dev server listening on `http://localhost:8003/` & `http://localhost:8004/`
+- `make clean` - removes the `composer.lock` and the entire `vendor/` directory from both the `cms_v3` & `cms_v4` projects
+- `make nuke` - restarts the project from scratch by running `make clean` (above), then shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
+
+### `make` CMS Commands
+
+composer craft ecs mysql phpstan postgres rector ssh
+
+You can run the following from terminal in the `cms_v3` or `cms_v4` CMS directories:
+
+- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
+- `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install` in the php container
+- `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g.: `make craft project-config/apply` in the php container
+- `make mysql` - switches the project to use the MySQL database container; just reload the browser
+- `make phpstan xxx` - runs [PHPStan](https://github.com/phpstan/phpstan) using the [Craft CMS PHPStan config](https://github.com/craftcms/phpstan), with the passed in path, e.g.: `make phpstan vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `phpstan.neon` file
+- `make postgres` - switches the project to use the Postgres database container; just reload the browser
+- `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
+- `make ssh` - opens up a Unix shell inside the PHP container for the project
+
 ### Switching between MySQL & Postgres
 
 The `plugindev` environment supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
@@ -110,37 +141,6 @@ If however the `XDEBUG_SESSION` cookie is set (with any value), it routes the re
 You can set this cookie with a [browser extension, your IDE](https://xdebug.org/docs/step_debug), or via a number of other methods. Here is the Xdebug Helper browser extension for your favorite browsers: [Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) - [Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12)
 
 You can read more about it in the [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
-
-## `make` Commands
-
-This project uses Docker to shrink-wrap the devops it needs to run around the project.
-
-To make using it easier, we're using a Makefile and the built-in `make` utility to create a CLI API both for the project as a whole, and for the individual Craft CMS 3 & Craft CMS 4 site.
-
-You can read more about it in the [Using Make & Makefiles to Automate your Frontend Workflow](https://nystudio107.com/blog/using-make-makefiles-to-automate-your-frontend-workflow) article.
-
-### `make` Project Commands
-
-You can run the following from terminal in the root project directory:
-
-- `make dev` - starts up the local dev server listening on `http://localhost:8003/` & `http://localhost:8004/`
-- `make clean` - removes the `composer.lock` and the entire `vendor/` directory from both the `cms_v3` & `cms_v4` projects
-- `make nuke` - restarts the project from scratch by running `make clean` (above), then shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
-
-### `make` CMS Commands
-
-composer craft ecs mysql phpstan postgres rector ssh
-
-You can run the following from terminal in the `cms_v3` or `cms_v4` CMS directories:
-
-- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
-- `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install` in the php container
-- `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g.: `make craft project-config/apply` in the php container
-- `make mysql` - switches the project to use the MySQL database container; just reload the browser
-- `make phpstan xxx` - runs [PHPStan](https://github.com/phpstan/phpstan) using the [Craft CMS PHPStan config](https://github.com/craftcms/phpstan), with the passed in path, e.g.: `make phpstan vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `phpstan.neon` file
-- `make postgres` - switches the project to use the Postgres database container; just reload the browser
-- `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
-- `make ssh` - opens up a Unix shell inside the PHP container for the project
 
 ## XDebug with VScode
 
