@@ -1,0 +1,19 @@
+{% extends "_layouts/generic-page-layout.twig" %}
+
+{% block content %}
+    <section>
+        <h1>{{ entry.title }}</h1>
+        <h3>content</h3>
+    </section>
+{% endblock %}
+
+{% block subcontent %}
+    <section>
+        <h3>subcontent</h3>
+    </section>
+{% endblock %}
+
+{# -- Any JavaScript that should be included before </body> -- #}
+{% block bodyJs %}
+    {{ parent() }}
+{% endblock bodyJs %}

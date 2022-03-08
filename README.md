@@ -2,13 +2,13 @@
 
 ## About nystudio107/plugindev
 
-This is a project scaffolding package for Craft 3 CMS plugin development.
+This is a project scaffolding package for Craft CMS & Craft CMS 4 plugin development.
 
 Read the [A Craft CMS Plugin Local Development Environment article](https://nystudio107.com/blog/a-craft-cms-plugin-local-development-environment) for full details on this project.
 
 It gives you the following out of the box:
 
-* Craft CMS `^3.6.7` is installed
+* Dual installs of both Craft CMS `^3.7.26` and Craft CMS `^4.0.0-alpha.1` running simultaneously
 * `craftcms/redactor` plugin is installed
 * `craftcms/commerce` plugin is installed
 * A PHP 8.x environment with Imagick and other needed extensions pre-installed
@@ -18,49 +18,70 @@ It gives you the following out of the box:
 * Multiple sites for testing
 * Prefab content with a "blog" channel for testing
 
-## Using nystudio107/plugindev
+## Creating nystudio107/plugindev
 
-This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project by first creating & installing the project:
+This project package works exactly the way Pixel & Tonic's [craftcms/craft](https://github.com/craftcms/craft) package works; you create a new project via Composer:
 
-    composer create-project nystudio107/plugindev --no-install --remove-vcs
+    composer create-project nystudio107/plugindev --no-install
 
 This will create a project named `plugindev` which is a turnkey Craft CMS install for developing plugins.
 
 We use `--no-install` so that the composer packages for the root project are not installed.
 
+It works this way so that you can take the basic scaffolding, and then modify it as you see fit.
+
 ## Setting Up Local Dev
 
-You'll need Docker desktop for your platform installed to run the project in local development
+You'll need [Docker desktop](https://www.docker.com/products/docker-desktop) for your platform installed to run the project in local development
 
-* Composer will have already created a `.env` file in the `cms/` directory, based off of the provided `example.env`
-  
-* Edit the `cms/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft/*",` in `repostories` to point to your local plugin Git repositories
-* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft:/Users/andrew/webdev/craft` to point to your local plugin Git repositories
-* Start up the site with `make dev` (the first build will be somewhat lengthy)
-* Navigate to `http://localhost:8000` to use the site
+Craft CMS 3 runs out of the `cms_v3/` directory available at `http://localhost:8003`, and Craft CMS 4 runs out of the `cms_v4` directory available at `http://localhost:8004`.
+
+Each version of Craft CMS runs in separate Docker containers, and uses a separate database running out of the database containers (MySQL and Postgres). 
+
+Composer will have already created a `.env` file in the `cms_v3/` & `cms_v4` directories, based off of the respective `example.env` files.
+
+To set up your local dev environment:
+
+* Edit the `cms_v3/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v3/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
+* Edit the `cms_v4/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v4/*",` in `repostories` to point to your local plugin Git repositories for Craft CMS 3
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3` to point to your local plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4` to point to your local plugin Git repositories
+
+## Using nystudio107/plugindev
+
+Start up the `plugindev` environment by typing `make dev` in a terminal window (the first build will be somewhat lengthy).
+
+To stop the `plugindev` environment, type `Control-C` in the terminal window you used to start it, which terminates the Docker containers.
 
 ### Login
 
-The default login is:
+* Navigate to `http://localhost:8003` to use the Craft CMS 3 site
+* Navigate to `http://localhost:8004` to use the Craft CMS 4 site
+
+The default login for both sites is:
 
 **User:** `admin` \
 **Password:** `password`
 
-### Updating
+### Exposed ports & services
 
-To update to the latest Composer packages (as constrained by the `cms/composer.json` semvers), do:
-```
-make update
-```
+The following ports are exposed on `localhost` while `plugindev` is running (these need to not be in use prior to starting up `plugindev`):
 
-To start from scratch by removing `cms/vendor/`, then update to the latest Composer packages (as constrained by the `cms/composer.json` semvers), do:
-```
-make update-clean
-```
+* `8003` - The Craft CMS 3 website
+* `8004` - The Craft CMS 4 website
+* `5432` - The Postgres database server
+* `3306` - The MySQL database server
+
+The following databases are available in both the MySQL and Postgres database containers:
+
+* `project_v3` - the database for Craft CMS 3. User: `project` Password: `project`
+* `project_43` - the database for Craft CMS 4. User: `project` Password: `project`
+
+Internally, there are also containers that run the Craft CMS queue automatically, a Redis container for caching.
 
 ### Switching between MySQL & Postgres
 
-The plugindev project supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
+The `plugindev` environment supports both MySQL and Postgres out of the box. It spins up a container for each database, and seeds them with a starter db.
 
 To use MySQL (the default) just type:
 ```bash
@@ -88,25 +109,40 @@ If however the `XDEBUG_SESSION` cookie is set (with any value), it routes the re
 
 You can set this cookie with a [browser extension, your IDE](https://xdebug.org/docs/step_debug), or via a number of other methods. Here is the Xdebug Helper browser extension for your favorite browsers: [Chrome](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc) - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) - [Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12)
 
-You can read more about it in the Dual [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
+You can read more about it in the [An Annotated Docker Config for Frontend Web Development](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) article.
 
-### Makefile Project Commands
+## `make` Commands
 
 This project uses Docker to shrink-wrap the devops it needs to run around the project.
 
-To make using it easier, we're using a Makefile and the built-in `make` utility to create local aliases. You can run the following from terminal in the project directory:
+To make using it easier, we're using a Makefile and the built-in `make` utility to create a CLI API both for the project as a whole, and for the individual Craft CMS 3 & Craft CMS 4 site.
 
-- `make dev` - starts up the local dev server listening on `http://localhost:8000/`
-- `make clean` - shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
-- `make mysql` - switches the project to use the MySQL database container; just reload the browser
-- `make postgres` - switches the project to use the Postgres database container; just reload the browser
-- `make update` - causes the project to update to the latest Composer dependencies
-- `make update-clean` - completely removes `node_modules/` & `vendor/`, then causes the project to update to the latest Composer dependencies
+You can read more about it in the [Using Make & Makefiles to Automate your Frontend Workflow](https://nystudio107.com/blog/using-make-makefiles-to-automate-your-frontend-workflow) article.
+
+### `make` Project Commands
+
+You can run the following from terminal in the root project directory:
+
+- `make dev` - starts up the local dev server listening on `http://localhost:8003/` & `http://localhost:8004/`
+- `make clean` - removes the `composer.lock` and the entire `vendor/` directory from both the `cms_v3` & `cms_v4` projects
+- `make nuke` - restarts the project from scratch by running `make clean` (above), then shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
+
+### `make` CMS Commands
+
+composer craft ecs mysql phpstan postgres rector ssh
+
+You can run the following from terminal in the `cms_v3` or `cms_v4` CMS directories:
+
+- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
 - `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install` in the php container
-- `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g. `make craft project-config/apply` in the php container
-- `make ssh` - opens a shell inside the PHP container
+- `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g.: `make craft project-config/apply` in the php container
+- `make mysql` - switches the project to use the MySQL database container; just reload the browser
+- `make phpstan xxx` - runs [PHPStan](https://github.com/phpstan/phpstan) using the [Craft CMS PHPStan config](https://github.com/craftcms/phpstan), with the passed in path, e.g.: `make phpstan vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `phpstan.neon` file
+- `make postgres` - switches the project to use the Postgres database container; just reload the browser
+- `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
+- `make ssh` - opens up a Unix shell inside the PHP container for the project
 
-### XDebug with VScode
+## XDebug with VScode
 
 To use Xdebug with VSCode install the [PHP Debug extension](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug ) and use the following configuration in your `.vscode/launch.json`:
 ```json

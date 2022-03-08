@@ -1,42 +1,27 @@
-CONTAINER?=$(shell basename $(CURDIR))-php-1
+PROJECT_NAME?=$(shell basename $(CURDIR))
+SERVICE_NAME?=php
+CMS_ROOT_NAME?=cms_
+CMS_VERSIONS:=v3 v4
+SEPARATOR:=-
 
-.PHONY: dev clean composer craft mysql nuke postgres ssh update update-clean up
+.PHONY: dev clean nuke up
 
 dev: up
 clean:
+	for v in $(CMS_VERSIONS) ; do \
+		rm -f $(CMS_ROOT_NAME)$$v/composer.lock ; \
+		rm -rf $(CMS_ROOT_NAME)$$v/vendor/ ; \
+	done
+nuke: clean
 	docker-compose down -v
-	docker-compose up --build
-composer: up
-	docker exec -it ${CONTAINER} su-exec www-data composer \
-		$(filter-out $@,$(MAKECMDGOALS))
-craft: up
-	docker exec -it ${CONTAINER} su-exec www-data php craft \
-		$(filter-out $@,$(MAKECMDGOALS))
-mysql: up
-	cp cms/config/_configs/mysql/db.php cms/config/db.php
-	cp cms/config/_configs/mysql/general.php cms/config/general.php
-nuke:
-	docker-compose down -v
-	rm -f cms/composer.lock
 	docker-compose up --build --force-recreate
-postgres: up
-	cp cms/config/_configs/postgres/db.php cms/config/db.php
-	cp cms/config/_configs/postgres/general.php cms/config/general.php
-ssh: up
-	docker exec -it ${CONTAINER} su-exec www-data /bin/sh
-update:
-	docker-compose down
-	rm -f cms/composer.lock
-	docker-compose up
-update-clean:
-	docker-compose down
-	rm -f cms/composer.lock
-	rm -rf cms/vendor/
-	docker-compose up
+up: CONTAINER=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(word 1,$(CMS_VERSIONS))$(SEPARATOR)1
 up:
-	if [ ! "$$(docker ps -q -f name=${CONTAINER})" ]; then \
-		cp -n cms/example.env cms/.env; \
-		docker-compose up; \
+	if [ ! "$$(docker ps -q -f name=$(CONTAINER))" ]; then \
+		for v in $(CMS_VERSIONS) ; do \
+			cp -fn $(CMS_ROOT_NAME)$$v/example.env $(CMS_ROOT_NAME)$$v/.env ; \
+		done ; \
+		docker-compose up ; \
     fi
 %:
 	@:
