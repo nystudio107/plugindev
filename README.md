@@ -70,6 +70,17 @@ Start up the `plugindev` environment by typing `make dev` in a terminal window (
 
 To stop the `plugindev` environment, type `Control-C` in the terminal window you used to start it, which terminates the Docker containers.
 
+**N.B.:** Since the containers need to be built, and Composer needs to install all of the packages, the initial `make dev` can take some time. So before you attempt to load it in your web browser, wait until you see:
+```
+plugindev-php_v3-1         | [09-Mar-2022 04:05:33] NOTICE: fpm is running, pid 8
+plugindev-php_v3-1         | [09-Mar-2022 04:05:33] NOTICE: ready to handle connections
+```
+...and:
+```
+plugindev-php_v4-1         | [09-Mar-2022 04:05:33] NOTICE: fpm is running, pid 8
+plugindev-php_v4-1         | [09-Mar-2022 04:05:33] NOTICE: ready to handle connections
+```
+
 ### Login
 
 * Navigate to `http://localhost:8003` to use the Craft CMS 3 site
@@ -126,6 +137,8 @@ You can run the following from terminal in the `cms_v3` or `cms_v4` CMS director
 - `make postgres` - switches the project to use the Postgres database container; just reload the browser
 - `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
 - `make ssh` - opens up a Unix shell inside the PHP container for the project
+
+**Tip:** If you try a command like `make craft project-config/apply --force` you’ll see an error, because the shell thinks the --force flag should be applied to the make command. To side-step this, use the `--` (double-dash) to disable further option processing, like this: `make -- craft project-config/apply --force`
 
 ### Switching between MySQL & Postgres
 
