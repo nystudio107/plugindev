@@ -115,7 +115,7 @@ The following databases are available in both the MySQL and Postgres database co
 * `project_v3` - the database for Craft CMS 3. User: `project` Password: `project`
 * `project_v4` - the database for Craft CMS 4. User: `project` Password: `project`
 
-Internally, there are also containers that run the Craft CMS queue automatically, a Redis container for caching.
+Internally, there are also containers that run the Craft CMS queue automatically, and a Redis container for caching.
 
 ## `make` Commands
 
@@ -148,7 +148,7 @@ You can run the following from terminal in the `cms_v3` or `cms_v4` CMS director
 - `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector process vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
 - `make ssh` - opens up a Unix shell inside the PHP container for the project
 
-**Tip:** If you try a command like `make craft project-config/apply --force` you’ll see an error, because the shell thinks the --force flag should be applied to the make command. To side-step this, use the `--` (double-dash) to disable further option processing, like this: `make -- craft project-config/apply --force`
+**Tip:** If you try a command like `make craft project-config/apply --force` you’ll see an error, because the shell thinks the `--force` flag should be applied to the `make` command. To side-step this, use the `--` (double-dash) to disable further option processing, like this: `make -- craft project-config/apply --force`
 
 ### Switching between MySQL & Postgres
 
