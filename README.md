@@ -129,13 +129,13 @@ composer craft ecs mysql phpstan postgres rector ssh
 
 You can run the following from terminal in the `cms_v3` or `cms_v4` CMS directories:
 
-- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
+- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs check vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
 - `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install` in the php container
 - `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g.: `make craft project-config/apply` in the php container
 - `make mysql` - switches the project to use the MySQL database container; just reload the browser
 - `make phpstan xxx` - runs [PHPStan](https://github.com/phpstan/phpstan) using the [Craft CMS PHPStan config](https://github.com/craftcms/phpstan), with the passed in path, e.g.: `make phpstan vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `phpstan.neon` file
 - `make postgres` - switches the project to use the Postgres database container; just reload the browser
-- `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
+- `make rector xxx` - runs [Rector](https://github.com/rectorphp/rector) using the [Craft CMS Rector config](https://github.com/craftcms/rector), with the passed in path, e.g.: `make rector process vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `rector.php` file
 - `make ssh` - opens up a Unix shell inside the PHP container for the project
 
 **Tip:** If you try a command like `make craft project-config/apply --force` you’ll see an error, because the shell thinks the --force flag should be applied to the make command. To side-step this, use the `--` (double-dash) to disable further option processing, like this: `make -- craft project-config/apply --force`
