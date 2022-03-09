@@ -91,6 +91,16 @@ The default login for both sites is:
 **User:** `admin` \
 **Password:** `password`
 
+### Editor
+
+You should open the `craft_v3` and `craft_v4` subdirectories in separate windows in your code editor of choice, rather than opening up the entire `plugindev` project in a single window.
+
+This allows your editor to index each Craft CMS install separately for things like code completion, and it also allows you to have separate PHP language level inspection settings (PHP 7.1 for Craft CMS 3, PHP 8 for Craft CMS 4).
+
+You can also set up IDEs like PhpStorm to use the PHP interpreter inside the appropriate Docker container (`plugindev_php_xdebug_v3` for Craft CMS 3, and `plugindev_php_xdebug_v4` for Craft CMS 4), and set up path mappings for XDebug.
+
+Remember to enable the Symfony plugin if you're using PhpStorm for each project.
+
 ### Exposed ports & services
 
 The following ports are exposed on `localhost` while `plugindev` is running (these need to not be in use prior to starting up `plugindev`):
