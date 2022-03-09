@@ -2,7 +2,7 @@
 
 ## About nystudio107/plugindev
 
-This is a project scaffolding package for Craft CMS & Craft CMS 4 plugin development.
+This is a project scaffolding package for Craft CMS 3 & Craft CMS 4 plugin development.
 
 Read the [A Craft CMS Plugin Local Development Environment article](https://nystudio107.com/blog/a-craft-cms-plugin-local-development-environment) for full details on this project.
 
@@ -52,7 +52,7 @@ To set up your local dev environment, follow these steps:
 
 ### Setting up Plugin Git Repos
 
-To make working on plugins from multiple versions of Craft CMS easier, clone each of your plugin repositories down to two separate directories: `craft_v3` and `craft_4`.
+To make working on plugins from multiple versions of Craft CMS easier, clone each of your plugin repositories down to two separate directories: `craft_v3` and `craft_v4`.
 
 These are two separate local repositories from the same remote git origin repository.
 
