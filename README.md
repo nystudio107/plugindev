@@ -41,6 +41,16 @@ Each version of Craft CMS runs in separate Docker containers, and uses a separat
 
 Composer will have already created a `.env` file in the `cms_v3/` & `cms_v4` directories, based off of the respective `example.env` files.
 
+### Docker Desktop Setup
+
+The `plugindev` setup assumes you are using the Docker Compose API v2, which changes the container separator character from `_` to `-`.
+
+This affects the names of your containers, which the `make` interface depends on.
+
+So go to Docker &rarr; Preferences &rarr; General and check the **Use Docker Compose V2** checkbox.
+
+If you've already set up `plugindev` before changing to Docker Compose v2, use `make nuke` to rebuild the environment from scratch. The reason is if the Docker images have already been created, it'll keep using the v1 naming, even after you've switched to v2. The gory details can be found in this [StackOverflow discussion](https://stackoverflow.com/questions/69464001/docker-compose-container-name-use-dash-instead-of-underscore/70295720#70295720).
+
 ### Setting up Local Dev
 
 To set up your local dev environment, follow these steps:
