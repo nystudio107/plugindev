@@ -5,5 +5,5 @@ hasUrls: true
 language: en-US
 name: English
 primary: true
-siteGroup: f89601e9-4ba9-4a48-9e99-350aa9914912
+siteGroup: f89601e9-4ba9-4a48-9e99-350aa9914912 # plugindev
 sortOrder: 1

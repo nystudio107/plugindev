@@ -4,27 +4,17 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3
+            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3 # Plain Text
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f088d1ae-0e27-4b44-8409-9b280767bc95
-            warning: null
-            width: 100
-          -
-            fieldUid: abcda4a4-b1db-4677-b5d6-69588443704f
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: aa115fb5-c963-4b33-ae24-6142e5fbea98
+            uid: c3ae85e2-d868-435c-9fbb-fa56c7fe0ad3
             warning: null
             width: 100
         name: Default
-        uid: 3a845609-01dd-4d7f-bafd-8c001c4be32d
+        uid: 39fa5f70-670b-44cc-a7b2-e7684c2ca914
 handle: globals
 name: Globals
 sortOrder: 0
