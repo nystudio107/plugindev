@@ -8,7 +8,7 @@ Read the [A Craft CMS Plugin Local Development Environment article](https://nyst
 
 It gives you the following out of the box:
 
-* Dual installs of both Craft CMS `^3.7.26` and Craft CMS `^4.0.0-alpha.1` running simultaneously
+* Dual installs of both Craft CMS `^3.7.26` and Craft CMS `^4.0.0-beta.1` running simultaneously
 * `craftcms/redactor` plugin is installed
 * `craftcms/commerce` plugin is installed
 * A PHP 8.x environment with Imagick and other needed extensions pre-installed
