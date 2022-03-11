@@ -1,4 +1,4 @@
-dateModified: 1646968691
+dateModified: 1646977481
 email:
   fromEmail: andrew@nystudio107.com
   fromName: Craft
@@ -30,6 +30,10 @@ meta:
     fb3a8f31-d1cc-4c13-903b-a501f7e51f54: Homepage # Homepage
 plugins:
   cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  eager-beaver:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
