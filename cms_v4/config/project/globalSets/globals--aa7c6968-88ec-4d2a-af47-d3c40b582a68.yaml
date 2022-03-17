@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3 # Plain Text
+            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3
             instructions: null
             label: null
             required: false

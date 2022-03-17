@@ -28,7 +28,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3 # Plain Text
+            fieldUid: 21903cb2-5b82-49ea-9766-e120d0951ea3
             instructions: null
             label: null
             required: false
@@ -42,7 +42,7 @@ fieldLayouts:
 handle: blog
 hasTitleField: true
 name: Blog
-section: de308a7d-1794-448f-9176-29e2eace7ecf # Blog
+section: de308a7d-1794-448f-9176-29e2eace7ecf
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null
