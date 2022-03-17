@@ -1,3 +1,4 @@
+{% spaceless %}
 {# -- Root global variables that all templates inherit from -- #}
 {# -- This allows for defining site-wide Twig variables as needed -- #}
 {#
@@ -8,7 +9,6 @@
  │                                  htmlPage                                   │
  └─────────────────────────────────────────────────────────────────────────────┘
 #}
-{% spaceless %}
 
 {# -- Prefetch & preconnect headers and links -- #}
 {% set prefetchUrls = [
@@ -18,7 +18,6 @@
 {% set baseUrl = alias('@assetsUrl') ~ '/' %}
 
 {# -- Twig output from the render; this must be in a block -- #}
-{% block htmlPage %}
+{% endspaceless %}{% block htmlPage %}
 {% endblock %}
 
-{% endspaceless %}
