@@ -1,11 +1,13 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.3 - UNRELEASED
+## 1.1.3 - 2022.03.17
 ### Changed
 * Adjust `spaceless` from the root template for easier debugging
 * Comment out non-Craft specific Rector settings in `rector.php`, for the initial pass
 * Add Craft Commerce `4.0.0-beta.1` to `cms_v4`
 * Update to Craft CMS `4.0.0-beta.2`
+* Updated Project Config files for `craft_v3` & `craft_v4`
+* Updated database seeds for `craft_v3` & `craft_v4`
 
 ## 1.1.2 - 2022.03.10
 ### Changed
