@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.5 - 2022.03.17
+### Changed
+* Expose ports `33060` for MySQL and port `54320` on the host side, to avoid conflicts with other local development environments
+
 ## 1.1.4 - 2022.03.17
 ### Added
 * Restart the `queue` container after switching between `mysql` and `postgres` so the queue runner process picks up the new database settings
