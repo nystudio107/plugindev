@@ -49,7 +49,6 @@ services:
     env_file: &env_v3
       - ./cms_v3/.env
     init: true
-    tty: true
     volumes: &php-volumes_v3
       # Change the path below to map to your local plugin repositories
       - /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3
@@ -74,7 +73,6 @@ services:
     env_file: &env_v4
       - ./cms_v4/.env
     init: true
-    tty: true
     volumes: &php-volumes_v4
       # Change the path below to map to your local plugin repositories
       - /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4
@@ -97,7 +95,6 @@ services:
     env_file:
       *env_v3
     init: true
-    tty: true
     volumes:
       *php-volumes_v3
   # php_xdebug_v4 - run php-fpm with xdebug
@@ -110,7 +107,6 @@ services:
     env_file:
       *env_v4
     init: true
-    tty: true
     volumes:
       *php-volumes_v4
   # postgres - database
@@ -138,7 +134,6 @@ services:
     env_file:
       *env_v3
     init: true
-    tty: true
     volumes:
       *php-volumes_v3
   # queue_v4 - runs queue jobs via php craft queue/listen
@@ -151,7 +146,6 @@ services:
     env_file:
       *env_v4
     init: true
-    tty: true
     volumes:
       *php-volumes_v4
   # redis - key/value database for caching & php sessions
