@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.4 - 2022.03.17
+### Added
+* Restart the `queue` container after switching between `mysql` and `postgres` so the queue runner process picks up the new database settings
+
 ## 1.1.3 - 2022.03.17
 ### Changed
 * Adjust `spaceless` from the root template for easier debugging
