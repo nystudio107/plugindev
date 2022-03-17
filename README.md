@@ -113,12 +113,14 @@ Remember to enable the Symfony plugin if you're using PhpStorm for each project.
 
 ### Exposed ports & services
 
+`plugindev` intentionally uses non-standard ports so you can run it side-by-side with another local dev environment, without risk of port conflicts.
+
 The following ports are exposed on `localhost` while `plugindev` is running (these need to not be in use prior to starting up `plugindev`):
 
 * `8003` - The Craft CMS 3 website
 * `8004` - The Craft CMS 4 website
-* `5432` - The Postgres database server
-* `3306` - The MySQL database server
+* `54320` - The Postgres database server
+* `33060` - The MySQL database server
 
 The following databases are available in both the MySQL and Postgres database containers:
 
