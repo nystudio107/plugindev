@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.3 - UNRELEASED
+### Changed
+* Remove `spaceless` from the root template for easier debugging
+
 ## 1.1.2 - 2022.03.10
 ### Changed
 * Updated for Craft CMS `4.0.0-beta.1`
