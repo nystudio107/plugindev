@@ -2,7 +2,10 @@
 
 ## 1.1.3 - UNRELEASED
 ### Changed
-* Remove `spaceless` from the root template for easier debugging
+* Adjust `spaceless` from the root template for easier debugging
+* Comment out non-Craft specific Rector settings in `rector.php`, for the initial pass
+* Add Craft Commerce `4.0.0-beta.1` to `cms_v4`
+* Update to Craft CMS `4.0.0-beta.2`
 
 ## 1.1.2 - 2022.03.10
 ### Changed
