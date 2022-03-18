@@ -11,6 +11,7 @@
 # @link      https://nystudio107.com/
 # @license   MIT
 
+sleep 60
 while true
 do
   cd $CMS_ROOT_PATH
