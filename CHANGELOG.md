@@ -7,6 +7,7 @@
 
 ### Changed
 * Expose ports `33060` for MySQL and port `54320` on the host side, to avoid conflicts with other local development environments
+* Added a `sleep 60` in the `run_queue.sh` containers, so they don't run the "keepalive" script until the other containers have started
 
 ## 1.1.4 - 2022.03.17
 ### Added
