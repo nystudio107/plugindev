@@ -1,6 +1,10 @@
 # nystudio107/plugindev Change Log
 
 ## 1.1.5 - 2022.03.17
+
+### Added
+* Significantly increased startup times via a `composer_install.sh` script that only runs `composer install` at container startup time if `composer.lock` or `vendor/` is missing
+
 ### Changed
 * Expose ports `33060` for MySQL and port `54320` on the host side, to avoid conflicts with other local development environments
 
