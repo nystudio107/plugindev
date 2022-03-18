@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.6 - 2022.03.17
+### Added
+* Run migrations / project config changes via the `run_queue.sh` script, only after both db containers respond
+
 ## 1.1.5 - 2022.03.17
 
 ### Added
