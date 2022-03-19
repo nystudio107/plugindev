@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.7 - 2022.03.19
+### Changed
+* Wait until the `composer install` is done by looking for the `vendor/autoload.php` file in the `queue` container
+
 ## 1.1.6 - 2022.03.17
 ### Added
 * Run migrations / project config changes via the `run_queue.sh` script, only after both db containers respond

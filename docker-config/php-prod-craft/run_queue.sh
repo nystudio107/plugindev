@@ -12,6 +12,7 @@
 # @link      https://nystudio107.com/
 # @license   MIT
 
+cd $CMS_ROOT_PATH
 # Wait until the MySQL db container responds
 until eval "mysql -h mysql -u $DB_USER -p$DB_PASSWORD $DB_DATABASE -e 'select 1' > /dev/null 2>&1"
 do
@@ -22,8 +23,12 @@ until eval "PGPASSWORD=$DB_PASSWORD psql -h postgres -U $DB_USER $DB_DATABASE -c
 do
     sleep 1
 done
+# Wait until the `composer install` is done by looking for the `vendor/autoload.php` file
+while [ ! -f vendor/autoload.php ]
+do
+  sleep 1
+done
 # Run any pending migrations/project config changes
-cd $CMS_ROOT_PATH
 su-exec www-data composer craft-update
 # Run a queue listener
 su-exec www-data php craft queue/listen 10
