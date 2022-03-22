@@ -4,6 +4,8 @@
  * Craft console bootstrap file
  */
 
+// Turn stream logging on for the queue container
+define('CRAFT_STREAM_LOG', true);
 // Load shared bootstrap
 require __DIR__ . '/bootstrap.php';
 

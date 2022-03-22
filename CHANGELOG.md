@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.8 - 2022.03.22
+### Changed
+* Add a stream logging target for `stderr` so that we can capture thrown exceptions or other errors that would normally be captured only to a specific log file like `queue.log`
+
 ## 1.1.7 - 2022.03.19
 ### Changed
 * Wait until the `composer install` is done by looking for the `vendor/autoload.php` file in the `queue` container
