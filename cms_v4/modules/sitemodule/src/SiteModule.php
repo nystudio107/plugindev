@@ -10,20 +10,21 @@
 
 namespace modules\sitemodule;
 
-use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
-use modules\sitemodule\services\Helper;
-use modules\sitemodule\variables\SiteVariable;
-
 use Craft;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\events\TemplateEvent;
 use craft\i18n\PhpMessageSource;
+use craft\log\Dispatcher;
+use craft\log\StreamLogTarget;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
-
+use modules\sitemodule\assetbundles\sitemodule\SiteModuleAsset;
+use modules\sitemodule\services\Helper;
+use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
 use yii\base\InvalidConfigException;
 use yii\base\Module;
+use yii\log\Logger;
 
 /**
  * Class SiteModule
@@ -58,7 +59,7 @@ class SiteModule extends Module
         // Translation category
         $i18n = Craft::$app->getI18n();
         /** @noinspection UnSafeIsSetOverArrayInspection */
-        if (!isset($i18n->translations[$id]) && !isset($i18n->translations[$id.'*'])) {
+        if (!isset($i18n->translations[$id]) && !isset($i18n->translations[$id . '*'])) {
             $i18n->translations[$id] = [
                 'class' => PhpMessageSource::class,
                 'sourceLanguage' => 'en-US',
@@ -70,7 +71,7 @@ class SiteModule extends Module
 
         // Base template directory
         Event::on(View::class, View::EVENT_REGISTER_CP_TEMPLATE_ROOTS, function (RegisterTemplateRootsEvent $e) {
-            if (is_dir($baseDir = $this->getBasePath().DIRECTORY_SEPARATOR.'templates')) {
+            if (is_dir($baseDir = $this->getBasePath() . DIRECTORY_SEPARATOR . 'templates')) {
                 $e->roots[$this->id] = $baseDir;
             }
         });
@@ -95,36 +96,44 @@ class SiteModule extends Module
                 'class' => Helper::class,
             ]
         ]);
-
         // Register our variables
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
-            function (Event $event) {
+            static function (Event $event) {
                 /** @var CraftVariable $variable */
                 $variable = $event->sender;
                 $variable->set('site', SiteVariable::class);
             }
         );
-
         // Register our Asset bundle for CP requests
         if (Craft::$app->getRequest()->getIsCpRequest()) {
             Event::on(
                 View::class,
                 View::EVENT_BEFORE_RENDER_TEMPLATE,
-                function (TemplateEvent $event) {
+                static function (TemplateEvent $event) {
                     try {
                         Craft::$app->getView()->registerAssetBundle(SiteModuleAsset::class);
                     } catch (InvalidConfigException $e) {
                         Craft::error(
-                            'Error registering AssetBundle - '.$e->getMessage(),
+                            'Error registering AssetBundle - ' . $e->getMessage(),
                             __METHOD__
                         );
                     }
                 }
             );
         }
-
+        // Create a `stderr` log target, so we can log exceptions that would
+        // normally go only to a specific log file
+        if (defined('CRAFT_STREAM_LOG') && CRAFT_STREAM_LOG === true) {
+            $logger = Craft::getLogger();
+            $logger->dispatcher->targets[Dispatcher::TARGET_STDERR] = Craft::createObject([
+                'class' => StreamLogTarget::class,
+                'url' => 'php://stderr',
+                'levels' => Logger::LEVEL_ERROR | Logger::LEVEL_WARNING,
+                'includeUserIp' => true,
+            ]);
+        }
         Craft::info(
             Craft::t(
                 'site-module',
