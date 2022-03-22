@@ -28,7 +28,7 @@ services:
       - SYS_NICE  # CAP_SYS_NICE
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASES: "project_v3 project_v4"
+      MYSQL_DATABASES: "project_v3 project_v4 test"
       MYSQL_USER: project
       MYSQL_PASSWORD: project
     init: true
@@ -115,7 +115,7 @@ services:
       context: ./docker-config/postgres
       dockerfile: ./Dockerfile
     environment:
-      POSTGRES_DATABASES: "project_v3 project_v4"
+      POSTGRES_DATABASES: "project_v3 project_v4 test"
       POSTGRES_USER: project
       POSTGRES_PASSWORD: project
     init: true

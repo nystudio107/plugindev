@@ -128,6 +128,7 @@ The following databases are available in both the MySQL and Postgres database co
 
 * `project_v3` - the database for Craft CMS 3. User: `project` Password: `project`
 * `project_v4` - the database for Craft CMS 4. User: `project` Password: `project`
+* `test` - an entirely empty database that can be used for testing. User: `project` Password: `project`
 
 Internally, there are also containers that run the Craft CMS queue automatically, and a Redis container for caching.
 
