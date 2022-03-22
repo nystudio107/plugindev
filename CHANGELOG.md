@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.10 - UNRELEASED
+### Added
+* Added empty `test` databases for local testing
+
 ## 1.1.9 - 2022.03.22
 ### Fixed
 * Fixed the SiteModule to work properly on Craft 4, removing the additional logging code, as it is not needed. The Craft logger handles it properly as long as `CRAFT_STREAM_LOG=true`
