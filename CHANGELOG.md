@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.10 - UNRELEASED
+## 1.1.10 - 2022.03.22
 ### Added
 * Added empty `test` databases for local testing
 
