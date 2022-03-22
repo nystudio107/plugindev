@@ -14,7 +14,6 @@ use Craft;
 use craft\events\RegisterTemplateRootsEvent;
 use craft\events\TemplateEvent;
 use craft\i18n\PhpMessageSource;
-use craft\log\Dispatcher;
 use craft\log\StreamLogTarget;
 use craft\web\twig\variables\CraftVariable;
 use craft\web\View;
@@ -24,7 +23,6 @@ use modules\sitemodule\variables\SiteVariable;
 use yii\base\Event;
 use yii\base\InvalidConfigException;
 use yii\base\Module;
-use yii\log\Logger;
 
 /**
  * Class SiteModule
@@ -122,17 +120,6 @@ class SiteModule extends Module
                     }
                 }
             );
-        }
-        // Create a `stderr` log target, so we can log exceptions that would
-        // normally go only to a specific log file
-        if (defined('CRAFT_STREAM_LOG') && CRAFT_STREAM_LOG === true) {
-            $logger = Craft::getLogger();
-            $logger->dispatcher->targets[Dispatcher::TARGET_STDERR] = Craft::createObject([
-                'class' => StreamLogTarget::class,
-                'url' => 'php://stderr',
-                'levels' => Logger::LEVEL_ERROR | Logger::LEVEL_WARNING,
-                'includeUserIp' => true,
-            ]);
         }
         Craft::info(
             Craft::t(
