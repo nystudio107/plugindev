@@ -15,6 +15,7 @@ It gives you the following out of the box:
 * Code quality tools like `rector`, `phpstan`, and `ecs` are all baked in
 * A prefab database seed for both MySQL and Postgres databases
 * The ability to switch between MySQL and Postgres easily
+* A separate `test` database available for use during Codeception testing
 * Dual [production/debug Docker](https://nystudio107.com/blog/an-annotated-docker-config-for-frontend-web-development#xdebug-performance) containers for PHP, for improved performance while also supporting XDebug
 * Multiple sites for testing
 * Prefab content with a "blog" channel for testing
