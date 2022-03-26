@@ -12,5 +12,5 @@
 
 cd $CMS_ROOT_PATH
 if [ ! -f "composer.lock" ] || [ ! -d "vendor" ]; then
-    su-exec www-data composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction
+    su-exec www-data composer install --verbose --no-progress --optimize-autoloader --no-interaction
 fi
