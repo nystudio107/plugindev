@@ -3,6 +3,7 @@
 ## 1.1.11 - 2022.03.26
 ### Added
 * Dramatically sped up the startup time for the PHP containers by moving the permissions setting script to run asynchronously in the queue container via the `run_queue.sh` script
+* Added Codeception via the `make codecept` command via PR ([#7](https://github.com/nystudio107/plugindev/pull/7))
 
 ## 1.1.10 - 2022.03.22
 ### Added
