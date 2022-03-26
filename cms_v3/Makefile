@@ -9,8 +9,11 @@ CONTAINER:=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(CMS_VERSION)$(SEPARATOR)
 QUEUE_CONTAINER:=$(PROJECT_NAME)$(SEPARATOR)$(QUEUE_SERVICE_NAME)_$(CMS_VERSION)$(SEPARATOR)1
 CMS_DIR:=$(CMS_ROOT_NAME)$(CMS_VERSION)
 
-.PHONY: composer craft ecs mysql phpstan postgres rector ssh
+.PHONY: codecept composer craft ecs mysql phpstan postgres rector ssh
 
+codecept:
+	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/codecept \
+		$(filter-out $@,$(MAKECMDGOALS))
 composer:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data composer \
 		$(filter-out $@,$(MAKECMDGOALS))
