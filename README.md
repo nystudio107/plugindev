@@ -13,6 +13,7 @@ It gives you the following out of the box:
 * `craftcms/commerce` plugin is installed
 * A PHP 8.x environment with Imagick and other needed extensions pre-installed
 * Code quality tools like `rector`, `phpstan`, and `ecs` are all baked in
+* The Codeception PHP testing framework is installed and available for running tests
 * A prefab database seed for both MySQL and Postgres databases
 * The ability to switch between MySQL and Postgres easily
 * A separate `test` database available for use during Codeception testing
@@ -155,9 +156,10 @@ composer craft ecs mysql phpstan postgres rector ssh
 
 You can run the following from terminal in the `cms_v3` or `cms_v4` CMS directories:
 
-- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs check vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
 - `make composer xxx` - runs the `composer` command passed in, e.g. `make composer install` in the php container
 - `make craft xxx` - runs the `craft` [console command](https://craftcms.com/docs/3.x/console-commands.html) passed in, e.g.: `make craft project-config/apply` in the php container
+- `make codecept xxx` - runs the [Codeception](https://codeception.com/) testing framework with the passed in commands, e.g.: `make codecept run --steps` in the php container
+- `make ecs xxx` - runs [Easy Coding Standard](https://github.com/symplify/easy-coding-standard) using the [Craft CMS ECS config](https://github.com/craftcms/ecs), with the passed in path, e.g.: `make ecs check vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `ecs.php` file
 - `make mysql` - switches the project to use the MySQL database container; just reload the browser
 - `make phpstan xxx` - runs [PHPStan](https://github.com/phpstan/phpstan) using the [Craft CMS PHPStan config](https://github.com/craftcms/phpstan), with the passed in path, e.g.: `make phpstan vendor/nystudio107/craft-seomatic/src`. Additional settings are available in the `phpstan.neon` file
 - `make postgres` - switches the project to use the Postgres database container; just reload the browser

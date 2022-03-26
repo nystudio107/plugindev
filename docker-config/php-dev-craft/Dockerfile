@@ -92,7 +92,5 @@ RUN set -eux; \
         && \
         npm install -g puppeteer
 
-    # Force permissions, update Craft, and start php-fpm
-CMD chown -R www-data:www-data /var/www/project \
-    && \
-    php-fpm
+# Start php-fpm
+CMD php-fpm
