@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.11 - 2022.03.26
+### Added
+* Dramatically sped up the startup time for the PHP containers by moving the permissions setting script to run asynchronously in the queue container via the `run_queue.sh` script
+
 ## 1.1.10 - 2022.03.22
 ### Added
 * Added empty `test` databases for local testing
