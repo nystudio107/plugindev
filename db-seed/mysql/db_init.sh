@@ -39,4 +39,5 @@ do
     # Seed the database
     echo "### Seeding database \`$MYSQL_DB\`"
     cat "/docker-entrypoint-initdb.d/$MYSQL_DB_SEED_DIR/$MYSQL_DB.sql" | "${mysql[@]}"
+    echo "### \`$MYSQL_DB\` database seeded"
 done
