@@ -92,5 +92,8 @@ RUN set -eux; \
         && \
         npm install -g puppeteer
 
+# Force the permissions to be set properly
+RUN chown -R www-data:www-data /var/www/project
+
 # Start php-fpm
 CMD php-fpm

@@ -17,4 +17,5 @@ do
     pgsql+=( "$POSTGRES_DB" )
     echo "### Seeding database \`$POSTGRES_DB\`"
     cat "/docker-entrypoint-initdb.d/$POSTGRES_DB_SEED_DIR/$POSTGRES_DB.sql" | "${pgsql[@]}" >/dev/null
+    echo "### \`$POSTGRES_DB\` database seeded"
 done
