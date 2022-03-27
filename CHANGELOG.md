@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.14 - 2022.03.27
+### Added
+* Fix `php-dev-craft` Docker image regression by adding `WORKDIR` back in
+
 ## 1.1.13 - 2022.03.26
 ### Added
 * Ensure permissions on directories Craft needs to write to
