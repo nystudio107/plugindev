@@ -92,6 +92,8 @@ RUN set -eux; \
         && \
         npm install -g puppeteer
 
+WORKDIR /var/www/project
+
 # Force the permissions to be set properly
 RUN chown -R www-data:www-data /var/www/project
 
