@@ -10,6 +10,10 @@
 # @link      https://nystudio107.com/
 # @license   MIT
 
+# Ensure permissions on directories Craft needs to write to
+chown -R www-data:www-data $CMS_ROOT_PATH/storage
+chown -R www-data:www-data $CMS_ROOT_PATH/web/cpresources
+# Check for `composer.lock` & `vendor/`
 cd $CMS_ROOT_PATH
 if [ ! -f "composer.lock" ] || [ ! -d "vendor" ]; then
     su-exec www-data composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction

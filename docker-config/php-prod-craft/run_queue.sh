@@ -31,6 +31,9 @@ while [ ! -f vendor/autoload.php ]
 do
   sleep 1
 done
+# Ensure permissions on directories Craft needs to write to
+chown -R www-data:www-data $CMS_ROOT_PATH/storage
+chown -R www-data:www-data $CMS_ROOT_PATH/web/cpresources
 # Run any pending migrations/project config changes
 su-exec www-data composer craft-update
 # Run a queue listener

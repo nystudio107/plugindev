@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.13 - 2022.03.26
+### Added
+* Ensure permissions on directories Craft needs to write to
+
 ## 1.1.12 - 2022.03.26
 ### Added
 * Added more logging to indicate when a container is waiting for another service to start up, and when seeding a database is complete
