@@ -98,6 +98,8 @@ COPY ./run_queue.sh .
 RUN chmod a+x run_queue.sh
 COPY ./composer_install.sh .
 RUN chmod a+x composer_install.sh
+# Force the permissions to be set properly
+RUN chown -R www-data:www-data /var/www/project
 
 # Run the composer_install.sh script that will do a `composer install`:
 # - If `composer.lock` is missing
