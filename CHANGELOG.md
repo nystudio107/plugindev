@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.15 - UNRELEASED
+## 1.1.15 - 2022.03.28
 ### Changed
 * Add `disableProcessTimeout` to the `post-craft-update` Composer scripts, and run Project Config before migrations
 
