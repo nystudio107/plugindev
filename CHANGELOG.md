@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.17 - UNRELEASED
+### Added
+* Added `config/custom.php` for custom config settings
+
 ## 1.1.16 - 2022.04.08
 ### Changed
 * Run migrations first via `composer.json` scripts, because Craft won't apply Project Config if there are pending migrations
