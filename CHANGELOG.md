@@ -1,8 +1,11 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.17 - UNRELEASED
+## 1.1.17 - 2022.04.15
 ### Added
 * Added `config/custom.php` for custom config settings
+
+### Changed
+* Changed `bootstrap.php` to allow `.env`-set environment variables override existing injected environment variables ([#82](https://github.com/craftcms/craft/issues/82))
 
 ## 1.1.16 - 2022.04.08
 ### Changed
