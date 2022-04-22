@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.18 - UNRELEASED
+### Fixed
+* Ensure that the MySQL image can pick from the ARM64 architecture by using `latest` tag
+
 ## 1.1.17 - 2022.04.15
 ### Added
 * Added `config/custom.php` for custom config settings
