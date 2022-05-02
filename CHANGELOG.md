@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.19 - 2022.05.02
+### Fixed
+* Clean up initial check for `composer.lock` or `vendor/autoload.php` to ensure the first-time install is done
+
 ## 1.1.18 - 2022.04.22
 ### Fixed
 * Ensure that the [mysql/mysql-server](https://hub.docker.com/r/mysql/mysql-server/tags) image can pick from the ARM64 architecture by using `latest` tag
