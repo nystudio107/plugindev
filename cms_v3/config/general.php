@@ -43,4 +43,6 @@ return [
     'useEmailAsUsername' => false,
     'usePathInfo' => true,
     'useProjectConfigFile' => true,
+    'requireMatchingUserAgentForSession' => false,
+    'rememberedUserSessionDuration' => 31536000,
 ];
