@@ -42,4 +42,6 @@ return [
     'omitScriptNameInUrls' => true,
     'useEmailAsUsername' => false,
     'usePathInfo' => true,
+    'requireMatchingUserAgentForSession' => false,
+    'rememberedUserSessionDuration' => 31536000,
 ];
