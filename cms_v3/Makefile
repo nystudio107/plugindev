@@ -1,10 +1,16 @@
+# Determine the docker compose API version to get the separator character
+VERSION?=$(shell docker-compose -v)
+ifneq (,$(findstring v2.,$(VERSION)))
+	SEPARATOR:=-
+else
+	SEPARATOR:=_
+endif
 PROJECT_NAME?=$(shell basename $(dir $(CURDIR)))
 PROJECT_DIR?=/var/www/project/
 SERVICE_NAME?=php
 QUEUE_SERVICE_NAME?=queue
 CMS_ROOT_NAME?=cms_
 CMS_VERSION:=v3
-SEPARATOR:=-
 CONTAINER:=$(PROJECT_NAME)$(SEPARATOR)$(SERVICE_NAME)_$(CMS_VERSION)$(SEPARATOR)1
 QUEUE_CONTAINER:=$(PROJECT_NAME)$(SEPARATOR)$(QUEUE_SERVICE_NAME)_$(CMS_VERSION)$(SEPARATOR)1
 CMS_DIR:=$(CMS_ROOT_NAME)$(CMS_VERSION)

@@ -1,5 +1,11 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.20 - 2022.05.03
+### Added
+* Determine the container name separator character by checking the Docker Compose API version at runtime
+* Add `config/general.php` settings for `requireMatchingUserAgentForSession` & `rememberedUserSessionDuration` ([#10](https://github.com/nystudio107/plugindev/pull/10))
+* Add Elements Panel plugin ([#11](https://github.com/nystudio107/plugindev/pull/11))
+
 ## 1.1.19 - 2022.05.02
 ### Fixed
 * Clean up initial check for `composer.lock` or `vendor/autoload.php` to ensure the first-time install is done
