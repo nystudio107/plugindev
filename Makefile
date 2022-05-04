@@ -1,8 +1,14 @@
+# Determine the docker compose API version to get the separator character
+VERSION?=$(shell docker-compose -v)
+ifneq (,$(findstring v2.,$(VERSION)))
+	SEPARATOR:=-
+else
+	SEPARATOR:=_
+endif
 PROJECT_NAME?=$(shell basename $(CURDIR))
 SERVICE_NAME?=php
 CMS_ROOT_NAME?=cms_
 CMS_VERSIONS:=v3 v4
-SEPARATOR:=-
 
 .PHONY: dev clean nuke up
 
