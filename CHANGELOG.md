@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.21 - 2022.05.31
+### Changed
+* Prefer release plugin/package versions where available for Craft CMS 4
+* Use `craft up` to run migrations & apply Project Config changes
+
 ## 1.1.20 - 2022.05.03
 ### Added
 * Determine the container name separator character by checking the Docker Compose API version at runtime
