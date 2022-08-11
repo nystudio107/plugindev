@@ -8,16 +8,17 @@
  * @see craft\config\DbConfig
  */
 
+use craft\config\DbConfig;
 use craft\helpers\App;
 
-return [
-    'dsn' => App::env('DB_DSN') ?: null,
-    'driver' => 'mysql',
-    'server' => 'mysql',
-    'port' => 3306,
-    'database' => App::env('DB_DATABASE'),
-    'user' => App::env('DB_USER'),
-    'password' => App::env('DB_PASSWORD'),
-    'schema' => App::env('DB_SCHEMA'),
-    'tablePrefix' => App::env('DB_TABLE_PREFIX'),
-];
+return DbConfig::create()
+    ->dsn(App::env('DB_DSN') ?: null)
+    ->driver('mysql')
+    ->server('mysql')
+    ->port(3306)
+    ->database(App::env('DB_DATABASE'))
+    ->user(App::env('DB_USER'))
+    ->password(App::env('DB_PASSWORD'))
+    ->schema(App::env('DB_SCHEMA'))
+    ->tablePrefix(App::env('DB_TABLE_PREFIX'))
+    ;

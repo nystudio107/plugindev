@@ -1,5 +1,11 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.22 - 2022.09.11
+### Changed
+* Use fluent model config settings for `general.php` & `db.php`
+* Bumped minimum `craftcms/cms` versions for both Craft 3 and Craft 4
+* Updated to reflect the status of the Craft 4 plugins that are out of beta (and what's left to do)
+
 ## 1.1.21 - 2022.05.31
 ### Changed
 * Prefer release plugin/package versions where available for Craft CMS 4
