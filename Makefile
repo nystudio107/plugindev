@@ -29,7 +29,8 @@ up:
 		done ; \
 		docker-compose up ; \
     fi
-down: docker-compose down
+down: 
+	docker-compose down
 %:
 	@:
 # ref: https://stackoverflow.com/questions/6273608/how-to-pass-argument-to-makefile-from-command-line
