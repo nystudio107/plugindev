@@ -6,7 +6,7 @@
   "require": {
     "php": "^7.2.5 || ^8.0.2",
     "craftcms/aws-s3": "^1.3.0",
-    "craftcms/cms": "3.7.51",
+    "craftcms/cms": "^3.7.0",
     "craftcms/commerce": "^3.0.0",
     "craftcms/digital-products": "^2.0.0",
     "craftcms/feed-me": "^4.4.0",
