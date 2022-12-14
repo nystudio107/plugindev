@@ -11,6 +11,7 @@
     "craftcms/digital-products": "^2.0.0",
     "craftcms/feed-me": "^4.4.0",
     "craftcms/redactor": "^2.0.0",
+    "nystudio107/craft-code-field": "^3.0.0",
     "nystudio107/craft-connect": "^1.0.0",
     "nystudio107/craft-cookies": "^1.0.0",
     "nystudio107/craft-disqus": "^1.0.0",
