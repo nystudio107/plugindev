@@ -1,5 +1,14 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.23 - 2022.12.14
+###  Added
+* Added `nystudio107/craft-code-field`
+
+### Changed
+* Added updated versions of nystudio107 plugins to reflect their beta/release status
+* Added `craftcms/generator` to the `craft_v4` `composer.json`
+* Bumped the minimum Craft CMS versions to the latest
+
 ## 1.1.22 - 2022.09.11
 ### Changed
 * Use fluent model config settings for `general.php` & `db.php`
