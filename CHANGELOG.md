@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.24 - 2022.12.15
+###  Changed
+* Ensure that flags can be passed down via `make xxx` commands via `$(MAKEFLAGS)`. e.g.: `make craft make field-type -- --module=test` (simple flags without values like `--help` already worked)
+
 ## 1.1.23 - 2022.12.14
 ###  Added
 * Added `nystudio107/craft-code-field`
