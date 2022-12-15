@@ -19,30 +19,30 @@ CMS_DIR:=$(CMS_ROOT_NAME)$(CMS_VERSION)
 
 codecept:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/codecept \
-		$(filter-out $@,$(MAKECMDGOALS))
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 composer:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data composer \
-		$(filter-out $@,$(MAKECMDGOALS))
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 craft:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data php craft \
-		$(filter-out $@,$(MAKECMDGOALS))
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 ecs:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/ecs \
-		$(filter-out $@,$(MAKECMDGOALS))
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 mysql:
 	cp config/_configs/mysql/db.php config/db.php
 	cp config/_configs/mysql/general.php config/general.php
 	docker restart $(QUEUE_CONTAINER)
 phpstan:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/phpstan --memory-limit=1G \
-		$(filter-out $@,$(MAKECMDGOALS))
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 postgres:
 	cp config/_configs/postgres/db.php config/db.php
 	cp config/_configs/postgres/general.php config/general.php
 	docker restart $(QUEUE_CONTAINER)
 rector:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/rector \
-		$(filter-out $@,$(MAKECMDGOALS))
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 ssh:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data /bin/sh
 %:
