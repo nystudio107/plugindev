@@ -3,6 +3,7 @@
 ## 1.1.25 - UNRELEASED
 ###  Changed
 * Remove `optimize-autoloader` in `composer.json` to speed up composer installs in local dev ([#16](https://github.com/nystudio107/plugindev/pull/16))
+* Added `stop_grace_period: "1s"` to the services that have long-running processes in the `docker-compose.yaml`
 
 ## 1.1.24 - 2022.12.15
 ###  Changed
