@@ -49,6 +49,7 @@ services:
     env_file: &env_v3
       - ./cms_v3/.env
     init: true
+    stop_grace_period: "1s"
     tty: true
     volumes: &php-volumes_v3
       # Change the path below to map to your local plugin repositories
@@ -74,6 +75,7 @@ services:
     env_file: &env_v4
       - ./cms_v4/.env
     init: true
+    stop_grace_period: "1s"
     tty: true
     volumes: &php-volumes_v4
       # Change the path below to map to your local plugin repositories
@@ -97,6 +99,7 @@ services:
     env_file:
       *env_v3
     init: true
+    stop_grace_period: "1s"
     tty: true
     volumes:
       *php-volumes_v3
@@ -110,6 +113,7 @@ services:
     env_file:
       *env_v4
     init: true
+    stop_grace_period: "1s"
     tty: true
     volumes:
       *php-volumes_v4
@@ -138,6 +142,7 @@ services:
     env_file:
       *env_v3
     init: true
+    stop_grace_period: "1s"
     tty: true
     volumes:
       *php-volumes_v3
@@ -151,6 +156,7 @@ services:
     env_file:
       *env_v4
     init: true
+    stop_grace_period: "1s"
     tty: true
     volumes:
       *php-volumes_v4
