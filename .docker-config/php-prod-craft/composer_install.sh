@@ -16,6 +16,7 @@ chown -R www-data:www-data $CMS_ROOT_PATH/web/cpresources
 # Check for `composer.lock` & `vendor/autoload.php`
 cd $CMS_ROOT_PATH
 if [ ! -f "composer.lock" ] || [ ! -f "vendor/autoload.php" ]; then
+    chown -R www-data:www-data /var/www/project
     su-exec www-data composer install --verbose --no-progress --no-scripts --optimize-autoloader --no-interaction
     # Wait until the MySQL db container responds
     echo "### Waiting for MySQL database"
