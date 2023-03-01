@@ -1,6 +1,9 @@
 # nystudio107/plugindev Change Log
 
 ## 1.1.25 - UNRELEASED
+### Added
+* Added an optional `buildchain` to both the `craft_v3` and `craft_v4` projects, which allows you to spin up a Vite buildchain; see the `Makefile` for available commands. This is for frontend testing.
+
 ###  Changed
 * Remove `optimize-autoloader` in `composer.json` to speed up composer installs in local dev ([#16](https://github.com/nystudio107/plugindev/pull/16))
 * Added `stop_grace_period: "1s"` to the services that have long-running processes in the `docker-compose.yaml`
