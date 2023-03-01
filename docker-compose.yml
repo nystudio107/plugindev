@@ -8,7 +8,7 @@ services:
   # nginx - web server
   nginx:
     build:
-      context: ./docker-config/nginx
+      context: ./.docker-config/nginx
       dockerfile: ./Dockerfile
     init: true
     ports:
@@ -22,7 +22,7 @@ services:
   # mysql - database
   mysql:
     build:
-      context: ./docker-config/mysql
+      context: ./.docker-config/mysql
       dockerfile: ./Dockerfile
     cap_add:
       - SYS_NICE  # CAP_SYS_NICE
@@ -40,7 +40,7 @@ services:
   # php_v3 - run php-fpm
   php_v3:
     build: &php-build_v3
-      context: ./docker-config/php-prod-craft
+      context: ./.docker-config/php-prod-craft
       dockerfile: ./Dockerfile
     depends_on:
       - "mysql"
@@ -66,7 +66,7 @@ services:
   # php_v4 - run php-fpm
   php_v4:
     build: &php-build_v4
-      context: ./docker-config/php-prod-craft
+      context: ./.docker-config/php-prod-craft
       dockerfile: ./Dockerfile
     depends_on:
       - "mysql"
@@ -92,7 +92,7 @@ services:
   # php_xdebug_v3 - run php-fpm with xdebug
   php_xdebug_v3:
     build:
-      context: ./docker-config/php-dev-craft
+      context: ./.docker-config/php-dev-craft
       dockerfile: ./Dockerfile
     depends_on:
       - "php_v3"
@@ -106,7 +106,7 @@ services:
   # php_xdebug_v4 - run php-fpm with xdebug
   php_xdebug_v4:
     build:
-      context: ./docker-config/php-dev-craft
+      context: ./.docker-config/php-dev-craft
       dockerfile: ./Dockerfile
     depends_on:
       - "php_v4"
@@ -120,7 +120,7 @@ services:
   # postgres - database
   postgres:
     build:
-      context: ./docker-config/postgres
+      context: ./.docker-config/postgres
       dockerfile: ./Dockerfile
     environment:
       POSTGRES_DATABASES: "project_v3 project_v4 test"
@@ -163,7 +163,7 @@ services:
   # redis - key/value database for caching & php sessions
   redis:
     build:
-      context: ./docker-config/redis
+      context: ./.docker-config/redis
       dockerfile: ./Dockerfile
     expose:
       - "6379"
