@@ -1,6 +1,9 @@
 # nystudio107/plugindev Change Log
 
 ## 1.1.26 - UNRELEASED
+### Added
+* Add `craftcms/ckeditor` `^3.0.0` to the default packages
+
 ### Fixed
 * Fix Solspace Calendar namespace
 
