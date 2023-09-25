@@ -40,7 +40,7 @@
     "nystudio107/craft-youtubeliveembed": "^1.0.0",
     "nystudio107/craft-vite": "^1.0.0",
     "putyourlightson/craft-elements-panel": "^1.1",
-    "solspace/craft3-calendar": "^3.0.0",
+    "solspace/craft-calendar": "^3.0.0",
     "spicyweb/craft-neo": "^2.13.3",
     "verbb/super-table": "^2.7.0",
     "vlucas/phpdotenv": "^5.4.0",

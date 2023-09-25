@@ -6,6 +6,7 @@
   "require": {
     "php": "^8.0.2",
     "craftcms/aws-s3": "^2.0.0",
+    "craftcms/ckeditor": "^3.0.0",
     "craftcms/cms": "^4.0.0",
     "craftcms/commerce": "^4.0.0",
     "craftcms/redactor": "^3.0.0",
@@ -38,6 +39,7 @@
     "nystudio107/craft-webperf": "^4.0.0",
     "nystudio107/craft-youtubeliveembed": "^4.0.0",
     "putyourlightson/craft-elements-panel": "^2.0.0",
+    "solspace/craft-calendar": "^4.0.0",
     "verbb/super-table": "^3.0.0",
     "vlucas/phpdotenv": "^5.4.0",
     "yiisoft/yii2-redis": "^2.0.6"

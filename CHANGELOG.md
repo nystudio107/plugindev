@@ -1,5 +1,13 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.26 - 2023.09.25
+### Added
+* Add `craftcms/ckeditor` `^3.0.0` to the default packages
+* Add OrbStack support via the local domain `plugindev.local`
+
+### Fixed
+* Fix Solspace Calendar namespace
+
 ## 1.1.25 - 2023.03.01
 ### Added
 * Added an optional `buildchain` to both the `craft_v3` and `craft_v4` projects, which allows you to spin up a Vite buildchain; see the `Makefile` for available commands. This is for frontend testing.

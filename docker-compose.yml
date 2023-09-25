@@ -11,6 +11,8 @@ services:
       context: ./.docker-config/nginx
       dockerfile: ./Dockerfile
     init: true
+    labels:
+      - dev.orbstack.domains=plugindev.local
     ports:
       - "8003:8003"
       - "8004:8004"
@@ -32,6 +34,8 @@ services:
       MYSQL_USER: project
       MYSQL_PASSWORD: project
     init: true
+    labels:
+      - dev.orbstack.domains=mysql.plugindev.local
     ports:
       - "33060:3306"
     volumes:
@@ -127,7 +131,9 @@ services:
       POSTGRES_USER: project
       POSTGRES_PASSWORD: project
     init: true
-    ports:
+    labels:
+      - dev.orbstack.domains=pgsql.plugindev.local
+    expose:
       - "54320:5432"
     volumes:
       - postgres-db-data:/usr/local/pgsql/data
