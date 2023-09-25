@@ -3,6 +3,7 @@
 ## 1.1.26 - UNRELEASED
 ### Added
 * Add `craftcms/ckeditor` `^3.0.0` to the default packages
+* Add OrbStack support via the local domain `plugindev.local`
 
 ### Fixed
 * Fix Solspace Calendar namespace
