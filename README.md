@@ -174,7 +174,15 @@ make postgres
 
 This is great for ensuring your db queries work properly on both MySQL and Postgres, without having to set up two separate environments.
 
-### Dual PHP Containers for Xdebug
+## OrbStack support
+
+IF you use [OrbStack](https://orbstack.dev/) as a faster, more efficient replacement for Docker Desktop on the Mac, you can take advantage of some local domain aliases:
+
+* `plugindev.local:8003` & `plugindev.local:8004` - domain aliases for the respective web hosts
+* `mysql.plugindev.local` - local domain alias for the MySQL database container
+* `pgsql.plugindev.local` - local domain alias for the Postgres database container
+
+## Dual PHP Containers for Xdebug
 
 By default, all of your requests will be routed through the production PHP container, for speedy local development and testing.
 
