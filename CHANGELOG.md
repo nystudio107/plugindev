@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.26 - UNRELEASED
+## 1.1.26 - 2023.09.25
 ### Added
 * Add `craftcms/ckeditor` `^3.0.0` to the default packages
 * Add OrbStack support via the local domain `plugindev.local`
