@@ -9,6 +9,7 @@
     "craftcms/ckeditor": "^3.0.0",
     "craftcms/cms": "^4.0.0",
     "craftcms/commerce": "^4.0.0",
+    "craftcms/digital-products": "^3.0.0",
     "craftcms/redactor": "^3.0.0",
     "craftcms/shopify": "^3.0.0",
     "nystudio107/craft-code-field": "^4.0.0",
