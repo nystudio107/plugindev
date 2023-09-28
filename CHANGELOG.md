@@ -1,5 +1,10 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.27 - UNRELEASED
+### Added
+### Added
+* Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`
+
 ## 1.1.26 - 2023.09.25
 ### Added
 * Add `craftcms/ckeditor` `^3.0.0` to the default packages
