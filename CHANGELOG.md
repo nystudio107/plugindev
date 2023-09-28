@@ -2,8 +2,8 @@
 
 ## 1.1.27 - UNRELEASED
 ### Added
-### Added
 * Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`
+* Add `craftcms/digital-products` plugin to `composer.json`
 
 ## 1.1.26 - 2023.09.25
 ### Added
