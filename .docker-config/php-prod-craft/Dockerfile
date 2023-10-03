@@ -13,6 +13,7 @@ ENV PHPIZE_DEPS \
         make \
         pkgconf \
         re2c \
+        linux-headers \
         wget
 
 # Install packages
