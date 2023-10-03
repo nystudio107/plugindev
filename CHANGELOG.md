@@ -5,6 +5,9 @@
 * Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`
 * Add `craftcms/digital-products` plugin to `composer.json`
 
+### Changed
+* Use PHP `8.2` as the minimum PHP version
+
 ## 1.1.26 - 2023.09.25
 ### Added
 * Add `craftcms/ckeditor` `^3.0.0` to the default packages
