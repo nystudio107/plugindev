@@ -1,4 +1,4 @@
-FROM nystudio107/php-dev-base:8.0-alpine
+FROM nystudio107/php-dev-base:8.2-alpine
 
 # dependencies required for running "phpize"
 # these get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
