@@ -1,4 +1,4 @@
-FROM nystudio107/php-prod-base:8.0-alpine
+FROM nystudio107/php-prod-base:8.2-alpine
 
 # dependencies required for running "phpize"
 # these get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
@@ -65,9 +65,9 @@ RUN set -eux; \
         nodejs \
         npm \
     && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+    echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
     && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
+    echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
     && \
     apk update \
     && \
