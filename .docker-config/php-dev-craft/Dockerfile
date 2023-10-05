@@ -27,6 +27,7 @@ RUN set -eux; \
         gifsicle \
         jpegoptim \
         libwebp-tools \
+        linux-headers \
         nano \
         optipng \
         mysql-client \
