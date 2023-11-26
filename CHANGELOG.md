@@ -5,6 +5,9 @@
 * Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`
 * Add `craftcms/digital-products` plugin to `composer.json`
 
+### Changed
+* Moved the PHP Docker config to subdirs `v3` & `v4` for both `php-dev-craft` and `php-prod-craft` so we can pin different PHP versions to different versions of Craft
+
 ## 1.1.26 - 2023.09.25
 ### Added
 * Add `craftcms/ckeditor` `^3.0.0` to the default packages
