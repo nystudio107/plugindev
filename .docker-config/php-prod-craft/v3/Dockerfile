@@ -27,6 +27,7 @@ RUN set -eux; \
         gifsicle \
         jpegoptim \
         libwebp-tools \
+        linux-headers \
         nano \
         optipng \
         mysql-client \
@@ -64,9 +65,9 @@ RUN set -eux; \
         nodejs \
         npm \
     && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
+    echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories \
     && \
-    echo @edge http://nl.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
+    echo @edge http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories \
     && \
     apk update \
     && \

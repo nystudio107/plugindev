@@ -44,7 +44,7 @@ services:
   # php_v3 - run php-fpm
   php_v3:
     build: &php-build_v3
-      context: ./.docker-config/php-prod-craft
+      context: ./.docker-config/php-prod-craft/v3
       dockerfile: ./Dockerfile
     depends_on:
       - "mysql"
@@ -70,7 +70,7 @@ services:
   # php_v4 - run php-fpm
   php_v4:
     build: &php-build_v4
-      context: ./.docker-config/php-prod-craft
+      context: ./.docker-config/php-prod-craft/v4
       dockerfile: ./Dockerfile
     depends_on:
       - "mysql"
@@ -96,7 +96,7 @@ services:
   # php_xdebug_v3 - run php-fpm with xdebug
   php_xdebug_v3:
     build:
-      context: ./.docker-config/php-dev-craft
+      context: ./.docker-config/php-dev-craft/v3
       dockerfile: ./Dockerfile
     depends_on:
       - "php_v3"
@@ -110,7 +110,7 @@ services:
   # php_xdebug_v4 - run php-fpm with xdebug
   php_xdebug_v4:
     build:
-      context: ./.docker-config/php-dev-craft
+      context: ./.docker-config/php-dev-craft/v4
       dockerfile: ./Dockerfile
     depends_on:
       - "php_v4"
@@ -132,7 +132,7 @@ services:
       POSTGRES_PASSWORD: project
     init: true
     labels:
-      - dev.orbstack.domains=pgsql.plugindev.local
+      - dev.orbstack.domains=postgres.plugindev.local
     expose:
       - "54320:5432"
     volumes:

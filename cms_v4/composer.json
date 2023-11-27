@@ -9,7 +9,9 @@
     "craftcms/ckeditor": "^3.0.0",
     "craftcms/cms": "^4.0.0",
     "craftcms/commerce": "^4.0.0",
+    "craftcms/digital-products": "^3.0.0",
     "craftcms/redactor": "^3.0.0",
+    "craftcms/shopify": "^3.0.0",
     "nystudio107/craft-code-field": "^4.0.0",
     "nystudio107/craft-connect": "^4.0.0",
     "nystudio107/craft-cookies": "^4.0.0",
@@ -41,6 +43,7 @@
     "putyourlightson/craft-elements-panel": "^2.0.0",
     "solspace/craft-calendar": "^4.0.0",
     "verbb/super-table": "^3.0.0",
+    "verbb/vizy": "^2.0.0",
     "vlucas/phpdotenv": "^5.4.0",
     "yiisoft/yii2-redis": "^2.0.6"
   },
