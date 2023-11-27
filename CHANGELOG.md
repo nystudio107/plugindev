@@ -1,12 +1,13 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.27 - UNRELEASED
+## 1.1.27 - 2023.11.26
 ### Added
 * Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`
 * Add `craftcms/digital-products` plugin to `composer.json`
 
 ### Changed
 * Moved the PHP Docker config to subdirs `v3` & `v4` for both `php-dev-craft` and `php-prod-craft` so we can pin different PHP versions to different versions of Craft
+* The default PHP version for Craft 4 is now `8.2`
 
 ## 1.1.26 - 2023.09.25
 ### Added
