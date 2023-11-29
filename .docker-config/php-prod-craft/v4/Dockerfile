@@ -7,6 +7,20 @@ RUN set -eux; \
         # Dependencies required for running "phpize"; the $PHPIZE_DEPS env var is inherited from the parent image
         # These get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
         $PHPIZE_DEPS \
+        # Build deps
+        autoconf \
+        dpkg-dev \
+        dpkg \
+        file \
+        g++ \
+        gcc \
+        libc-dev \
+        make \
+        pkgconf \
+        re2c \
+        libtool \
+        linux-headers \
+        wget \
     && \
     # Packages to install
     apk add --no-cache \
