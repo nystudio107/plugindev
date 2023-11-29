@@ -1,24 +1,11 @@
 FROM nystudio107/php-dev-base:8.0-alpine
 
-# dependencies required for running "phpize"
-# these get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
-ENV PHPIZE_DEPS \
-        autoconf \
-        dpkg-dev \
-        dpkg \
-        file \
-        g++ \
-        gcc \
-        libc-dev \
-        make \
-        pkgconf \
-        re2c \
-        wget
-
 # Install packages
 RUN set -eux; \
     # Packages needed only for build
     apk add --no-cache --virtual .build-deps \
+        # Dependencies required for running "phpize"; the $PHPIZE_DEPS env var is inherited from the parent image
+        # These get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
         $PHPIZE_DEPS \
     && \
     # Packages to install
