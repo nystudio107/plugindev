@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.1.28 - UNRELEASED
+### Changed
+* Remove `ENV PHPIZE_DEPS`, and use the environment variable inherited from the parent Alpine images rather than manually setting it ourselves
+
 ## 1.1.27 - 2023.11.26
 ### Added
 * Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`
