@@ -1,4 +1,4 @@
-FROM nystudio107/php-dev-base:8.2-alpine
+FROM nystudio107/php-dev-base:8.1-alpine
 
 # Install packages
 RUN set -eux; \
