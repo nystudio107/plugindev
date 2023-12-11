@@ -1,0 +1,131 @@
+dateModified: 1647537342
+email:
+  fromEmail: andrew@nystudio107.com
+  fromName: Craft
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  site:
+    hasUrls: true
+    name: Site
+    settings:
+      path: '@webroot/assets/site'
+    type: craft\fs\Local
+    url: '@assetsUrl/assets/site'
+meta:
+  __names__:
+    5c642d7e-b16b-4836-9575-668d75d242e5: Site # Site
+    5da841b1-ca0d-46ff-8bb1-04d6c889ac54: English # English
+    6a117ef0-054c-4147-acb6-6fe57d48c4ae: Dummy # Dummy
+    54e60257-f31a-44aa-960e-bbd364197e28: Homepage
+    94b4d5ac-d7ea-4241-a6cb-92b39f482f99: Common # Common
+    407fe253-2ada-4a88-b1a4-fb6c2004cd9b: Clothing # Clothing
+    6005c2f9-5d85-4442-b712-22e070096ac8: 'Public Schema'
+    21903cb2-5b82-49ea-9766-e120d0951ea3: 'Plain Text'
+    aa7c6968-88ec-4d2a-af47-d3c40b582a68: Globals
+    c4536798-743d-4bf0-9669-192827bfb26c: Blog # Blog
+    de308a7d-1794-448f-9176-29e2eace7ecf: Blog
+    ec473f07-152f-423b-90df-ac425e6068a1: Spanish # Spanish
+    f89601e9-4ba9-4a48-9e99-350aa9914912: plugindev # plugindev
+    f923795f-139e-4b59-b27c-eaa0be4f847c: New # New
+    fb3a8f31-d1cc-4c13-903b-a501f7e51f54: Homepage # Homepage
+plugins:
+  commerce:
+    edition: lite
+    enabled: true
+    licenseKey: ORAM7PNVONMKNBD7083BDO6D
+    schemaVersion: 4.0.0
+  cookies:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  eager-beaver:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  empty-coalesce:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  fastcgi-cache-bust:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  instant-analytics:
+    edition: standard
+    enabled: true
+    licenseKey: 67C17M8H38K0J1ZD1XG3TX20
+    schemaVersion: 1.0.0
+  minify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  recipe:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  retour:
+    edition: standard
+    enabled: true
+    licenseKey: 4PZ1O8RLH41TSWXE5OZ4CK21
+    schemaVersion: 3.0.10
+  rich-variables:
+    edition: standard
+    enabled: true
+    licenseKey: MDZ1YQF50MXGJ6COJZAP10E3
+    schemaVersion: 1.0.0
+  route-map:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    licenseKey: CMCX7OBRF0EX4B63Z5K5250P
+    schemaVersion: 3.0.11
+  similar:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  templatecomments:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  twig-profiler:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  twigpack:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  typogrify:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  webperf:
+    edition: standard
+    enabled: true
+    licenseKey: W88SAELYDCCSFNLL0KILKRL8
+    schemaVersion: 1.0.1
+system:
+  edition: pro
+  live: true
+  name: plugindev
+  retryDuration: 60
+  schemaVersion: 4.0.0.7
+  timeZone: America/New_York
+users:
+  allowPublicRegistration: false
+  deactivateByDefault: false
+  defaultGroup: null
+  photoSubpath: ''
+  photoVolumeUid: null
+  requireEmailVerification: true

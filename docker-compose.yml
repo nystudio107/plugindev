@@ -16,11 +16,14 @@ services:
     ports:
       - "8003:8003"
       - "8004:8004"
+      - "8005:8005"
     volumes:
       - cpresources_v3:/var/www/project/cms_v3/web/cpresources:delegated
       - cpresources_v4:/var/www/project/cms_v4/web/cpresources:delegated
+      - cpresources_v5:/var/www/project/cms_v5/web/cpresources:delegated
       - ./cms_v3/web:/var/www/project/cms_v3/web:cached
       - ./cms_v4/web:/var/www/project/cms_v4/web:cached
+      - ./cms_v5/web:/var/www/project/cms_v5/web:cached
   # mysql - database
   mysql:
     build:
@@ -30,7 +33,7 @@ services:
       - SYS_NICE  # CAP_SYS_NICE
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASES: "project_v3 project_v4 test"
+      MYSQL_DATABASES: "project_v3 project_v4 project_v5 test"
       MYSQL_USER: project
       MYSQL_PASSWORD: project
     init: true
@@ -93,6 +96,32 @@ services:
       - ./cms_v4/storage/runtime/compiled_classes:/var/www/project/cms_v4/storage/runtime/compiled_classes:delegated
       - ./cms_v4/vendor:/var/www/project/cms_v4/vendor:delegated
       - ./cms_v4/storage/rebrand:/var/www/project/cms_v4/storage/rebrand:delegated
+  # php_v5 - run php-fpm
+  php_v5:
+    build: &php-build_v5
+      context: ./.docker-config/php-prod-craft/v5
+      dockerfile: ./Dockerfile
+    depends_on:
+      - "mysql"
+      - "postgres"
+      - "redis"
+    env_file: &env_v5
+      - ./cms_v5/.env
+    init: true
+    stop_grace_period: "1s"
+    tty: true
+    volumes: &php-volumes_v5
+      # Change the path below to map to your local plugin repositories
+      - /Users/andrew/webdev/craft_v5:/Users/andrew/webdev/craft_v5
+      - cpresources_v5:/var/www/project/cms_v5/web/cpresources:delegated
+      - storage_v5:/var/www/project/cms_v5/storage:delegated
+      - ./cms_v5:/var/www/project/cms_v5:cached
+      # Specific directories that need to be bind-mounted
+      - ./cms_v5/storage/logs:/var/www/project/cms_v5/storage/logs:delegated
+      - ./cms_v5/storage/runtime/compiled_templates:/var/www/project/cms_v5/storage/runtime/compiled_templates:delegated
+      - ./cms_v5/storage/runtime/compiled_classes:/var/www/project/cms_v5/storage/runtime/compiled_classes:delegated
+      - ./cms_v5/vendor:/var/www/project/cms_v5/vendor:delegated
+      - ./cms_v5/storage/rebrand:/var/www/project/cms_v5/storage/rebrand:delegated
   # php_xdebug_v3 - run php-fpm with xdebug
   php_xdebug_v3:
     build:
@@ -121,13 +150,27 @@ services:
     tty: true
     volumes:
       *php-volumes_v4
+  # php_xdebug_v5 - run php-fpm with xdebug
+  php_xdebug_v5:
+    build:
+      context: ./.docker-config/php-dev-craft/v5
+      dockerfile: ./Dockerfile
+    depends_on:
+      - "php_v5"
+    env_file:
+      *env_v5
+    init: true
+    stop_grace_period: "1s"
+    tty: true
+    volumes:
+      *php-volumes_v5
   # postgres - database
   postgres:
     build:
       context: ./.docker-config/postgres
       dockerfile: ./Dockerfile
     environment:
-      POSTGRES_DATABASES: "project_v3 project_v4 test"
+      POSTGRES_DATABASES: "project_v3 project_v4 project_v5 test"
       POSTGRES_USER: project
       POSTGRES_PASSWORD: project
     init: true
@@ -166,6 +209,20 @@ services:
     tty: true
     volumes:
       *php-volumes_v4
+  # queue_v5 - runs queue jobs via php craft queue/listen
+  queue_v5:
+    build:
+      *php-build_v5
+    command: /var/www/project/run_queue.sh
+    depends_on:
+      - "php_v5"
+    env_file:
+      *env_v5
+    init: true
+    stop_grace_period: "1s"
+    tty: true
+    volumes:
+      *php-volumes_v5
   # redis - key/value database for caching & php sessions
   redis:
     build:
@@ -180,5 +237,7 @@ volumes:
   postgres-db-data:
   cpresources_v3:
   cpresources_v4:
+  cpresources_v5:
   storage_v3:
   storage_v4:
+  storage_v5:

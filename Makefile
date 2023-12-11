@@ -8,7 +8,7 @@ endif
 PROJECT_NAME?=$(shell basename $(CURDIR))
 SERVICE_NAME?=php
 CMS_ROOT_NAME?=cms_
-CMS_VERSIONS:=v3 v4
+CMS_VERSIONS:=v3 v4 v5
 
 .PHONY: dev clean nuke up
 
@@ -29,7 +29,7 @@ up:
 		done ; \
 		docker-compose up ; \
     fi
-down: 
+down:
 	docker-compose down
 %:
 	@:
