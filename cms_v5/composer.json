@@ -5,7 +5,7 @@
   "prefer-stable": true,
   "require": {
     "php": "^8.2.0",
-    "craftcms/cms": "5.0.x-dev as 5.0.0-alpha.1",
+    "craftcms/cms": "^5.0.0-alpha.1",
     "craftcms/ckeditor": "4.0.x-dev",
     "craftcms/redactor": "4.0.x-dev",
     "nystudio107/craft-twig-base-templates": "^1.0.0",
