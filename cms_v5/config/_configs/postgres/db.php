@@ -21,6 +21,4 @@ return DbConfig::create()
     ->password(App::env('DB_PASSWORD'))
     ->schema(App::env('DB_SCHEMA'))
     ->tablePrefix(App::env('DB_TABLE_PREFIX'))
-    ->charset(App::env('DB_CHARSET'))
-    ->collation(App::env('DB_COLLATION'))
     ;
