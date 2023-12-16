@@ -1,6 +1,9 @@
 # nystudio107/plugindev Change Log
 
-## 1.1.28 - UNRELEASED
+## 1.2.0 - UNRELEASED
+### Added
+* Added support for Craft CMS 5 `^5.0.0-alpha.1` for both MySQL and Postgres development. Let the plugin porting commence!
+
 ### Changed
 * Remove `ENV PHPIZE_DEPS`, and use the environment variable inherited from the parent Alpine images rather than manually setting it ourselves
 
