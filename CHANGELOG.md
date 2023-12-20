@@ -3,6 +3,7 @@
 ## 1.2.0 - UNRELEASED
 ### Added
 * Added support for Craft CMS 5 `^5.0.0-alpha.1` for both MySQL and Postgres development. Let the plugin porting commence!
+* Use [`craft-twig-base-templates`](https://github.com/nystudio107/craft-twig-base-templates) for the base layout templates
 
 ### Changed
 * Remove `ENV PHPIZE_DEPS`, and use the environment variable inherited from the parent Alpine images rather than manually setting it ourselves
