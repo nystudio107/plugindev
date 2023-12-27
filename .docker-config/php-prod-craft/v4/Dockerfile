@@ -1,8 +1,13 @@
-FROM nystudio107/php-prod-base:8.2-alpine
+FROM nystudio107/php-prod-base:8.1-alpine
 
-# dependencies required for running "phpize"
-# these get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
-ENV PHPIZE_DEPS \
+# Install packages
+RUN set -eux; \
+    # Packages needed only for build
+    apk add --no-cache --virtual .build-deps \
+        # Dependencies required for running "phpize"; the $PHPIZE_DEPS env var is inherited from the parent image
+        # These get automatically installed and removed by "docker-php-ext-*" (unless they're already installed)
+        $PHPIZE_DEPS \
+        # Build deps
         autoconf \
         dpkg-dev \
         dpkg \
@@ -13,13 +18,9 @@ ENV PHPIZE_DEPS \
         make \
         pkgconf \
         re2c \
-        wget
-
-# Install packages
-RUN set -eux; \
-    # Packages needed only for build
-    apk add --no-cache --virtual .build-deps \
-        $PHPIZE_DEPS \
+        libtool \
+        linux-headers \
+        wget \
     && \
     # Packages to install
     apk add --no-cache \

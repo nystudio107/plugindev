@@ -2,13 +2,13 @@
 
 ## About nystudio107/plugindev
 
-This is a project scaffolding package for Craft CMS 3 & Craft CMS 4 plugin development.
+This is a project scaffolding package for Craft CMS 3, 4 & 5 plugin development.
 
 Read the [A Craft CMS Plugin Local Development Environment article](https://nystudio107.com/blog/a-craft-cms-plugin-local-development-environment) for full details on this project.
 
 It gives you the following out of the box:
 
-* Dual installs of both Craft CMS `^3.0.0` and Craft CMS `^4.0.0` running simultaneously
+* Triple installs of both Craft CMS `^3.0.0`, Craft CMS `^4.0.0`, and Craft CMS `^5.0.0` running simultaneously
 * `craftcms/redactor` plugin is installed
 * `craftcms/commerce` plugin is installed
 * A PHP 8.x environment with Imagick and other needed extensions pre-installed
@@ -37,11 +37,17 @@ It works this way so that you can take the basic scaffolding, and then modify it
 
 You'll need [Docker desktop](https://www.docker.com/products/docker-desktop) for your platform installed to run the project in local development
 
-Craft CMS 3 runs out of the `cms_v3/` directory available at `http://localhost:8003`, and Craft CMS 4 runs out of the `cms_v4` directory available at `http://localhost:8004`.
+We also highly recommend that you use [OrbStack](https://orbstack.dev/) if you're running MacOS; it's a drop-in replacement for Docker Desktop that is significantly faster and more reliable.
+
+* Craft CMS 3 runs out of the `cms_v3/` directory available at `http://plugindev.local:8003` with OrbStack (`http://localhost:8003` with Docker Desktop)
+
+* Craft CMS 4 runs out of the `cms_v4/` directory available at `http://plugindev.local:8004` with OrbStack (`http://localhost:8004` with Docker Desktop)
+
+* Craft CMS 5 runs out of the `cms_v5/` directory available at `http://plugindev.local:8005` with OrbStack (`http://localhost:8005` with Docker Desktop)
 
 Each version of Craft CMS runs in separate Docker containers, and uses a separate database running out of the database containers (MySQL and Postgres). 
 
-Composer will have already created a `.env` file in the `cms_v3/` & `cms_v4` directories, based off of the respective `example.env` files.
+Composer will have already created a `.env` file in the `cms_v3/`, `cms_v4` & `cms_v5/` directories, based off of the respective `example.env` files.
 
 ### Setting up Local Dev
 
@@ -49,18 +55,20 @@ To set up your local dev environment, follow these steps:
 
 * Edit the `cms_v3/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v3/*",` in `repositories` to point to your local plugin Git repositories for Craft CMS 3
 * Edit the `cms_v4/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v4/*",` in `repositories` to point to your local plugin Git repositories for Craft CMS 4
+* Edit the `cms_v5/composer.json` file and change the line `"url": "/Users/andrew/webdev/craft_v5/*",` in `repositories` to point to your local plugin Git repositories for Craft CMS 5
 * Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v3:/Users/andrew/webdev/craft_v3` to point to your local Craft CMS 3 plugin Git repositories
 * Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v4:/Users/andrew/webdev/craft_v4` to point to your local Craft CMS 4 plugin Git repositories
+* Edit the `docker-composer.yaml` file and change the line `- /Users/andrew/webdev/craft_v5:/Users/andrew/webdev/craft_v5` to point to your local Craft CMS 4 plugin Git repositories
 
 ### Setting up Plugin Git Repos
 
-To make working on plugins from multiple versions of Craft CMS easier, clone each of your plugin repositories down to two separate directories: `craft_v3` and `craft_v4`.
+To make working on plugins from multiple versions of Craft CMS easier, clone each of your plugin repositories down to the appropriate separate directories: `craft_v3`, `craft_v4`, and `craft_v5`.
 
 These are two separate local repositories from the same remote git origin repository.
 
 The path `repositories` in your respective `composer.json` files will cause Composer to install your plugins locally, rather than via Packagist, creating a symlink to the directories mentioned above.
 
-This allows you to have all the repositories in the `craft_v3` directory set to your Craft CMS 3 compatible branch, and all the repositories in the `craft_v4` directory set to your Craft CMS 4 compatible branch.
+This allows you to have all the repositories in the `craft_v3` directory set to your Craft CMS 3 compatible branch, all the repositories in the `craft_v4` directory set to your Craft CMS 4 compatible branch, and all the repositories in the `craft_v5` directory set to your Craft CMS 4 compatible branch.
 
 This makes working with multiple versions of your plugins for multiple versions of Craft CMS much easier.
 
@@ -82,24 +90,30 @@ plugindev-php_v3-1         | [09-Mar-2022 04:05:33] NOTICE: ready to handle conn
 plugindev-php_v4-1         | [09-Mar-2022 04:05:33] NOTICE: fpm is running, pid 8
 plugindev-php_v4-1         | [09-Mar-2022 04:05:33] NOTICE: ready to handle connections
 ```
+...and:
+```
+plugindev-php_v5-1         | [09-Mar-2022 04:05:33] NOTICE: fpm is running, pid 8
+plugindev-php_v5-1         | [09-Mar-2022 04:05:33] NOTICE: ready to handle connections
+```
 
 ### Login
 
-* Navigate to `http://localhost:8003` to use the Craft CMS 3 site
-* Navigate to `http://localhost:8004` to use the Craft CMS 4 site
+* Navigate to `http://plugindev.local:8003` to use the Craft CMS 3 site
+* Navigate to `http://plugindev.local:8004` to use the Craft CMS 4 site
+* Navigate to `http://plugindev.local:8004` to use the Craft CMS 5 site
 
-The default login for both sites is:
+The default login for all `plugindev` sites is:
 
 **User:** `admin` \
 **Password:** `password`
 
 ### Editor
 
-You should open the `craft_v3` and `craft_v4` subdirectories in separate windows in your code editor of choice, rather than opening up the entire `plugindev` project in a single window.
+You should open the `craft_v3`, `craft_v4`, and `craft_v5` subdirectories in separate windows in your code editor of choice, rather than opening up the entire `plugindev` project in a single window.
 
-This allows your editor to index each Craft CMS install separately for things like code completion, and it also allows you to have separate PHP language level inspection settings (PHP 7.1 for Craft CMS 3, PHP 8 for Craft CMS 4).
+This allows your editor to index each Craft CMS install separately for things like code completion, and it also allows you to have separate PHP language level inspection settings (PHP 7.1 for Craft CMS 3, PHP 8 for Craft CMS 4, PHP 8.2 for Craft CMS 5).
 
-You can also set up IDEs like PhpStorm to use the PHP interpreter inside the appropriate Docker container (`plugindev_php_xdebug_v3` for Craft CMS 3, and `plugindev_php_xdebug_v4` for Craft CMS 4), and set up path mappings for XDebug.
+You can also set up IDEs like PhpStorm to use the PHP interpreter inside the appropriate Docker container (`plugindev_php_xdebug_v3` for Craft CMS 3, `plugindev_php_xdebug_v4` for Craft CMS 4, and `plugindev_php_xdebug_v5` for Craft CMS 5), and set up path mappings for XDebug.
 
 Remember to enable the Symfony plugin if you're using PhpStorm for each project.
 
@@ -111,6 +125,7 @@ The following ports are exposed on `localhost` while `plugindev` is running (the
 
 * `8003` - The Craft CMS 3 website
 * `8004` - The Craft CMS 4 website
+* `8005` - The Craft CMS 5 website
 * `54320` - The Postgres database server
 * `33060` - The MySQL database server
 
@@ -118,6 +133,7 @@ The following databases are available in both the MySQL and Postgres database co
 
 * `project_v3` - the database for Craft CMS 3. User: `project` Password: `project`
 * `project_v4` - the database for Craft CMS 4. User: `project` Password: `project`
+* `project_v5` - the database for Craft CMS 5. User: `project` Password: `project`
 * `test` - an entirely empty database that can be used for testing. User: `project` Password: `project`
 
 Internally, there are also containers that run the Craft CMS queue automatically, and a Redis container for caching.
@@ -134,8 +150,8 @@ You can read more about it in the [Using Make & Makefiles to Automate your Front
 
 You can run the following from terminal in the root project directory:
 
-- `make dev` - starts up the local dev server listening on `http://localhost:8003/` & `http://localhost:8004/`
-- `make clean` - removes the `composer.lock` and the entire `vendor/` directory from both the `cms_v3` & `cms_v4` projects
+- `make dev` - starts up the local dev server listening on `http://plugindev.local:8003/`, `http://plugindev.local:8004/` & `http://plugindev.local:8005/`
+- `make clean` - removes the `composer.lock` and the entire `vendor/` directory from the `cms_v3`, `cms_v4` & `cms_v5` projects
 - `make nuke` - restarts the project from scratch by running `make clean` (above), then shuts down the Docker containers, removes any mounted volumes (including the database), and then rebuilds the containers from scratch
 
 ### `make` CMS Commands
@@ -178,9 +194,9 @@ This is great for ensuring your db queries work properly on both MySQL and Postg
 
 IF you use [OrbStack](https://orbstack.dev/) as a faster, more efficient replacement for Docker Desktop on the Mac, you can take advantage of some local domain aliases:
 
-* `plugindev.local:8003` & `plugindev.local:8004` - domain aliases for the respective web hosts
+* `plugindev.local:8003`, `plugindev.local:8004` & `plugindev.local:8005` - domain aliases for the respective web hosts
 * `mysql.plugindev.local` - local domain alias for the MySQL database container
-* `pgsql.plugindev.local` - local domain alias for the Postgres database container
+* `postgres.plugindev.local` - local domain alias for the Postgres database container
 
 ## Dual PHP Containers for Xdebug
 

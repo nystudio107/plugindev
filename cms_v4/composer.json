@@ -32,6 +32,7 @@
     "nystudio107/craft-similar": "^4.0.0",
     "nystudio107/craft-templatecomments": "^4.0.0",
     "nystudio107/craft-transcoder": "^4.0.0",
+    "nystudio107/craft-twig-base-templates": "^1.0.0",
     "nystudio107/craft-twigpack": "^4.0.0-beta.1",
     "nystudio107/craft-twigprofiler": "^4.0.0-beta.1",
     "nystudio107/craft-typogrify": "^4.0.0",
@@ -40,6 +41,7 @@
     "nystudio107/craft-vite": "^4.0.0",
     "nystudio107/craft-webperf": "^4.0.0",
     "nystudio107/craft-youtubeliveembed": "^4.0.0",
+    "nystudio107/twig-bundle-installer": "^1.0.0",
     "putyourlightson/craft-elements-panel": "^2.0.0",
     "solspace/craft-calendar": "^4.0.0",
     "verbb/super-table": "^3.0.0",
@@ -69,6 +71,7 @@
   "config": {
     "allow-plugins": {
       "craftcms/plugin-installer": true,
+      "nystudio107/twig-bundle-installer": true,
       "yiisoft/yii2-composer": true
     },
     "sort-packages": true

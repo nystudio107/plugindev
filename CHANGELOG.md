@@ -1,5 +1,17 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.0 - 2023.12.27
+### Added
+* Added support for Craft CMS 5 `^5.0.0-alpha.1` for both MySQL and Postgres development. Let the plugin porting commence!
+* Use [`craft-twig-base-templates`](https://github.com/nystudio107/craft-twig-base-templates) for the base layout templates
+* The `buildchain` now uses `vite` `^5.0.0`
+
+### Changed
+* Updated the db seeds to the latest versions of Craft CMS
+* Removed the Project Config files entirely (and rely on the db seeds instead)
+* User settings now default to showing field handles, and showing the debug toolbar on the frontend and in the CP
+* Remove `ENV PHPIZE_DEPS`, and use the environment variable inherited from the parent Alpine images rather than manually setting it ourselves
+
 ## 1.1.27 - 2023.11.26
 ### Added
 * Add `craftcms/shopify` & `verbb/vizy` plugins to `composer.json`

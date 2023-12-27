@@ -1,0 +1,20 @@
+/**
+ * Site module for Craft CMS
+ *
+ * Site CSS
+ *
+ * @author    nystudio107
+ * @copyright Copyright (c) 2018 nystudio107
+ * @link      https://nystudio107.com/
+ * @package   SiteModule
+ * @since     1.0.0
+ */
+
+body.login {
+    background-color: #FFF;
+    background-image: url('/img/site/login-background-image.png');
+}
+
+body.login label, body.login #forgot-password {
+    background-color: #FFF;
+}
