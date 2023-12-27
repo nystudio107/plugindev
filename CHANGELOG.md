@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.1 - UNRELEASED
+### Added
+* Added `vite_v3.plugindev.local`, `vite_v4.plugindev.local` & `vite_v5.plugindev.local` as OrbStack domain labels for the buildchain
+
 ## 1.2.0 - 2023.12.27
 ### Added
 * Added support for Craft CMS 5 `^5.0.0-alpha.1` for both MySQL and Postgres development. Let the plugin porting commence!
