@@ -1,9 +1,0 @@
-baseUrl: '@web/es'
-enabled: true
-handle: spanish
-hasUrls: true
-language: es
-name: Spanish
-primary: false
-siteGroup: f89601e9-4ba9-4a48-9e99-350aa9914912 # plugindev
-sortOrder: 2
