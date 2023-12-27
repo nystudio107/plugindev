@@ -3812,6 +3812,8 @@ COPY public.drafts (id, "canonicalId", "creatorId", name, notes, "trackChanges",
 --
 
 COPY public.elementactivity ("elementId", "userId", "siteId", "draftId", type, "timestamp") FROM stdin;
+2	2	1	\N	view	2023-12-27 19:46:40
+6	2	1	\N	view	2023-12-27 19:47:56
 \.
 
 
@@ -3962,7 +3964,7 @@ COPY public.imagetransforms (id, name, handle, mode, "position", width, height, 
 --
 
 COPY public.info (id, version, "schemaVersion", maintenance, "configVersion", "fieldVersion", "dateCreated", "dateUpdated", uid) FROM stdin;
-1	5.0.0-alpha.1	5.0.0.12	f	hawtxuhhxjwa	3@xesongdcao	2021-03-01 00:43:17	2023-12-15 19:01:15	b7a12d28-aa59-44af-815b-8cca8a6dcdfb
+1	5.0.0-alpha.3	5.0.0.12	f	svtbfaebzafx	3@xesongdcao	2021-03-01 00:43:17	2023-12-27 19:44:09	b7a12d28-aa59-44af-815b-8cca8a6dcdfb
 \.
 
 
@@ -4325,19 +4327,12 @@ system.live	true
 system.name	"plugindev"
 system.retryDuration	60
 system.timeZone	"America/New_York"
-meta.__names__.5c642d7e-b16b-4836-9575-668d75d242e5	"Site"
-meta.__names__.5da841b1-ca0d-46ff-8bb1-04d6c889ac54	"English"
-meta.__names__.c4536798-743d-4bf0-9669-192827bfb26c	"Blog"
-meta.__names__.ec473f07-152f-423b-90df-ac425e6068a1	"Spanish"
-meta.__names__.f89601e9-4ba9-4a48-9e99-350aa9914912	"plugindev"
-meta.__names__.fb3a8f31-d1cc-4c13-903b-a501f7e51f54	"Homepage"
 users.allowPublicRegistration	false
 users.deactivateByDefault	false
 users.defaultGroup	null
 users.photoSubpath	""
 users.photoVolumeUid	null
 users.requireEmailVerification	true
-dateModified	1702666874
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.autocapitalize	true
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.autocomplete	false
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.autocorrect	true
@@ -4357,6 +4352,7 @@ entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.step	null
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.tip	null
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.title	null
+entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.size	null
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.type	"craft\\\\fieldlayoutelements\\\\entries\\\\EntryTitleField"
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.warning	null
 entryTypes.c4536798-743d-4bf0-9669-192827bfb26c.fieldLayouts.44918e94-126a-4108-98da-1f66e19d2b2d.tabs.0.elements.0.width	100
@@ -4408,7 +4404,6 @@ entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.placeholder	null
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.readonly	false
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.requirable	false
-entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.size	null
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.step	null
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.tip	null
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.fieldLayouts.3079b909-ff31-4f40-98a0-10c57767ab1f.tabs.0.elements.0.title	null
@@ -4448,7 +4443,6 @@ entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.sortOrder	1
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.titleFormat	"{section.name|raw}"
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.titleTranslationKeyFormat	null
 entryTypes.fb3a8f31-d1cc-4c13-903b-a501f7e51f54.titleTranslationMethod	"none"
-meta.__names__.54e60257-f31a-44aa-960e-bbd364197e28	"Homepage"
 sections.54e60257-f31a-44aa-960e-bbd364197e28.enableVersioning	false
 sections.54e60257-f31a-44aa-960e-bbd364197e28.entryTypes.0	"fb3a8f31-d1cc-4c13-903b-a501f7e51f54"
 sections.54e60257-f31a-44aa-960e-bbd364197e28.handle	"homepage"
@@ -4469,7 +4463,6 @@ sections.54e60257-f31a-44aa-960e-bbd364197e28.siteSettings.ec473f07-152f-423b-90
 sections.54e60257-f31a-44aa-960e-bbd364197e28.siteSettings.ec473f07-152f-423b-90df-ac425e6068a1.template	"index"
 sections.54e60257-f31a-44aa-960e-bbd364197e28.siteSettings.ec473f07-152f-423b-90df-ac425e6068a1.uriFormat	"__home__"
 sections.54e60257-f31a-44aa-960e-bbd364197e28.type	"single"
-meta.__names__.de308a7d-1794-448f-9176-29e2eace7ecf	"Blog"
 sections.de308a7d-1794-448f-9176-29e2eace7ecf.enableVersioning	true
 sections.de308a7d-1794-448f-9176-29e2eace7ecf.entryTypes.0	"c4536798-743d-4bf0-9669-192827bfb26c"
 sections.de308a7d-1794-448f-9176-29e2eace7ecf.handle	"blog"
@@ -4490,7 +4483,6 @@ sections.de308a7d-1794-448f-9176-29e2eace7ecf.siteSettings.ec473f07-152f-423b-90
 sections.de308a7d-1794-448f-9176-29e2eace7ecf.siteSettings.ec473f07-152f-423b-90df-ac425e6068a1.template	"blog/_entry"
 sections.de308a7d-1794-448f-9176-29e2eace7ecf.siteSettings.ec473f07-152f-423b-90df-ac425e6068a1.uriFormat	"blog/{slug}"
 sections.de308a7d-1794-448f-9176-29e2eace7ecf.type	"channel"
-meta.__names__.21903cb2-5b82-49ea-9766-e120d0951ea3	"Plain Text"
 fields.21903cb2-5b82-49ea-9766-e120d0951ea3.contentColumnType	"text"
 fields.21903cb2-5b82-49ea-9766-e120d0951ea3.handle	"plainText"
 fields.21903cb2-5b82-49ea-9766-e120d0951ea3.instructions	""
@@ -4508,6 +4500,30 @@ fields.21903cb2-5b82-49ea-9766-e120d0951ea3.translationKeyFormat	null
 fields.21903cb2-5b82-49ea-9766-e120d0951ea3.translationMethod	"none"
 fields.21903cb2-5b82-49ea-9766-e120d0951ea3.type	"craft\\\\fields\\\\PlainText"
 system.schemaVersion	"5.0.0.12"
+dateModified	1703705297
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.0	1
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.1	2
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.2	3
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.3	4
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.4	5
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.5	6
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.listPlugin	"List"
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.name	"Simple"
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.0	"heading"
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.1	"|"
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.2	"bold"
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.3	"italic"
+ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.4	"link"
+meta.__names__.5c642d7e-b16b-4836-9575-668d75d242e5	"Site"
+meta.__names__.5da841b1-ca0d-46ff-8bb1-04d6c889ac54	"English"
+meta.__names__.54e60257-f31a-44aa-960e-bbd364197e28	"Homepage"
+meta.__names__.681bb90b-e190-4f91-8c54-6fcbff972de5	"Simple"
+meta.__names__.21903cb2-5b82-49ea-9766-e120d0951ea3	"Plain Text"
+meta.__names__.c4536798-743d-4bf0-9669-192827bfb26c	"Blog"
+meta.__names__.de308a7d-1794-448f-9176-29e2eace7ecf	"Blog"
+meta.__names__.ec473f07-152f-423b-90df-ac425e6068a1	"Spanish"
+meta.__names__.f89601e9-4ba9-4a48-9e99-350aa9914912	"plugindev"
+meta.__names__.fb3a8f31-d1cc-4c13-903b-a501f7e51f54	"Homepage"
 \.
 
 
@@ -4753,7 +4769,7 @@ COPY public.userpermissions_users (id, "permissionId", "userId", "dateCreated", 
 --
 
 COPY public.userpreferences ("userId", preferences) FROM stdin;
-2	{"language":"en-US","locale":null,"weekStartDay":"1","useShapes":false,"underlineLinks":false,"showFieldHandles":false,"enableDebugToolbarForSite":false,"enableDebugToolbarForCp":false,"showExceptionView":false,"profileTemplates":false}
+2	{"language":"en-US","locale":null,"weekStartDay":"1","alwaysShowFocusRings":false,"useShapes":false,"underlineLinks":false,"notificationDuration":"5000","showFieldHandles":true,"enableDebugToolbarForSite":true,"enableDebugToolbarForCp":true,"showExceptionView":false,"profileTemplates":false}
 \.
 
 
@@ -4762,7 +4778,7 @@ COPY public.userpreferences ("userId", preferences) FROM stdin;
 --
 
 COPY public.users (id, username, "photoId", "firstName", "lastName", email, password, admin, locked, suspended, pending, "lastLoginDate", "lastLoginAttemptIp", "invalidLoginWindowStart", "invalidLoginCount", "lastInvalidLoginDate", "lockoutDate", "hasDashboard", "verificationCode", "verificationCodeIssuedDate", "unverifiedEmail", "passwordResetRequired", "lastPasswordChangeDate", "dateCreated", "dateUpdated", active, "fullName") FROM stdin;
-2	admin	\N			andrew@nystudio107.com	$2y$13$MSK16Tb4nffl25V/SibFe.VF9AJItEA/IBQ/yd5y/o6RCGw8l9HEm	t	f	f	f	2023-12-15 19:04:33	\N	\N	\N	\N	\N	t	\N	\N	\N	f	2021-03-15 16:24:54	2021-03-01 00:43:19	2023-12-15 19:04:33	t	\N
+2	admin	\N			andrew@nystudio107.com	$2y$13$MSK16Tb4nffl25V/SibFe.VF9AJItEA/IBQ/yd5y/o6RCGw8l9HEm	t	f	f	f	2023-12-27 19:49:11	\N	\N	\N	\N	\N	t	\N	\N	\N	f	2021-03-15 16:24:54	2021-03-01 00:43:19	2023-12-27 19:49:11	t	\N
 \.
 
 
@@ -5069,7 +5085,7 @@ SELECT pg_catalog.setval('public.sections_sites_id_seq', 5, true);
 -- Name: sessions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
 --
 
-SELECT pg_catalog.setval('public.sessions_id_seq', 9, true);
+SELECT pg_catalog.setval('public.sessions_id_seq', 18, true);
 
 
 --

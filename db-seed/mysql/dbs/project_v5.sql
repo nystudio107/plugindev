@@ -1825,7 +1825,7 @@ CREATE TABLE `drafts` (
   KEY `idx_olmrehwtliqoudkrpdixkujnwdycnqgqphbp` (`creatorId`,`provisional`),
   CONSTRAINT `drafts_creatorId_fk` FOREIGN KEY (`creatorId`) REFERENCES `users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `drafts_sourceId_fk` FOREIGN KEY (`canonicalId`) REFERENCES `elements` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1891,7 +1891,7 @@ CREATE TABLE `elements` (
   CONSTRAINT `elements_fieldLayoutId_fk` FOREIGN KEY (`fieldLayoutId`) REFERENCES `fieldlayouts` (`id`) ON DELETE SET NULL,
   CONSTRAINT `elements_revisionId_fk` FOREIGN KEY (`revisionId`) REFERENCES `revisions` (`id`) ON DELETE CASCADE,
   CONSTRAINT `fk_rfcqjuhlhjoecifhyvitygmxrripjdounsdu` FOREIGN KEY (`canonicalId`) REFERENCES `elements` (`id`) ON DELETE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1957,7 +1957,7 @@ CREATE TABLE `elements_sites` (
   KEY `idx_fdewpqmwpdhixdajlwzwrfeiqvhgvkfikiap` (`title`,`siteId`),
   CONSTRAINT `elements_sites_elementId_fk` FOREIGN KEY (`elementId`) REFERENCES `elements` (`id`) ON DELETE CASCADE,
   CONSTRAINT `elements_sites_siteId_fk` FOREIGN KEY (`siteId`) REFERENCES `sites` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2243,7 +2243,7 @@ CREATE TABLE `migrations` (
   `uid` char(36) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `migrations_track_name_unq_idx` (`track`,`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=411 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=413 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2264,7 +2264,7 @@ CREATE TABLE `plugins` (
   `uid` char(36) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `plugins_handle_unq_idx` (`handle`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2308,7 +2308,7 @@ CREATE TABLE `queue` (
   PRIMARY KEY (`id`),
   KEY `queue_channel_fail_timeUpdated_timePushed_idx` (`channel`,`fail`,`timeUpdated`,`timePushed`),
   KEY `queue_channel_fail_timeUpdated_delay_idx` (`channel`,`fail`,`timeUpdated`,`delay`)
-) ENGINE=InnoDB AUTO_INCREMENT=66 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2483,7 +2483,7 @@ CREATE TABLE `revisions` (
   KEY `revisions_creatorId_fk` (`creatorId`),
   CONSTRAINT `revisions_creatorId_fk` FOREIGN KEY (`creatorId`) REFERENCES `users` (`id`) ON DELETE SET NULL,
   CONSTRAINT `revisions_sourceId_fk` FOREIGN KEY (`canonicalId`) REFERENCES `elements` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -2651,7 +2651,7 @@ CREATE TABLE `sessions` (
   KEY `sessions_dateUpdated_idx` (`dateUpdated`),
   KEY `sessions_userId_idx` (`userId`),
   CONSTRAINT `sessions_userId_fk` FOREIGN KEY (`userId`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -3225,7 +3225,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-15 19:12:36
+-- Dump completed on 2023-12-27 19:40:24
 -- MariaDB dump 10.19  Distrib 10.11.5-MariaDB, for Linux (aarch64)
 --
 -- Host: mysql    Database: project_v5
@@ -3376,6 +3376,9 @@ commit;
 LOCK TABLES `changedfields` WRITE;
 /*!40000 ALTER TABLE `changedfields` DISABLE KEYS */;
 set autocommit=0;
+INSERT INTO `changedfields` VALUES
+(17,1,7,'c6d28728-9454-415b-b286-a976728e0024','2023-12-27 19:37:17',0,1),
+(17,2,7,'c6d28728-9454-415b-b286-a976728e0024','2023-12-27 19:37:17',1,1);
 /*!40000 ALTER TABLE `changedfields` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -4378,6 +4381,11 @@ commit;
 LOCK TABLES `elementactivity` WRITE;
 /*!40000 ALTER TABLE `elementactivity` DISABLE KEYS */;
 set autocommit=0;
+INSERT INTO `elementactivity` VALUES
+(1,1,1,NULL,'view','2023-12-27 19:02:46'),
+(17,1,1,NULL,'edit','2023-12-27 19:37:15'),
+(17,1,1,NULL,'save','2023-12-27 19:37:17'),
+(17,1,1,NULL,'view','2023-12-27 19:37:09');
 /*!40000 ALTER TABLE `elementactivity` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -4405,12 +4413,13 @@ INSERT INTO `elements` VALUES
 (13,NULL,NULL,NULL,NULL,'craft\\commerce\\elements\\Variant',1,0,'2021-03-15 15:24:16','2021-03-15 15:24:21',NULL,NULL,NULL,'8f5e64bc-8282-42a9-a462-e13aff72917d'),
 (14,NULL,NULL,NULL,3,'craft\\commerce\\elements\\Product',1,0,'2021-03-15 15:24:16','2021-03-15 15:24:16',NULL,NULL,NULL,'cc3c2113-f0bd-47d2-bad9-5a7c585228a9'),
 (15,NULL,NULL,NULL,NULL,'craft\\commerce\\elements\\Variant',1,0,'2021-03-15 15:24:16','2021-03-15 15:24:21',NULL,NULL,NULL,'e17cdcbf-cf0b-4ff5-9943-f04e7b8d821a'),
-(17,NULL,NULL,NULL,5,'craft\\elements\\Entry',1,0,'2021-03-15 15:41:19','2021-03-15 16:17:36',NULL,NULL,NULL,'251c74e8-9611-447e-a7a0-7c3e48dd315c'),
+(17,NULL,NULL,NULL,5,'craft\\elements\\Entry',1,0,'2021-03-15 15:41:19','2023-12-27 19:37:17',NULL,NULL,NULL,'251c74e8-9611-447e-a7a0-7c3e48dd315c'),
 (18,17,NULL,1,5,'craft\\elements\\Entry',1,0,'2021-03-15 15:41:19','2021-03-15 15:41:19',NULL,NULL,NULL,'903b23f3-a446-4282-89bb-c18c3a2b8bec'),
 (19,NULL,NULL,NULL,6,'craft\\elements\\GlobalSet',1,0,'2021-03-15 15:55:30','2023-12-15 19:06:41',NULL,NULL,NULL,'aa7c6968-88ec-4d2a-af47-d3c40b582a68'),
 (20,17,NULL,2,5,'craft\\elements\\Entry',1,0,'2021-03-15 16:17:36','2021-03-15 16:17:36',NULL,NULL,NULL,'9e157ef9-368f-49aa-bff9-901e83da4e14'),
 (21,NULL,NULL,NULL,9,'craft\\elements\\Category',1,0,'2021-04-01 02:35:35','2021-04-01 02:35:35',NULL,'2022-01-31 03:39:08',NULL,'0b5e2d02-58de-4965-b9c6-280dfecedd34'),
-(22,NULL,NULL,NULL,9,'craft\\elements\\Category',1,0,'2021-04-01 02:35:44','2021-04-01 02:35:44',NULL,'2022-01-31 03:39:08',NULL,'8deb5a7a-2202-4eac-8415-2ef70a523974');
+(22,NULL,NULL,NULL,9,'craft\\elements\\Category',1,0,'2021-04-01 02:35:44','2021-04-01 02:35:44',NULL,'2022-01-31 03:39:08',NULL,'8deb5a7a-2202-4eac-8415-2ef70a523974'),
+(24,17,NULL,3,5,'craft\\elements\\Entry',1,0,'2023-12-27 19:37:17','2023-12-27 19:37:17',NULL,NULL,NULL,'e39ee52b-1c4e-4beb-9ee6-ab0f26e83e10');
 /*!40000 ALTER TABLE `elements` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -4473,8 +4482,8 @@ INSERT INTO `elements_sites` VALUES
 (26,15,1,NULL,'fdb-001',NULL,NULL,1,'2021-03-15 15:24:16','2021-03-15 15:24:16','93ca9c74-7665-42e6-ade5-4fbea4a22207'),
 (27,14,2,NULL,'fdb-001','shop/products/fdb-001',NULL,1,'2021-03-15 15:24:16','2021-03-15 15:24:20','bf3dedc6-8751-41c9-b950-908d0ff3dd78'),
 (28,15,2,NULL,'fdb-001',NULL,NULL,1,'2021-03-15 15:24:16','2021-03-15 15:24:16','7bc767c8-49af-4dd6-8810-6f964d1d0a97'),
-(31,17,1,'My first blog','my-first-blog','blog/my-first-blog','{\"c218ec6f-7d3b-4836-a62e-481537610827\": \"Some plain text\"}',1,'2021-03-15 15:41:19','2021-03-15 15:41:19','63a271a3-7312-4bec-b3e8-e7b86621e999'),
-(32,17,2,'My first blog','my-first-blog','blog/my-first-blog','{\"c218ec6f-7d3b-4836-a62e-481537610827\": \"Some plain text\"}',1,'2021-03-15 15:41:19','2021-03-15 15:41:19','5102c9da-9a13-4193-81e7-947fb09b7881'),
+(31,17,1,'My first blog','my-first-blog','blog/my-first-blog','{\"c6d28728-9454-415b-b286-a976728e0024\": \"Some plain text\"}',1,'2021-03-15 15:41:19','2023-12-27 19:37:17','63a271a3-7312-4bec-b3e8-e7b86621e999'),
+(32,17,2,'My first blog','my-first-blog','blog/my-first-blog','{\"c6d28728-9454-415b-b286-a976728e0024\": \"Some plain text\"}',1,'2021-03-15 15:41:19','2023-12-27 19:37:17','5102c9da-9a13-4193-81e7-947fb09b7881'),
 (33,18,1,'My first blog','my-first-blog','blog/my-first-blog','{\"c218ec6f-7d3b-4836-a62e-481537610827\": \"Some plain text\"}',1,'2021-03-15 15:41:19','2021-03-15 15:41:19','4ee22583-ddef-491d-951e-9e8b12a7f98b'),
 (34,18,2,'My first blog','my-first-blog','blog/my-first-blog','{\"c218ec6f-7d3b-4836-a62e-481537610827\": \"Some plain text\"}',1,'2021-03-15 15:41:19','2021-03-15 15:41:19','85cd3c31-091d-4dab-addc-310ce17e129c'),
 (35,19,1,NULL,NULL,NULL,NULL,1,'2021-03-15 15:55:30','2023-12-15 19:06:41','cb7c4fe6-7ae8-4d1b-813c-932c555613a0'),
@@ -4484,7 +4493,9 @@ INSERT INTO `elements_sites` VALUES
 (39,21,1,NULL,'puppies','category/puppies',NULL,1,'2021-04-01 02:35:35','2021-04-01 02:35:46','51530c40-112f-484f-addd-8abf4dfa39d6'),
 (40,21,2,NULL,'puppies','category/puppies',NULL,1,'2021-04-01 02:35:35','2021-04-01 02:35:46','5c01578e-7c8c-41de-8a01-58f5b38e7195'),
 (41,22,1,NULL,'kitties','category/kitties',NULL,1,'2021-04-01 02:35:44','2021-04-01 02:35:48','2373a4d8-4ee0-4e70-9cc3-6d3b6dd054c3'),
-(42,22,2,NULL,'kitties','category/kitties',NULL,1,'2021-04-01 02:35:44','2021-04-01 02:35:48','41ed619d-71c4-48fe-b548-b3d3d8373620');
+(42,22,2,NULL,'kitties','category/kitties',NULL,1,'2021-04-01 02:35:44','2021-04-01 02:35:48','41ed619d-71c4-48fe-b548-b3d3d8373620'),
+(45,24,1,'My first blog','my-first-blog','blog/my-first-blog','{\"c6d28728-9454-415b-b286-a976728e0024\": \"Some plain text\"}',1,'2023-12-27 19:37:17','2023-12-27 19:37:17','d7120d9b-fddb-4a3b-b357-f4db5f84ae68'),
+(46,24,2,'My first blog','my-first-blog','blog/my-first-blog','{\"c6d28728-9454-415b-b286-a976728e0024\": \"Some plain text\"}',1,'2023-12-27 19:37:17','2023-12-27 19:37:17','49a677a5-48dc-4bf1-8fda-b56b4fea5e60');
 /*!40000 ALTER TABLE `elements_sites` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -4500,7 +4511,8 @@ INSERT INTO `entries` VALUES
 (2,5,NULL,NULL,NULL,2,NULL,'2020-03-27 13:38:00',NULL,NULL,'2020-03-27 13:38:49','2020-03-27 13:38:49'),
 (17,6,NULL,NULL,NULL,3,1,'2021-03-15 15:40:00',NULL,NULL,'2021-03-15 15:41:19','2021-03-15 15:41:19'),
 (18,6,NULL,NULL,NULL,3,1,'2021-03-15 15:40:00',NULL,NULL,'2021-03-15 15:41:19','2021-03-15 15:41:19'),
-(20,6,NULL,NULL,NULL,3,1,'2021-03-15 15:40:00',NULL,NULL,'2021-03-15 16:17:37','2021-03-15 16:17:37');
+(20,6,NULL,NULL,NULL,3,1,'2021-03-15 15:40:00',NULL,NULL,'2021-03-15 16:17:37','2021-03-15 16:17:37'),
+(24,6,NULL,NULL,NULL,3,1,'2021-03-15 15:40:00',NULL,NULL,'2023-12-27 19:37:17','2023-12-27 19:37:17');
 /*!40000 ALTER TABLE `entries` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -4613,7 +4625,7 @@ LOCK TABLES `info` WRITE;
 /*!40000 ALTER TABLE `info` DISABLE KEYS */;
 set autocommit=0;
 INSERT INTO `info` VALUES
-(1,'5.0.0-alpha.1','5.0.0.12',0,'dyiexpfloboe','3@zojintfryz','2020-03-27 13:22:43','2023-12-15 19:06:41','85f4c669-6b2b-4771-976e-a4bcdd2bd77b');
+(1,'5.0.0-alpha.3','5.0.0.12',0,'adqhhquwupar','3@zojintfryz','2020-03-27 13:22:43','2023-12-27 19:28:17','85f4c669-6b2b-4771-976e-a4bcdd2bd77b');
 /*!40000 ALTER TABLE `info` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -4895,7 +4907,20 @@ LOCK TABLES `projectconfig` WRITE;
 /*!40000 ALTER TABLE `projectconfig` DISABLE KEYS */;
 set autocommit=0;
 INSERT INTO `projectconfig` VALUES
-('dateModified','1702666874'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.0','1'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.1','2'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.2','3'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.3','4'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.4','5'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.headingLevels.5','6'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.listPlugin','\"List\"'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.name','\"Simple\"'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.0','\"heading\"'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.1','\"|\"'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.2','\"bold\"'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.3','\"italic\"'),
+('ckeditor.configs.681bb90b-e190-4f91-8c54-6fcbff972de5.toolbar.4','\"link\"'),
+('dateModified','1703705297'),
 ('email.fromEmail','\"andrew@nystudio107.com\"'),
 ('email.fromName','\"Craft\"'),
 ('email.transportType','\"craft\\\\mail\\\\transportadapters\\\\Sendmail\"'),
@@ -5058,6 +5083,7 @@ INSERT INTO `projectconfig` VALUES
 ('meta.__names__.54e60257-f31a-44aa-960e-bbd364197e28','\"Homepage\"'),
 ('meta.__names__.5c642d7e-b16b-4836-9575-668d75d242e5','\"Site\"'),
 ('meta.__names__.5da841b1-ca0d-46ff-8bb1-04d6c889ac54','\"English\"'),
+('meta.__names__.681bb90b-e190-4f91-8c54-6fcbff972de5','\"Simple\"'),
 ('meta.__names__.c4536798-743d-4bf0-9669-192827bfb26c','\"Blog\"'),
 ('meta.__names__.de308a7d-1794-448f-9176-29e2eace7ecf','\"Blog\"'),
 ('meta.__names__.ec473f07-152f-423b-90df-ac425e6068a1','\"Spanish\"'),
@@ -5256,7 +5282,8 @@ LOCK TABLES `revisions` WRITE;
 set autocommit=0;
 INSERT INTO `revisions` VALUES
 (1,17,1,1,''),
-(2,17,1,2,'');
+(2,17,1,2,''),
+(3,17,1,3,'Applied “Draft 1”');
 /*!40000 ALTER TABLE `revisions` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -5279,10 +5306,9 @@ INSERT INTO `searchindex` VALUES
 (2,'slug',0,1,' homepage '),
 (2,'title',0,2,' homepage '),
 (3,'slug',0,1,''),
-(17,'title',0,2,' my first blog '),
 (17,'slug',0,2,' my first blog '),
-(17,'slug',0,1,' my first blog '),
 (17,'title',0,1,' my first blog '),
+(17,'slug',0,1,' my first blog '),
 (19,'slug',0,2,''),
 (19,'slug',0,1,''),
 (21,'title',0,2,' puppies '),
@@ -5293,7 +5319,8 @@ INSERT INTO `searchindex` VALUES
 (22,'slug',0,2,' kitties '),
 (22,'slug',0,1,' kitties '),
 (22,'title',0,1,' kitties '),
-(2,'slug',0,2,' homepage ');
+(2,'slug',0,2,' homepage '),
+(17,'title',0,2,' my first blog ');
 /*!40000 ALTER TABLE `searchindex` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -5549,7 +5576,7 @@ LOCK TABLES `userpreferences` WRITE;
 /*!40000 ALTER TABLE `userpreferences` DISABLE KEYS */;
 set autocommit=0;
 INSERT INTO `userpreferences` VALUES
-(1,'{\"language\":\"en-US\",\"locale\":null,\"weekStartDay\":\"1\",\"useShapes\":false,\"underlineLinks\":false,\"showFieldHandles\":false,\"enableDebugToolbarForSite\":false,\"enableDebugToolbarForCp\":false,\"showExceptionView\":false,\"profileTemplates\":false}');
+(1,'{\"language\":\"en-US\",\"locale\":null,\"weekStartDay\":\"1\",\"alwaysShowFocusRings\":false,\"useShapes\":false,\"underlineLinks\":false,\"notificationDuration\":\"5000\",\"showFieldHandles\":true,\"enableDebugToolbarForSite\":true,\"enableDebugToolbarForCp\":true,\"showExceptionView\":false,\"profileTemplates\":false}');
 /*!40000 ALTER TABLE `userpreferences` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -5562,7 +5589,7 @@ LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 set autocommit=0;
 INSERT INTO `users` VALUES
-(1,'admin',NULL,NULL,'','','andrew@nystudio107.com','$2y$13$EuMO1jWoObzUT.7T6IMJ4.U1GB2uIGV8LbrzGKT/HEimvXCPC65Ji',1,1,0,0,0,'2023-12-15 19:07:39',NULL,NULL,NULL,'2021-03-01 03:52:45',NULL,1,NULL,NULL,NULL,0,'2021-03-15 14:57:00','2020-03-27 13:22:44','2023-12-15 19:07:39');
+(1,'admin',NULL,NULL,'','','andrew@nystudio107.com','$2y$13$EuMO1jWoObzUT.7T6IMJ4.U1GB2uIGV8LbrzGKT/HEimvXCPC65Ji',1,1,0,0,0,'2023-12-27 19:40:08',NULL,NULL,NULL,'2021-03-01 03:52:45',NULL,1,NULL,NULL,NULL,0,'2021-03-15 14:57:00','2020-03-27 13:22:44','2023-12-27 19:40:08');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 commit;
@@ -5671,4 +5698,4 @@ commit;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-15 19:12:36
+-- Dump completed on 2023-12-27 19:40:24
