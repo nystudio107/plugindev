@@ -1,5 +1,13 @@
 {% extends "vendor/nystudio107/craft-twig-base-templates/templates/_layouts/html-page.twig" %}
 
+{# -- Content that appears before the primary content block -- #}
+{% block preContent %}
+    <section>
+        <h3>preContent</h3>
+    </section>
+{% endblock %}
+
+{# -- Primary content block -- #}
 {% block content %}
     <section>
         <h1>{{ entry.title }}</h1>
@@ -7,13 +15,14 @@
     </section>
 {% endblock %}
 
-{% block subcontent %}
+{# -- Content that appears after the primary content block -- #}
+{% block postContent %}
     <section>
-        <h3>subcontent</h3>
+        <h3>postContent</h3>
     </section>
 {% endblock %}
 
-{# -- Any JavaScript that should be included before </body> -- #}
-{% block bodyJs %}
+{# -- Any <script></script> tags that should be included before </body> -- #}
+{% block bodyScripts %}
     {{ parent() }}
-{% endblock bodyJs %}
+{% endblock bodyScripts %}
