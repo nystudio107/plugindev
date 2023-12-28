@@ -3,6 +3,7 @@
 ## 1.2.1 - UNRELEASED
 ### Added
 * Added `vite_v3.plugindev.local`, `vite_v4.plugindev.local` & `vite_v5.plugindev.local` as OrbStack domain labels for the buildchain
+* Added documentation for the `buildchain`
 
 ## 1.2.0 - 2023.12.27
 ### Added
