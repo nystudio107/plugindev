@@ -4,7 +4,7 @@ CONTAINER?=$(shell basename $(dir $(CURDIR)))-v${MAJOR_VERSION}-buildchain
 DEV_PORT?=400${MAJOR_VERSION}
 IMAGE_INFO=$(shell docker image inspect $(CONTAINER):$(TAG))
 IMAGE_NAME=${CONTAINER}:${TAG}
-DOCKER_RUN=docker container run --rm -it --network plugindev_default -v "${CURDIR}"/../:/app
+DOCKER_RUN=docker container run --rm -it --network plugindev_default -l dev.orbstack.domains=vite_v${MAJOR_VERSION}.plugindev.local -v "${CURDIR}"/../:/app
 
 .PHONY: build clean dev image-build image-check npm ssh
 
