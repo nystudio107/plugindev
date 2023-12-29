@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.2.1 - UNRELEASED
+## 1.2.1 - 2023.12.28
 ### Added
 * Added `vite_v3.plugindev.local`, `vite_v4.plugindev.local` & `vite_v5.plugindev.local` as OrbStack domain labels for the buildchain
 * Added documentation for the `buildchain`
