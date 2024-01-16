@@ -3,6 +3,7 @@
 ## 1.2.2 - UNRELEASED
 ### Added
 * Explicitly set `charset` & `collation` in `config/db.php` and `example.env` rather than depending on defaults
+* Add `craft-code-field`
 
 ## 1.2.1 - 2023.12.28
 ### Added
