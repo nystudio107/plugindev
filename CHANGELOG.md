@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.2 - UNRELEASED
+### Added
+* Explicitly set `charset` & `collation` in `config/db.php` and `example.env` rather than depending on defaults
+
 ## 1.2.1 - 2023.12.28
 ### Added
 * Added `vite_v3.plugindev.local`, `vite_v4.plugindev.local` & `vite_v5.plugindev.local` as OrbStack domain labels for the buildchain
