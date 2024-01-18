@@ -5,6 +5,12 @@
 * Explicitly set `charset` & `collation` in `config/db.php` and `example.env` rather than depending on defaults
 * Add `craft-code-field`
 
+### Changed
+* Updated `config/vite.php` to `src/js/app.ts` for reloading through Twig errors
+
+### Fixed
+* Fixed the Tailwind CSS content path to the Craft CMS `templates/` directory for the buildchain
+
 ## 1.2.1 - 2023.12.28
 ### Added
 * Added `vite_v3.plugindev.local`, `vite_v4.plugindev.local` & `vite_v5.plugindev.local` as OrbStack domain labels for the buildchain
