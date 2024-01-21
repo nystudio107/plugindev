@@ -3,7 +3,8 @@
 ## 1.2.2 - UNRELEASED
 ### Added
 * Explicitly set `charset` & `collation` in `config/db.php` and `example.env` rather than depending on defaults
-* Add `craft-code-field`
+* Add `craft-code-field`  to the `composer.json`
+* Add `craft-vite` to the `composer.json`
 
 ### Changed
 * Updated `config/vite.php` to `src/js/app.ts` for reloading through Twig errors
