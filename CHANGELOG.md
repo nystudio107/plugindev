@@ -1,10 +1,11 @@
 # nystudio107/plugindev Change Log
 
-## 1.2.2 - UNRELEASED
+## 1.2.2 - 2024.01.22
 ### Added
 * Explicitly set `charset` & `collation` in `config/db.php` and `example.env` rather than depending on defaults
 * Add `craft-code-field`  to the `composer.json`
 * Add `craft-vite` to the `composer.json`
+* Add `craft-seomatic` to the `composer.json`
 
 ### Changed
 * Updated `config/vite.php` to `src/js/app.ts` for reloading through Twig errors
