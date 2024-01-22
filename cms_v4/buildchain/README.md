@@ -69,7 +69,7 @@ The appropriate `config/vite.php` is already included in `plugindev`. The have t
 
 The `app.ts` just includes our CSS and an icon, while the `welcome.ts` mounts a Vue component that generates confetti.
 
-To get the confettit to appear, you just need to add the following to your template:
+To get the confetti to appear, you just need to add the following to your template:
 
 ```twig
 {% block preContent %}
