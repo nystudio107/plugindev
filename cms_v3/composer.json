@@ -20,7 +20,7 @@
     "nystudio107/craft-fastcgicachebust": "^1.0.3",
     "nystudio107/craft-icalendar": "^1.0.0",
     "nystudio107/craft-imageoptimize": "^1.0.0",
-    "nystudio107/craft-instantanalytics": "^1.0.0",
+    "nystudio107/craft-instantanalytics-ga4": "^3.0.0",
     "nystudio107/craft-minify": "^1.0.0",
     "nystudio107/craft-pathtools": "^1.0.0",
     "nystudio107/craft-recipe": "^1.0.0",

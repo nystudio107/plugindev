@@ -8,7 +8,10 @@
     "craftcms/cms": "^5.0.0-alpha.1",
     "craftcms/ckeditor": "4.0.x-dev",
     "craftcms/redactor": "4.0.x-dev",
+    "nystudio107/craft-code-field": "^5.0.0-beta.1",
+    "nystudio107/craft-seomatic": "^5.0.0-beta.1",
     "nystudio107/craft-twig-base-templates": "^1.0.0",
+    "nystudio107/craft-vite": "^5.0.0-beta.1",
     "nystudio107/twig-bundle-installer": "^1.0.0",
     "vlucas/phpdotenv": "^5.4.0",
     "yiisoft/yii2-redis": "^2.0.6"
