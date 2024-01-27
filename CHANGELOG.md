@@ -3,6 +3,8 @@
 ## 1.2.3 - UNRELEASED
 ### Added
 * Add `nystudio107/craft-autocomplete` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-closure` to the `cms_v4/composer.json`
+* Add `nystudio107/craft-closure` to the `cms_v5/composer.json`
 
 ## 1.2.2 - 2024.01.22
 ### Added
