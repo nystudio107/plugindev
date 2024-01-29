@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 use craft\ecs\SetList as CraftSetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
+return static function (ECSConfig $ecsConfig): void {
+    $parameters = $ecsConfig->parameters();
     $parameters->set(Option::PARALLEL, true);
-    $containerConfigurator->import(CraftSetList::CRAFT_CMS_4);
+    $ecsConfig->import(CraftSetList::CRAFT_CMS_4);
 };
