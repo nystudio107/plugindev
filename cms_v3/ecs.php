@@ -9,5 +9,5 @@ use Symplify\EasyCodingStandard\ValueObject\Option;
 return static function (ECSConfig $ecsConfig): void {
     $parameters = $ecsConfig->parameters();
     $parameters->set(Option::PARALLEL, true);
-    $ecsConfig->import(CraftSetList::CRAFT_CMS_4);
+    $ecsConfig->import(CraftSetList::CRAFT_CMS_3);
 };
