@@ -1,13 +1,9 @@
 <?php
 
-declare(strict_types=1);
-
-use craft\ecs\SetList as CraftSetList;
+use craft\ecs\SetList;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
-use Symplify\EasyCodingStandard\ValueObject\Option;
 
-return static function (ECSConfig $ecsConfig): void {
-    $parameters = $ecsConfig->parameters();
-    $parameters->set(Option::PARALLEL, true);
-    $ecsConfig->import(CraftSetList::CRAFT_CMS_4);
+return static function(ECSConfig $ecsConfig): void {
+    $ecsConfig->parallel();
+    $ecsConfig->sets([SetList::CRAFT_CMS_4]);
 };
