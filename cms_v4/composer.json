@@ -12,6 +12,7 @@
     "craftcms/digital-products": "^3.0.0",
     "craftcms/redactor": "^3.0.0",
     "craftcms/shopify": "^3.0.0",
+    "nystudio107/craft-closure": "^1.0.0",
     "nystudio107/craft-code-field": "^4.0.0",
     "nystudio107/craft-connect": "^4.0.0",
     "nystudio107/craft-cookies": "^4.0.0",

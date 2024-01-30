@@ -1,5 +1,18 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.3 - 2024.01.30
+### Added
+* Add `nystudio107/craft-autocomplete` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-closure` to the `cms_v4/composer.json`
+* Add `nystudio107/craft-closure` to the `cms_v5/composer.json`
+
+### Changed
+* Use `phpstan` level `5` by default
+* Add `craftcms/ecs`, `craftcms/phpstan` & `craftcms/rector`
+
+### Fixed
+* Update `ecs.php` to be compatible with the latest `ECSConfig` spec
+
 ## 1.2.2 - 2024.01.22
 ### Added
 * Explicitly set `charset` & `collation` in `config/db.php` and `example.env` rather than depending on defaults
