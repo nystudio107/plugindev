@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.2.3 - UNRELEASED
+## 1.2.3 - 2024.01.30
 ### Added
 * Add `nystudio107/craft-autocomplete` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-closure` to the `cms_v4/composer.json`
