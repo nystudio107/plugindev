@@ -1,5 +1,11 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.4 - UNRELEASED
+## Added
+* Add `nystudio107/craft-minify` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-retour` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-webperf` to the `cms_v5/composer.json`
+
 ## 1.2.3 - 2024.01.30
 ### Added
 * Add `nystudio107/craft-autocomplete` to the `cms_v5/composer.json`
