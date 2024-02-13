@@ -2,6 +2,7 @@
 
 ## 1.2.4 - UNRELEASED
 ## Added
+* Add `nystudio107/craft-cookies` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-minify` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-retour` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-webperf` to the `cms_v5/composer.json`
