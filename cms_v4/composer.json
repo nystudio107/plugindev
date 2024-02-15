@@ -5,6 +5,7 @@
   "prefer-stable": true,
   "require": {
     "php": "^8.0.2",
+    "besteadfast/craft-preparse-field": "^2.0.0",
     "craftcms/aws-s3": "^2.0.0",
     "craftcms/ckeditor": "^3.0.0",
     "craftcms/cms": "^4.0.0",
@@ -44,7 +45,10 @@
     "nystudio107/craft-youtubeliveembed": "^4.0.0",
     "nystudio107/twig-bundle-installer": "^1.0.0",
     "putyourlightson/craft-elements-panel": "^2.0.0",
+    "putyourlightson/craft-blitz": "^4.0.0",
     "solspace/craft-calendar": "^4.0.0",
+    "spicyweb/craft-neo": "^4.0.0",
+    "verbb/doxter": "^5.0.0",
     "verbb/super-table": "^3.0.0",
     "verbb/vizy": "^2.0.0",
     "vlucas/phpdotenv": "^5.4.0",
