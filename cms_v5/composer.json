@@ -26,7 +26,8 @@
     "craftcms/generator": "2.0.x-dev",
     "craftcms/phpstan": "dev-main",
     "craftcms/rector": "dev-main",
-    "nystudio107/craft-autocomplete": "^1.12.0"
+    "nystudio107/craft-autocomplete": "^1.12.0",
+    "putyourlightson/craft-blitz": "^5.0.0-beta.1"
   },
   "autoload": {
     "psr-4": {
