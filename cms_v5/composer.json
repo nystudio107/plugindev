@@ -6,6 +6,7 @@
   "require": {
     "php": "^8.2.0",
     "craftcms/cms": "^5.0.0-beta.1",
+    "craftcms/commerce": "^5.0.0-beta.1",
     "craftcms/ckeditor": "4.0.0-beta.1",
     "craftcms/redactor": "4.0.x-dev",
     "nystudio107/craft-cookies": "^5.0.0-beta.1",
@@ -22,6 +23,12 @@
     "yiisoft/yii2-redis": "^2.0.6"
   },
   "require-dev": {
+    "codeception/codeception": "^5.0.11",
+    "codeception/module-asserts": "^3.0.0",
+    "codeception/module-datafactory": "^3.0.0",
+    "codeception/module-phpbrowser": "^3.0.0",
+    "codeception/module-rest": "^3.3.2",
+    "codeception/module-yii2": "^1.1.9",
     "craftcms/ecs": "dev-main",
     "craftcms/generator": "2.0.x-dev",
     "craftcms/phpstan": "dev-main",
