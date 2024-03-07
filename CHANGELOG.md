@@ -6,6 +6,8 @@
 * Add `nystudio107/craft-minify` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-retour` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-webperf` to the `cms_v5/composer.json`
+* Add `craftcms/commerce`  to the `cms_v5/composer.json`
+* Add `codeception` to the `cms_v5/composer.json`
 
 ## 1.2.3 - 2024.01.30
 ### Added
