@@ -8,6 +8,7 @@
 * Add `nystudio107/craft-webperf` to the `cms_v5/composer.json`
 * Add `craftcms/commerce`  to the `cms_v5/composer.json`
 * Add `codeception` to the `cms_v5/composer.json`
+* Add `putyourlightson/craft-campaign` to the `cms_v5/composer.json`
 
 ## 1.2.3 - 2024.01.30
 ### Added
