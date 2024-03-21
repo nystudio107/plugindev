@@ -35,7 +35,8 @@
     "craftcms/redactor": "4.0.x-dev",
     "nystudio107/craft-autocomplete": "^1.12.0",
     "putyourlightson/craft-blitz": "^5.0.0-beta.1",
-    "putyourlightson/craft-campaign": "^3.0.0-beta.1"
+    "putyourlightson/craft-campaign": "^3.0.0-beta.1",
+    "verbb/doxter": "^6.0.0-beta.1"
   },
   "autoload": {
     "psr-4": {
