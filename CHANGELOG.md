@@ -13,6 +13,7 @@
 * Add `craftcms/feed-me` to the `cms_v5/composer.json`
 * Add `craftcms/shopify` to the `cms_v5/composer.json`
 * Add `craftcms/digital-products` to the `cms_v5/composer.json`
+* Add `spicyweb/craft-neo` to the `cms_v5/composer.json`
 
 ## 1.2.3 - 2024.01.30
 ### Added
