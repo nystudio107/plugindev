@@ -10,6 +10,7 @@
 * Add `codeception` to the `cms_v5/composer.json`
 * Add `putyourlightson/craft-campaign` to the `cms_v5/composer.json`
 * Add `verbb/doxster` to the `cms_v5/composer.json`
+* Add `craftcms/feed-me` to the `cms_v5/composer.json`
 
 ## 1.2.3 - 2024.01.30
 ### Added
