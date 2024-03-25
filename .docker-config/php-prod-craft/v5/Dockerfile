@@ -28,6 +28,7 @@ RUN set -eux; \
         gifsicle \
         jpegoptim \
         libwebp-tools \
+        libavif \
         linux-headers \
         nano \
         optipng \
