@@ -15,6 +15,7 @@
 * Add `craftcms/digital-products` to the `cms_v5/composer.json`
 * Add `spicyweb/craft-neo` to the `cms_v5/composer.json`
 * Add `libavif` to the PHP containers
+* Add `nystudio107/craft-typogrify` to the `cms_v5/composer.json`
 
 ## 1.2.3 - 2024.01.30
 ### Added
