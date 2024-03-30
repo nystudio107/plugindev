@@ -17,6 +17,7 @@
 * Add `libavif` to the PHP containers
 * Add `nystudio107/craft-typogrify` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-imageoptimize` to the `cms_v5/composer.json`
+* Add `craftcms/aws-s3` to the `cms_v5/composer.json`
 
 ## 1.2.3 - 2024.01.30
 ### Added
