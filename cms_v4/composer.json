@@ -8,6 +8,7 @@
     "besteadfast/craft-preparse-field": "^2.0.0",
     "craftcms/aws-s3": "^2.0.0",
     "craftcms/ckeditor": "^3.0.0",
+    "craftcms/cloud": "^1.41.0",
     "craftcms/cms": "^4.0.0",
     "craftcms/commerce": "^4.0.0",
     "craftcms/digital-products": "^3.0.0",
