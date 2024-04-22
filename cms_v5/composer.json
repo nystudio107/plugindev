@@ -16,6 +16,7 @@
     "nystudio107/craft-minify": "^5.0.0",
     "nystudio107/craft-retour": "^5.0.0",
     "nystudio107/craft-seomatic": "^5.0.0",
+    "nystudio107/craft-templatecomments": "^5.0.0",
     "nystudio107/craft-twigpack": "^5.0.0",
     "nystudio107/craft-twig-base-templates": "^1.0.0",
     "nystudio107/craft-typogrify": "^5.0.0",
