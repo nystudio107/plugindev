@@ -43,7 +43,7 @@
     "craftcms/ckeditor": "^4.0.0-beta.1",
     "craftcms/digital-products": "^4.0.0",
     "craftcms/feed-me": "^6.0.0",
-    "craftcms/redactor": "4.0.x-dev",
+    "craftcms/redactor": "^4.0.0",
     "craftcms/shopify": "^5.0.0",
     "nystudio107/craft-autocomplete": "^1.12.0",
     "putyourlightson/craft-blitz": "^5.0.0-beta.1",
