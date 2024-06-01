@@ -23,6 +23,9 @@
 * Add `nystudio107/craft-emptycoalesce` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-templatecomments` to the `cms_v5/composer.json`
 
+### Changed
+* Use `postgres:13-alpine` for Craft 5 support
+
 ## 1.2.3 - 2024.01.30
 ### Added
 * Add `nystudio107/craft-autocomplete` to the `cms_v5/composer.json`
