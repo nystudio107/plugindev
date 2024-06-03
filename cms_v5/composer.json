@@ -12,6 +12,7 @@
     "nystudio107/craft-code-field": "^5.0.0",
     "nystudio107/craft-cookies": "^5.0.0",
     "nystudio107/craft-emptycoalesce": "^5.0.0",
+    "nystudio107/craft-fastcgicachebust": "^5.0.0",
     "nystudio107/craft-imageoptimize": "^5.0.0",
     "nystudio107/craft-minify": "^5.0.0",
     "nystudio107/craft-retour": "^5.0.0",
