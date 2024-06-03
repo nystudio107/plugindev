@@ -23,6 +23,7 @@
 * Add `nystudio107/craft-emptycoalesce` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-templatecomments` to the `cms_v5/composer.json`
 * Add `solspace/craft-calendar` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-templatecomments` to the `cms_v5/composer.json`
 
 ### Changed
 * Use `postgres:13-alpine` for Craft 5 support
