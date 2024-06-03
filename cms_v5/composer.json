@@ -39,18 +39,18 @@
     "craftcms/rector": "dev-main",
     "composer-plugin-api": "^1.0 || ^2.0",
     "composer/composer": "^1.0 || ^2.0",
-    "craftcms/commerce": "^5.0.0-beta.1",
-    "craftcms/ckeditor": "^4.0.0-beta.1",
+    "craftcms/commerce": "^5.0.0",
+    "craftcms/ckeditor": "^4.0.0",
     "craftcms/digital-products": "^4.0.0",
     "craftcms/feed-me": "^6.0.0",
     "craftcms/redactor": "^4.0.0",
     "craftcms/shopify": "^5.0.0",
     "nystudio107/craft-autocomplete": "^1.12.0",
-    "putyourlightson/craft-blitz": "^5.0.0-beta.1",
-    "putyourlightson/craft-campaign": "^3.0.0-beta.1",
+    "putyourlightson/craft-blitz": "^5.0.0",
+    "putyourlightson/craft-campaign": "^3.0.0",
     "solspace/craft-calendar": "^5.0.0",
-    "spicyweb/craft-neo": "^5.0.0-beta.1",
-    "verbb/doxter": "^6.0.0-beta.1"
+    "spicyweb/craft-neo": "^5.0.0",
+    "verbb/doxter": "^6.0.0"
   },
   "autoload": {
     "psr-4": {
