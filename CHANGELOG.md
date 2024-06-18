@@ -1,6 +1,6 @@
 # nystudio107/plugindev Change Log
 
-## 1.2.4 - UNRELEASED
+## 1.2.4 - 2024.06.18
 ## Added
 * Add `nystudio107/craft-cookies` to the `cms_v5/composer.json`
 * Add `nystudio107/craft-minify` to the `cms_v5/composer.json`
