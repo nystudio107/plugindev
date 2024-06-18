@@ -1,5 +1,35 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.4 - 2024.06.18
+## Added
+* Add `nystudio107/craft-cookies` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-minify` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-retour` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-webperf` to the `cms_v5/composer.json`
+* Add `craftcms/commerce`  to the `cms_v5/composer.json`
+* Add `codeception` to the `cms_v5/composer.json`
+* Add `putyourlightson/craft-campaign` to the `cms_v5/composer.json`
+* Add `verbb/doxster` to the `cms_v5/composer.json`
+* Add `craftcms/feed-me` to the `cms_v5/composer.json`
+* Add `craftcms/shopify` to the `cms_v5/composer.json`
+* Add `craftcms/digital-products` to the `cms_v5/composer.json`
+* Add `spicyweb/craft-neo` to the `cms_v5/composer.json`
+* Add `libavif` to the PHP containers
+* Add `nystudio107/craft-typogrify` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-imageoptimize` to the `cms_v5/composer.json`
+* Add `craftcms/aws-s3` to the `cms_v5/composer.json`
+* Add `craftcms/cloud` to the `cms_v4/composer.json` & `cms_v5/composer.json`
+* Add `nystudio107/craft-twigpack` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-emptycoalesce` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-templatecomments` to the `cms_v5/composer.json`
+* Add `solspace/craft-calendar` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-templatecomments` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-twigprofiler` to the `cms_v5/composer.json`
+* Add `nystudio107/craft-similar` to the `cms_v5/composer.json`
+
+### Changed
+* Use `postgres:13-alpine` for Craft 5 support
+
 ## 1.2.3 - 2024.01.30
 ### Added
 * Add `nystudio107/craft-autocomplete` to the `cms_v5/composer.json`
