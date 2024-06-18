@@ -20,7 +20,7 @@
     "nystudio107/craft-similar": "^5.0.0",
     "nystudio107/craft-templatecomments": "^5.0.0",
     "nystudio107/craft-twigpack": "^5.0.0",
-    "nystudio107/craft-profiler": "^5.0.0",
+    "nystudio107/craft-twigprofiler": "^5.0.0",
     "nystudio107/craft-twig-base-templates": "^1.0.0",
     "nystudio107/craft-typogrify": "^5.0.0",
     "nystudio107/craft-vite": "^5.0.0",
