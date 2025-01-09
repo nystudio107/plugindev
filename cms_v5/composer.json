@@ -66,6 +66,10 @@
       "nystudio107/twig-bundle-installer": true,
       "yiisoft/yii2-composer": true
     },
+    "platform": {
+      "php": "8.2"
+    },
+    "platform-check": false,
     "sort-packages": true
   },
   "repositories": [
