@@ -1,5 +1,9 @@
 # nystudio107/plugindev Change Log
 
+## 1.2.5 - UNRELEASED
+## Added
+* Added `platform` to all Craft CMS versions, so that `phpstan` will perform checks for the minimum PHP version for each
+
 ## 1.2.4 - 2024.06.18
 ## Added
 * Add `nystudio107/craft-cookies` to the `cms_v5/composer.json`
