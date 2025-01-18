@@ -1,10 +1,4 @@
-# Determine the docker compose API version to get the separator character
-VERSION?=$(shell docker-compose -v)
-ifneq (,$(findstring v2.,$(VERSION)))
-	SEPARATOR:=-
-else
-	SEPARATOR:=_
-endif
+SEPARATOR:=-
 PROJECT_NAME?=$(shell basename $(dir $(CURDIR)))
 PROJECT_DIR?=/var/www/project/
 SERVICE_NAME?=php
