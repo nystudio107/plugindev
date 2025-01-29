@@ -6,6 +6,7 @@
 
 ## Changed
 * Remove docker compose versioning checks
+* Updated the `buildchain` to use Vite 6 & Tailwind 4
 
 ## 1.2.4 - 2024.06.18
 ## Added
