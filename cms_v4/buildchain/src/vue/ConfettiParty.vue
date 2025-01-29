@@ -1,9 +1,9 @@
 <template>
-  <div />
+  <div/>
 </template>
 
-<script setup lang="ts">
-import { onMounted } from 'vue';
+<script lang="ts" setup>
+import {onMounted} from 'vue';
 import Confetti from 'vue-confetti/src/confetti.js';
 
 const config: Partial<ConfettiConfig> = {

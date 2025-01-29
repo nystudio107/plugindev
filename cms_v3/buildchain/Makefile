@@ -30,6 +30,9 @@ endif
 # Run the passed in npm command
 npm: image-check
 	${DOCKER_RUN} --name ${CONTAINER}-$@ ${IMAGE_NAME} $(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
+# Run the passed in npx command
+npx: image-check
+	${DOCKER_RUN} --name ${CONTAINER}-$@ -it --entrypoint=/usr/local/bin/npx ${IMAGE_NAME} $(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 # Open a shell inside of the container
 ssh: image-check
 	${DOCKER_RUN} --name ${CONTAINER}-$@ --entrypoint=/bin/sh ${IMAGE_NAME}
