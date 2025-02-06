@@ -5,10 +5,7 @@
  *
  */
 
-@import "tailwindcss";
-
-@source "../../../src/templates";
-
+@import "./tailwind-config.css";
 
 @import "./components/webfonts.css";
 @import "./components/typography.css";
