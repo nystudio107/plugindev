@@ -27,6 +27,9 @@ mysql:
 	cp config/_configs/mysql/db.php config/db.php
 	cp config/_configs/mysql/general.php config/general.php
 	docker restart $(QUEUE_CONTAINER)
+pest:
+	docker exec -it -e PROJECT_VENDOR_DIR=$(PROJECT_VENDOR_DIR) -w $(PROJECT_DIR)$(CMS_DIR) $(DEBUG_CONTAINER) su-exec www-data vendor/bin/pest \
+		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
 phpstan:
 	docker exec -it -w $(PROJECT_DIR)$(CMS_DIR) $(CONTAINER) su-exec www-data vendor/bin/phpstan --memory-limit=1G \
 		$(filter-out $@,$(MAKECMDGOALS)) $(MAKEFLAGS)
