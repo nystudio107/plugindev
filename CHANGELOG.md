@@ -3,6 +3,7 @@
 ## 1.2.5 - UNRELEASED
 ## Added
 * Added `platform` to all Craft CMS versions, so that `phpstan` will perform checks for the minimum PHP version for each
+* Add support for `make pest`
 
 ## Changed
 * Remove docker compose versioning checks
