@@ -32,6 +32,7 @@ return [
             'class' => yii\redis\Cache::class,
             'keyPrefix' => App::env('APP_ID') ?: 'CraftCMS',
             'redis' => [
+                'class' => yii\redis\Connection::class,
                 'hostname' => App::env('REDIS_HOSTNAME'),
                 'port' => App::env('REDIS_PORT'),
                 'database' => App::env('REDIS_CRAFT_DB'),
