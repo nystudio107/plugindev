@@ -9,6 +9,9 @@
 * Remove docker compose versioning checks
 * Updated the `buildchain` to use Vite 6 & Tailwind 4
 
+### Fixed
+* Fixed the `config/app.php` & `config/app.web.php` files to work with the latest `yii2/redis` config
+
 ## 1.2.4 - 2024.06.18
 ## Added
 * Add `nystudio107/craft-cookies` to the `cms_v5/composer.json`
